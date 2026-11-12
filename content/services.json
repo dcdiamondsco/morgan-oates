@@ -1,0 +1,112 @@
+{
+ "overview": {
+  "path": "london-landscape-gardening",
+  "title": "Services",
+  "metaTitle": "Garden design, landscaping and maintenance in London | Morgan Oates",
+  "metaDescription": "Garden design, hard and soft landscaping, irrigation, lighting, living walls and ongoing maintenance, from Chiswick across West, Central and South London.",
+  "lede": "Design, build and care, offered together or separately. Some clients bring us a garden to design; others bring a design to build, or an established garden to keep.",
+  "image": "projects/west-london-romantic-style-garden/img_0202-900x675",
+  "imageAlt": "Planted borders and a path in a West London garden"
+ },
+ "pages": {
+  "design": {
+   "path": "london-garden-designers", "title": "Garden design", "kicker": "Design",
+   "metaTitle": "Garden designers in London | Morgan Oates",
+   "metaDescription": "Garden design from first site meeting to master plan and monitoring on site, from Chiswick across West, Central and South London.",
+   "lede": "A design that comes from the site and the people who will use it, drawn up in stages and carried through to the finished garden.",
+   "image": "projects/oasis-of-peace/57-9486sok-900x600", "imageAlt": "Oasis of Peace: a pool and decked path around a planted island",
+   "caption": "Oasis of Peace, designed by Anna Pawlowska.",
+   "sections": [
+    {"h":"How the design service works","p":["Good design develops in stages, and we think the designer should see the space and meet you face to face. Depending on what you need, the service can include drawing, planning, surveying, planting design and site management, and it can run on into construction and aftercare."]},
+    {"h":"The stages","steps":[
+      ["Consultation","An on-site meeting to understand the space and what you want from it. We write this up as the brief."],
+      ["Survey","Once the brief is accepted, a site survey is arranged, unless you already have one."],
+      ["Concept","Mood boards and 3D visuals show the proposed style, planting and landscape ideas. Plants and materials are not yet fixed."],
+      ["Master plan","When the concept is approved, a scaled, detailed plan and written specification are produced for construction."],
+      ["Project monitoring","The designer oversees the build to check it follows the plan. Any additional services are quoted in advance and charged separately."]]},
+    {"h":"Who designs","p":["Anna Pawlowska leads garden design and soft landscaping at Morgan Oates. Her Moroccan-inspired design Oasis of Peace was one of five APL Avenue Show Gardens at BBC Gardeners’ World Live in 2019.","Some gardens in our portfolio were designed by other designers and built by us. We say so on each project page."]}
+   ],
+   "related": ["oasis-of-peace","west-london-romantic-style-garden"],
+   "journal": "choosing-a-garden-designer"
+  },
+  "landscaping": {
+   "path": "london-landscape-gardening/west-london-landscape-gardening-services", "title": "Landscaping", "kicker": "Build",
+   "metaTitle": "Landscape gardening in West London | Morgan Oates",
+   "metaDescription": "Hard and soft landscaping, project management and overseas consultancy for gardens large and small, from a Chiswick base.",
+   "lede": "Construction for gardens of every size, to our own designs or to someone else’s.",
+   "image": "projects/scarsdale-villas/img012-900x593", "imageAlt": "Built garden at Scarsdale Villas",
+   "caption": "Scarsdale Villas: designed by Stephen Woodhams, built by Morgan Oates.",
+   "sections": [
+    {"h":"Our portfolio","p":["Our work includes Chelsea Flower Show gardens and stands, roof terraces, shop and event installations, town house gardens, country gardens and holiday homes in France and Ibiza. We work on small gardens and on large construction projects."]},
+    {"h":"Hard landscaping","p":["The heavy work: excavation and groundworks, stone and brickwork, paving, carpentry, tree surgery and electrical installation."]},
+    {"h":"Soft landscaping","p":["The finer work: planting, lawns, flower arranging and horticulture."]},
+    {"h":"Project management","p":["We aim to deliver efficiently, within budget and with attention to detail, to minimise disruption, and to keep you informed throughout about anything that arises. Build quality is what lets a garden last for many years."]},
+    {"h":"Overseas gardens","p":["Overseas projects, in France or elsewhere in Europe, bring their own bureaucracy, language barriers and building rules. We have managed several, and offer a consultancy service for clients building a holiday-home garden who would like a UK-based firm involved."]}
+   ],
+   "also": ["irrigation","lighting","living-walls"],
+   "related": ["scarsdale-villas","cheltenham-town-house-and-garden"]
+  },
+  "irrigation": {
+   "path": "london-landscape-gardening/garden-irrigation", "title": "Irrigation and water features", "kicker": "Landscaping",
+   "metaTitle": "Garden irrigation and water features | Morgan Oates",
+   "metaDescription": "Irrigation systems, ponds, fountains and large water features for London gardens, installed during construction or added to existing gardens.",
+   "lede": "Systems that keep a garden healthy in any weather, and water that gives it a focal point.",
+   "image": "projects/japanese-garden/cover-900x1200", "imageAlt": "Rocks and water in the Japanese Garden", "imagePortrait": true,
+   "caption": "Japanese Garden: pond and rockery, designed and built by Morgan Oates.",
+   "sections": [
+    {"h":"Irrigation","p":["We fit irrigation tailored to the size and needs of each garden, from a simple drench system to an advanced, computer-controlled one. Options include rainwater harvesting, drip irrigation and lawn sprinklers. Systems are water-efficient and save you time.","They are best installed during construction, so the pipework stays hidden, but they can be added to an existing garden with minimal disruption."]},
+    {"h":"Looking after irrigation","p":["Buried lines can be damaged by digging. Our maintenance team inspects systems to confirm they are working properly."]},
+    {"h":"Water features","p":["Fountains, ponds and bird baths bring a focal point and a calm atmosphere to a garden."]},
+    {"h":"Ponds and larger water features","p":["We have built ponds and large features, including fish ponds, as part of a garden’s foundations so that they sit naturally in the finished landscape. Brick or stone surrounds can be built to a high standard and kept watertight, and built-in overflows hold the level steady in heavy rain. We can also advise on planting for pond conditions."]}
+   ],
+   "related": ["japanese-garden","oasis-of-peace"]
+  },
+  "lighting": {
+   "path": "london-landscape-gardening/garden-lighting", "title": "Garden lighting", "kicker": "Landscaping",
+   "metaTitle": "Garden lighting design and installation | Morgan Oates",
+   "metaDescription": "Bespoke, safe and economical garden lighting, installed by qualified electricians, that extends the use of a London garden into the evening.",
+   "lede": "Lighting that lets you use and see the garden after dark.",
+   "image": "projects/central-london-garden/cover-900x675", "imageAlt": "Central London Garden, a basement-flat entrance",
+   "caption": "Central London Garden.",
+   "sections": [
+    {"h":"Seeing the garden differently","p":["We design and install bespoke garden lighting that is safe and economical. It can pick out structure, planting and architectural features that are easy to miss in daylight, and give the garden a different character at night.","Good lighting also lengthens the time you can spend outside, turning the garden into an extra room for evenings, and lets you enjoy the view from indoors."]},
+    {"h":"Control","p":["Controls can link to your existing home lighting, a remote control, or a smartphone or tablet, and effects can be set to your taste."]},
+    {"h":"Installation","p":["Installation is carried out by qualified electricians to current industry standards, and certificates are supplied on completion. We specify fittings from suppliers including Hunza, Collingwood, Louis Poulsen and Oase."]}
+   ],
+   "related": ["central-london-garden","cheltenham-town-house-and-garden"]
+  },
+  "living-walls": {
+   "path": "london-landscape-gardening/living-walls", "title": "Living walls", "kicker": "Landscaping",
+   "metaTitle": "Living walls and green walls in London | Morgan Oates",
+   "metaDescription": "Living walls for small and awkward spaces, indoors or out, installed by Morgan Oates using Biotecture systems.",
+   "lede": "Planting on the vertical, for the spaces that have no room for borders.",
+   "image": "projects/central-london-garden/img_0990-900x1200", "imageAlt": "Central London Garden, a basement-flat entrance", "imagePortrait": true,
+   "caption": "Central London Garden, where a faux living wall and trellis cover the walls.",
+   "sections": [
+    {"h":"What is a living wall?","p":["A living wall, or green wall, is a wall partly or fully covered with plants rooted in soil, kept alive by a built-in watering system. It can be indoors or outdoors, free-standing or fixed to an existing wall, and in a wide range of sizes.","Living walls suit small spaces with architectural drawbacks: a plain brick wall becomes a wall of flowers and foliage."]},
+    {"h":"Systems","p":["We install Biotecture living walls, using good-quality products so that installations thrive and last."]}
+   ],
+   "related": ["central-london-garden"]
+  },
+  "maintenance": {
+   "path": "london-landscape-gardening/west-london-garden-maintenance", "title": "Garden maintenance", "kicker": "Care",
+   "metaTitle": "Garden maintenance in West London | Morgan Oates",
+   "metaDescription": "Regular garden maintenance visits, weekly, fortnightly or monthly, plus advice for those who prefer to do some of the work themselves.",
+   "lede": "Regular visits that keep an established garden in good condition all year, on a schedule that suits you.",
+   "image": "projects/primrose-hill/primrose3-900x551", "imageAlt": "A maintained decked garden in Primrose Hill",
+   "caption": "Primrose Hill.",
+   "sections": [
+    {"h":"How visits work","p":["Our maintenance team visits regularly and agrees a schedule with you that fits your calendar. Tasks change with the season, and the team assesses what is needed at the start of each visit. Visits are weekly, fortnightly or monthly, depending on the size of the garden."]},
+    {"h":"Example maintenance schedule","schedule":true},
+    {"h":"Maintenance consultancy","p":["Many clients use the service because their lives leave no time for the garden. Others want to do some or all of it themselves, and we can help and advise. We can also carry out a six-month garden health check."]}
+   ],
+   "related": ["primrose-hill","scarsdale-villas"],
+   "journal": "autumn-lawn-care"
+  }
+ },
+ "schedule": [
+  ["Weekly",["Pressure washing of patios and driveways","Hedge cutting and trimming","Leaf clearing","Shrub and rose pruning"]],
+  ["Fortnightly",["Lawn mowing","Pressure washing of patios and driveways","Weeding","Hedge cutting and trimming","Leaf clearing","Shrub and rose pruning","Lawn care, fertilising and feeding"]],
+  ["Monthly",["Lawn mowing","Pressure washing of patios and driveways","Weeding and planting","Hedge cutting and trimming","Leaf clearing","Shrub and rose pruning","Lawn care, fertilising and feeding","Tree maintenance"]]
+ ]
+}

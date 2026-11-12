@@ -1,0 +1,17 @@
+{
+  "name": "Morgan Oates",
+  "legalName": "Morgan Oates Ltd",
+  "tagline": "Garden design & landscape",
+  "email": "info@morganoates.co",
+  "phoneDisplay": "07827 321373",
+  "phoneTel": "+447827321373",
+  "base": "Chiswick, West London",
+  "canonicalOrigin": "https://morganoates.co",
+  "formEndpoint": "",
+  "formEndpointNote": "Set to a form-handling URL (for example a Formspree or Netlify Forms endpoint) to enable sending. Leave empty and the form will not claim to send anything.",
+  "vimeoId": "480713474",
+  "social": [
+    { "label": "Facebook", "url": "http://facebook.com/pages/Morgan-Oates-ltd/146988758726192?ref=hl" },
+    { "label": "X / Twitter", "url": "https://twitter.com/MorganOatesLtd" }
+  ]
+}

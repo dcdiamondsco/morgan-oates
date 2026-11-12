@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Daniel Morgan Oates",
+    "role": "Director",
+    "image": "west-london-landscape-gardeners/01-600x402-q50",
+    "alt": "Portrait of Daniel Morgan Oates outdoors in a green jacket",
+    "bio": [
+      "Daniel began landscape gardening while still at school and grew up in Herefordshire. He studied at Pershore College, worked in West London, and went on to found Morgan Oates.",
+      "He leads hard and soft landscaping, and is the person most clients deal with on site."
+    ]
+  },
+  {
+    "name": "Anna Pawlowska",
+    "role": "Garden Designer",
+    "image": "west-london-landscape-gardeners/ania-600x400-q50",
+    "alt": "Portrait of Anna Pawlowska wearing glasses, holding orange flowers",
+    "bio": [
+      "Anna holds a master’s degree in landscape architecture from the University of Warmia and Mazury in Poland, and has studied on scholarships in Hungary, Portugal and Ukraine.",
+      "She joined Morgan Oates in 2013, moving from maintenance team leader to maintenance manager, then garden designer. She now leads garden design and soft landscaping projects. Her Moroccan-inspired design was one of five APL Avenue Show Gardens at BBC Gardeners’ World Live in 2019."
+    ]
+  }
+]

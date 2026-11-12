@@ -1,0 +1,12 @@
+{
+  "name": "morgan-oates-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "fetch-assets": "node scripts/fetch-assets.mjs",
+    "build": "node build.mjs",
+    "build:preview": "LINKS=files node build.mjs",
+    "build:launch": "LAUNCH=1 node build.mjs",
+    "serve": "node scripts/serve.mjs"
+  }
+}
