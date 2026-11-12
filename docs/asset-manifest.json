@@ -2,6 +2,13 @@
  "note": "Every photograph used by the site. Source files are on morganoates.co (maximum width available there: 900px; homepage slideshow images up to 1400px). Permission to reuse must be confirmed by the owner.",
  "images": [
   {
+   "key": "home/slideshow/7-1400x803-q80",
+   "width": 1400,
+   "height": 803,
+   "source": "https://morganoates.co/thumbs/home/slideshow/7-1400x803-q80.jpg",
+   "local": "assets/images/home/slideshow/7-1400x803-q80.jpg"
+  },
+  {
    "key": "projects/central-london-garden/cover-900x675",
    "width": 900,
    "height": 675,

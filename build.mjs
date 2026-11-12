@@ -69,7 +69,7 @@ const NAV = () => `
   </ul>
 </nav>`;
 
-function layout({ title, desc, path: p, body, ogImage, ld, dark = false, noindex = false }) {
+function layout({ title, desc, path: p, body, ogImage, ld, dark = false, noindex = false, compact = false }) {
   CUR = p;
   const canon = `${site.canonicalOrigin}/${p}`;
   const robots = !LAUNCH || noindex ? '<meta name="robots" content="noindex, nofollow">' : '';
@@ -108,7 +108,7 @@ ${ld ? `<script type="application/ld+json">${JSON.stringify(ld)}</script>` : ''}
 <main id="main" tabindex="-1">
 ${body}
 </main>
-<footer class="footer">
+${compact ? `<footer class="footer footer--compact"><div class="wrap footer__base footer__base--only"><p>© ${YEAR} ${esc(site.legalName)} · <a href="${mail}">${site.email}</a> · <a href="${tel}">${site.phoneDisplay}</a></p><ul class="footer__legal"><li><a href="${href('privacy')}">Privacy</a></li><li><a href="${href('terms')}">Terms</a></li></ul></div></footer>` : `<footer class="footer">
   <div class="wrap footer__grid">
     <div class="footer__brand">
       <img class="footer__logo" src="${logoSrc}"${logoDims} height="40" alt="Morgan Oates" loading="lazy">
@@ -140,7 +140,7 @@ ${body}
     <p>© ${YEAR} ${esc(site.legalName)}</p>
     <ul class="footer__legal"><li><a href="${href('privacy')}">Privacy</a></li><li><a href="${href('terms')}">Terms</a></li></ul>
   </div>
-</footer>
+</footer>`}
 <script src="${asset('assets/js/site.js')}" defer></script>
 </body>
 </html>`;
@@ -194,112 +194,22 @@ function sequence(p) {
 const pages = []; // {path, html}
 const add = (p, html) => pages.push({ path: p, html });
 
-// HOME
+// HOME: a single full-screen showcase, few words
 {
-  const hero = pimg('oasis-of-peace', 'cover-900x600');
-  const sel = ['west-london-romantic-style-garden', 'japanese-garden', 'scarsdale-villas', 'cheltenham-town-house-and-garden'].map((s) => proj[s]);
-  const card = (p, cls, key, sizes) => `<a class="sel__card ${cls} reveal" href="${href('projects/' + p.slug)}">
-      <figure class="sel__fig">${pic(key, { alt: p.alt, sizes })}</figure>
-      <div class="sel__txt"><h3>${esc(p.title)}</h3><p class="sel__meta">${esc(p.meta)}</p></div></a>`;
+  const hero = 'home/slideshow/7-1400x803-q80';
   const body = `
-<section class="hero" aria-labelledby="hero-h">
-  <div class="wrap hero__grid">
-    <p class="kicker hero__k">Garden design · Landscaping · Maintenance</p>
-    <h1 id="hero-h" class="hero__h">Considered gardens. <em>Beautifully built.</em></h1>
-    <figure class="hero__fig">${pic(hero, { alt: 'Oasis of Peace: a shallow blue pool and timber path around a planted island, with a sculpture behind', eager: true, sizes: '(min-width: 900px) 62vw, 100vw' })}<figcaption><span><a href="${href('projects/oasis-of-peace')}">Oasis of Peace</a></span> Garden by Morgan Oates, BBC Gardeners’ World Live 2019</figcaption></figure>
-    <div class="hero__copy">
-      <p class="lede">We design gardens, build them and look after them. Working from Chiswick, we take on town gardens, roof terraces and country gardens across West, Central and South London.</p>
-      <p class="hero__cta"><a class="btn" href="${href('projects')}">Explore our gardens</a> <a class="textlink" href="${href('contact')}">Discuss your garden</a></p>
-    </div>
+<section class="stage" aria-labelledby="hero-h">
+  ${pic(hero, { alt: 'A long planted border and sand path running through a Morgan Oates garden', eager: true, sizes: '100vw', cls: 'stage__img' })}
+  <div class="stage__shade"></div>
+  <div class="wrap stage__in">
+    <h1 id="hero-h" class="stage__h">Considered gardens.<br><em>Beautifully built.</em></h1>
+    <p class="stage__cta"><a class="btn btn--light" href="${href('projects')}">Explore our gardens</a><a class="stage__link" href="${href('contact')}">Discuss your garden</a></p>
   </div>
-</section>
-
-<section class="sel" aria-labelledby="sel-h">
-  <div class="wrap">
-    <div class="sec-head"><p class="kicker">Selected gardens</p><h2 id="sel-h">Four gardens, four ways of working</h2><a class="textlink" href="${href('projects')}">All gardens</a></div>
-    <div class="sel__grid">
-      ${card(sel[0], 'sel__card--a', pimg(sel[0].slug, 'cover-900x675'), '(min-width: 900px) 58vw, 100vw')}
-      ${card(sel[1], 'sel__card--b', pimg(sel[1].slug, 'cover-900x1200'), '(min-width: 900px) 34vw, 100vw')}
-      ${card(sel[2], 'sel__card--c', pimg(sel[2].slug, 'cover-900x580'), '(min-width: 900px) 40vw, 100vw')}
-      ${card(sel[3], 'sel__card--d', pimg(sel[3].slug, 'cover-900x604'), '(min-width: 900px) 50vw, 100vw')}
-    </div>
-  </div>
-</section>
-
-<section class="practice" aria-labelledby="practice-h">
-  <div class="wrap practice__grid">
-    <div class="practice__txt">
-      <p class="kicker kicker--light">The practice</p>
-      <h2 id="practice-h">Design, construction and care under one roof</h2>
-      <p>A garden is judged on the first day and again in the fifth year. The levels are right or they are not; the paving drains or it does not; the planting was chosen for that soil and that light, or it was not.</p>
-      <p>Keeping design, building and maintenance in one practice means the person who draws a detail is near the person who has to build it, and the people who maintain the garden have often seen it made. Where another designer’s plans are the starting point, we build them with the same care, and we say so plainly on each project.</p>
-      <p><a class="textlink textlink--light" href="${href('london-garden-designers')}">How we design</a></p>
-    </div>
-    <div class="practice__plates">
-      <figure class="practice__wide reveal">${pic(pimg('japanese-garden', 'img_0088-900x1023'), { alt: 'Japanese Garden: a timber gazebo beside stepping stones and planting', sizes: '(min-width: 900px) 40vw, 100vw' })}<figcaption><span>Wide view</span> Japanese Garden, gazebo and path</figcaption></figure>
-      <figure class="practice__detail reveal">${pic(pimg('west-london-romantic-style-garden', 'img_0203-900x1200'), { alt: 'A rust-coloured bird bath among foxgloves and shrubs', sizes: '(min-width: 900px) 22vw, 60vw' })}<figcaption><span>Close detail</span> Planting and bird bath, West London</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section class="svc" aria-labelledby="svc-h">
-  <div class="wrap">
-    <div class="sec-head"><p class="kicker">Services</p><h2 id="svc-h">Three routes into the same garden</h2></div>
-    <div class="svc__cols">
-      <article class="svc__col"><figure class="svc__fig reveal">${pic(pimg('oasis-of-peace', '57-9496sok-900x600'), { alt: 'Oasis of Peace, a garden designed by Anna Pawlowska', sizes: '(min-width: 900px) 30vw, 100vw' })}</figure><p class="svc__n" aria-hidden="true">01</p><h3><a href="${href(svc.pages.design.path)}">Design</a></h3>
-        <p>A staged design service: consultation, survey, concept, master plan, then monitoring on site. Led by Anna Pawlowska.</p>
-        <p class="svc__more"><a href="${href(svc.pages.design.path)}">Garden design</a></p></article>
-      <article class="svc__col"><figure class="svc__fig reveal">${pic(pimg('scarsdale-villas', 'img012-900x593'), { alt: 'Scarsdale Villas, a garden built by Morgan Oates', sizes: '(min-width: 900px) 30vw, 100vw' })}</figure><p class="svc__n" aria-hidden="true">02</p><h3><a href="${href(svc.pages.landscaping.path)}">Landscaping</a></h3>
-        <p>Hard and soft landscaping for gardens of every size, to our designs or yours, with the specialist work that makes a garden work.</p>
-        <ul class="svc__sub"><li><a href="${href(svc.pages.irrigation.path)}">Irrigation and water features</a></li><li><a href="${href(svc.pages.lighting.path)}">Garden lighting</a></li><li><a href="${href(svc.pages['living-walls'].path)}">Living walls</a></li></ul></article>
-      <article class="svc__col"><figure class="svc__fig reveal">${pic(pimg('primrose-hill', 'cover-900x551'), { alt: 'A garden in Primrose Hill', sizes: '(min-width: 900px) 30vw, 100vw' })}</figure><p class="svc__n" aria-hidden="true">03</p><h3><a href="${href(svc.pages.maintenance.path)}">Maintenance</a></h3>
-        <p>Weekly, fortnightly or monthly visits on a schedule that suits you, plus advice if you prefer to do part of the work yourself.</p>
-        <p class="svc__more"><a href="${href(svc.pages.maintenance.path)}">Garden maintenance</a></p></article>
-    </div>
-  </div>
-</section>
-
-<section class="people" aria-labelledby="people-h">
-  <div class="wrap people__grid">
-    <div class="people__txt">
-      <p class="kicker">People and craftsmanship</p>
-      <h2 id="people-h">The people you will deal with</h2>
-      <p>You will meet the people who design and build your garden. Our site foremen look after health and safety, keep sites tidy and keep noise down, and we aim to tell you early about anything that affects your project.</p>
-      <p><a class="textlink" href="${href('west-london-landscape-gardeners')}">Meet the team</a></p>
-    </div>
-    ${team.map((m) => `<figure class="people__fig reveal">${pic(m.image, { alt: m.alt, sizes: '(min-width: 900px) 24vw, 50vw' })}<figcaption><strong>${esc(m.name)}</strong><br>${esc(m.role)}</figcaption></figure>`).join('')}
-  </div>
-</section>
-
-<section class="proc" aria-labelledby="proc-h">
-  <div class="wrap">
-    <div class="sec-head"><p class="kicker">Process</p><h2 id="proc-h">From first conversation to established garden</h2></div>
-    <div class="proc__grid">
-      <div class="proc__phase"><h3>Design</h3><ol><li>Consultation and brief</li><li>Site survey</li><li>Concept</li><li>Master plan and specification</li></ol></div>
-      <div class="proc__phase"><h3>Construction</h3><ol start="5"><li>Groundworks and hard landscaping</li><li>Planting and soft landscaping</li><li>Specialist work: irrigation, lighting, water, living walls</li><li>Monitoring on site against the plan</li></ol></div>
-      <div class="proc__phase"><h3>Aftercare</h3><ol start="9"><li>Regular maintenance visits</li><li>Irrigation checks</li><li>Optional six-month garden health check</li></ol></div>
-    </div>
-    <p class="proc__note">You can join at any stage: commission only the design, bring us a design to build, or ask us to look after a garden that already exists.</p>
-  </div>
-</section>
-
-<section class="film" aria-labelledby="film-h">
-  <div class="wrap film__grid">
-    <div class="film__txt"><p class="kicker">Film</p><h2 id="film-h">Creating an Oasis of Peace</h2><p>A short film about making the garden we built for BBC Gardeners’ World Live. Playing it loads Vimeo’s player, which may set its own cookies.</p></div>
-    <div class="film__player" data-vimeo="${site.vimeoId}">
-      <button class="film__btn" type="button" aria-label="Play film: Creating an Oasis of Peace. Loads the Vimeo player">
-        ${pic(pimg('oasis-of-peace', '57-9486sok-900x600'), { alt: '', sizes: '(min-width: 900px) 60vw, 100vw' })}
-        <span class="film__play" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
-      </button>
-      <noscript><p><a href="https://vimeo.com/${site.vimeoId}">Watch on Vimeo</a></p></noscript>
-    </div>
-  </div>
-</section>
-${cta()}`;
+</section>`;
   add('', layout({
     title: 'Garden designers and landscapers in London | Morgan Oates',
     desc: 'Morgan Oates designs, builds and maintains gardens from Chiswick, West London, across West, Central and South London: town gardens, rooftops and country gardens.',
-    path: '', body, dark: false, ogImage: hero,
+    path: '', body, ogImage: hero, compact: true,
     ld: { '@context': 'https://schema.org', '@type': 'Organization', name: site.legalName, url: site.canonicalOrigin, logo: `${site.canonicalOrigin}/images/logo-web.png`, email: site.email, telephone: site.phoneTel, description: 'Garden design, landscaping and garden maintenance based in Chiswick, West London.' }
   }));
 }
