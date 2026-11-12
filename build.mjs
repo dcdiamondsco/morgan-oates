@@ -246,13 +246,13 @@ const add = (p, html) => pages.push({ path: p, html });
   <div class="wrap">
     <div class="sec-head"><p class="kicker">Services</p><h2 id="svc-h">Three routes into the same garden</h2></div>
     <div class="svc__cols">
-      <article class="svc__col"><p class="svc__n" aria-hidden="true">01</p><h3><a href="${href(svc.pages.design.path)}">Design</a></h3>
+      <article class="svc__col"><figure class="svc__fig reveal">${pic(pimg('oasis-of-peace', '57-9496sok-900x600'), { alt: 'Oasis of Peace, a garden designed by Anna Pawlowska', sizes: '(min-width: 900px) 30vw, 100vw' })}</figure><p class="svc__n" aria-hidden="true">01</p><h3><a href="${href(svc.pages.design.path)}">Design</a></h3>
         <p>A staged design service: consultation, survey, concept, master plan, then monitoring on site. Led by Anna Pawlowska.</p>
         <p class="svc__more"><a href="${href(svc.pages.design.path)}">Garden design</a></p></article>
-      <article class="svc__col"><p class="svc__n" aria-hidden="true">02</p><h3><a href="${href(svc.pages.landscaping.path)}">Landscaping</a></h3>
+      <article class="svc__col"><figure class="svc__fig reveal">${pic(pimg('scarsdale-villas', 'img012-900x593'), { alt: 'Scarsdale Villas, a garden built by Morgan Oates', sizes: '(min-width: 900px) 30vw, 100vw' })}</figure><p class="svc__n" aria-hidden="true">02</p><h3><a href="${href(svc.pages.landscaping.path)}">Landscaping</a></h3>
         <p>Hard and soft landscaping for gardens of every size, to our designs or yours, with the specialist work that makes a garden work.</p>
         <ul class="svc__sub"><li><a href="${href(svc.pages.irrigation.path)}">Irrigation and water features</a></li><li><a href="${href(svc.pages.lighting.path)}">Garden lighting</a></li><li><a href="${href(svc.pages['living-walls'].path)}">Living walls</a></li></ul></article>
-      <article class="svc__col"><p class="svc__n" aria-hidden="true">03</p><h3><a href="${href(svc.pages.maintenance.path)}">Maintenance</a></h3>
+      <article class="svc__col"><figure class="svc__fig reveal">${pic(pimg('primrose-hill', 'cover-900x551'), { alt: 'A garden in Primrose Hill', sizes: '(min-width: 900px) 30vw, 100vw' })}</figure><p class="svc__n" aria-hidden="true">03</p><h3><a href="${href(svc.pages.maintenance.path)}">Maintenance</a></h3>
         <p>Weekly, fortnightly or monthly visits on a schedule that suits you, plus advice if you prefer to do part of the work yourself.</p>
         <p class="svc__more"><a href="${href(svc.pages.maintenance.path)}">Garden maintenance</a></p></article>
     </div>
@@ -388,7 +388,8 @@ add('blog', layout({
 }));
 journal.forEach((a) => {
   const body = a.body.map((t) => t.startsWith('LIST:') ? `<ul>${t.slice(5).split('|').map((i) => `<li>${esc(i)}</li>`).join('')}</ul>` : `<p>${esc(t)}</p>`).join('');
-  const r = a.related && (proj[a.related] ? `<p class="note">See the garden: <a href="${href('projects/' + a.related)}">${esc(proj[a.related].title)}</a></p>` : `<p class="note">Related: <a href="${href(a.related)}">${esc(svc.pages.design.title)}</a></p>`);
+  const sib = journal.find((j) => j.slug === a.related);
+  const r = a.related && (proj[a.related] ? `<p class="note">See the garden: <a href="${href('projects/' + a.related)}">${esc(proj[a.related].title)}</a></p>` : sib ? `<p class="note">Also in this series: <a href="${href('blog/' + sib.slug)}">${esc(sib.title)}</a></p>` : `<p class="note">Related: <a href="${href(a.related)}">${esc(svc.pages.design.title)}</a></p>`);
   add(`blog/${a.slug}`, layout({
     title: `${a.title} | Morgan Oates Journal`, desc: a.excerpt, path: `blog/${a.slug}`,
     ld: { '@context': 'https://schema.org', '@type': 'Article', headline: a.title, datePublished: a.date, author: { '@type': 'Organization', name: site.legalName }, publisher: { '@type': 'Organization', name: site.legalName } },

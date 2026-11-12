@@ -289,3 +289,4 @@ dt{font:700 .75rem var(--sans);letter-spacing:.12em;text-transform:uppercase;col
 @media (max-width:860px){.contact{grid-template-columns:1fr}}
 @media print{.header,.footer,.close,.menu-btn{display:none}}
 figcaption span a{color:inherit;text-decoration:none;border-bottom:1px solid currentColor}
+.svc__fig{margin:0 0 1.2rem;overflow:hidden;background:var(--stone)}.svc__fig img{width:100%;aspect-ratio:3/2;object-fit:cover}
