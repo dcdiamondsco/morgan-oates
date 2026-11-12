@@ -194,22 +194,22 @@ function sequence(p) {
 const pages = []; // {path, html}
 const add = (p, html) => pages.push({ path: p, html });
 
-// HOME: a single full-screen showcase, few words
+// HOME: a single editorial showcase, few words
 {
-  const hero = 'home/slideshow/7-1400x803-q80';
   const body = `
 <section class="stage" aria-labelledby="hero-h">
-  ${pic(hero, { alt: 'A long planted border and sand path running through a Morgan Oates garden', eager: true, sizes: '100vw', cls: 'stage__img' })}
-  <div class="stage__shade"></div>
-  <div class="wrap stage__in">
-    <h1 id="hero-h" class="stage__h">Considered gardens.<br><em>Beautifully built.</em></h1>
-    <p class="stage__cta"><a class="btn btn--light" href="${href('projects')}">Explore our gardens</a><a class="stage__link" href="${href('contact')}">Discuss your garden</a></p>
+  <div class="stage__text">
+    <p class="stage__kicker">Garden design · Landscaping · Maintenance</p>
+    <h1 id="hero-h" class="stage__h">Considered gardens,<br><em>beautifully built.</em></h1>
+    <p class="stage__cta"><a class="btn" href="${href('projects')}">Explore our gardens</a><a class="stage__link" href="${href('contact')}">Discuss your garden</a></p>
+    <p class="stage__loc">Chiswick, West London</p>
   </div>
+  <figure class="stage__fig"><img class="stage__img" src="${asset('assets/photos/home-hero-1200x1600.jpg')}" width="1200" height="1600" fetchpriority="high" alt="Stone steps crossing a narrow rill in a London garden, with raised planters, ferns and a Victorian house behind"></figure>
 </section>`;
   add('', layout({
     title: 'Garden designers and landscapers in London | Morgan Oates',
     desc: 'Morgan Oates designs, builds and maintains gardens from Chiswick, West London, across West, Central and South London: town gardens, rooftops and country gardens.',
-    path: '', body, ogImage: hero, compact: true,
+    path: '', body, ogImage: null, compact: true,
     ld: { '@context': 'https://schema.org', '@type': 'Organization', name: site.legalName, url: site.canonicalOrigin, logo: `${site.canonicalOrigin}/images/logo-web.png`, email: site.email, telephone: site.phoneTel, description: 'Garden design, landscaping and garden maintenance based in Chiswick, West London.' }
   }));
 }
