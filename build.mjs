@@ -194,17 +194,37 @@ function sequence(p) {
 const pages = []; // {path, html}
 const add = (p, html) => pages.push({ path: p, html });
 
-// HOME: a single editorial showcase, few words
+// HOME: a quiet stage of slowly moving grasses, few words
+function grass() {
+  let a = 20261113;
+  const rnd = () => { a |= 0; a = (a + 0x6D2B79F5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+  const layers = [
+    { n: 70, hmin: 180, hmax: 330, fill: '#4f6b57', op: 0.55, dur: [11, 16], amp: [1.2, 2.4] },
+    { n: 85, hmin: 230, hmax: 420, fill: '#8aa07a', op: 0.7, dur: [9, 14], amp: [1.6, 3.2] },
+    { n: 60, hmin: 280, hmax: 500, fill: '#d6cfa8', op: 0.85, dur: [8, 12], amp: [2, 4] }
+  ];
+  const f = (x) => Math.round(x * 10) / 10;
+  return layers.map((L) => {
+    let blades = '';
+    for (let i = 0; i < L.n; i++) {
+      const x = rnd() * 1640 - 20, h = L.hmin + rnd() * (L.hmax - L.hmin), lean = (rnd() - 0.5) * 120, w = 3 + rnd() * 4;
+      const d = `M${f(x)} 620Q${f(x + lean * 0.25)} ${f(620 - h * 0.55)} ${f(x + lean)} ${f(620 - h)}Q${f(x + lean * 0.25 + w)} ${f(620 - h * 0.5)} ${f(x + w)} 620Z`;
+      const dur = L.dur[0] + rnd() * (L.dur[1] - L.dur[0]), amp = L.amp[0] + rnd() * (L.amp[1] - L.amp[0]);
+      blades += `<path d="${d}" style="--a:${f(amp)}deg;animation-duration:${f(dur)}s;animation-delay:-${f(rnd() * dur)}s;transform-origin:${f(x + w / 2)}px 620px"/>`;
+    }
+    return `<g fill="${L.fill}" fill-opacity="${L.op}">${blades}</g>`;
+  }).join('');
+}
 {
   const body = `
 <section class="stage" aria-labelledby="hero-h">
-  <div class="stage__text">
-    <p class="stage__kicker">Garden design · Landscaping · Maintenance</p>
-    <h1 id="hero-h" class="stage__h">Considered gardens,<br><em>beautifully built.</em></h1>
-    <p class="stage__cta"><a class="btn" href="${href('projects')}">Explore our gardens</a><a class="stage__link" href="${href('contact')}">Discuss your garden</a></p>
-    <p class="stage__loc">Chiswick, West London</p>
+  <div class="wrap stage__in">
+    <p class="stage__kicker">Chiswick, West London</p>
+    <h1 id="hero-h" class="stage__h">Gardens,<br><em>considered.</em></h1>
+    <p class="stage__sub">Design · Build · Maintain</p>
+    <p class="stage__cta"><a class="btn btn--light" href="${href('projects')}">Explore our gardens</a><a class="stage__link" href="${href('contact')}">Discuss your garden</a></p>
   </div>
-  <figure class="stage__fig"><img class="stage__img" src="${asset('assets/photos/home-hero-1200x1600.jpg')}" width="1200" height="1600" fetchpriority="high" alt="Stone steps crossing a narrow rill in a London garden, with raised planters, ferns and a Victorian house behind"></figure>
+  <svg class="stage__grass" viewBox="0 0 1600 620" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">${grass()}</svg>
 </section>`;
   add('', layout({
     title: 'Garden designers and landscapers in London | Morgan Oates',
