@@ -237,14 +237,21 @@ function wall() {
   return `<defs><linearGradient id="terra" x1="0" x2="1"><stop offset="0" stop-color="#c0693f"/><stop offset=".55" stop-color="#a95430"/><stop offset="1" stop-color="#8d4326"/></linearGradient></defs>${tuft(1325, 130, 9)}${pot(1280, 62, 90, 70)}${pot(1420, 86, 62, 46)}${tuft(1451, 90, 6)}${s}`;
 }
 {
-  const body = `
-<section class="stage" aria-labelledby="hero-h">
+  const hasVideo = fs.existsSync(path.join(ROOT, 'assets/video/hero.mp4'));
+  const poster = fs.existsSync(path.join(ROOT, 'assets/video/hero-poster.jpg')) ? ` poster="${asset('assets/video/hero-poster.jpg')}"` : '';
+  const words = `
   <div class="wrap stage__in">
     <p class="stage__kicker">Chiswick, West London</p>
     <h1 id="hero-h" class="stage__h">Gardens,<br><em>considered.</em></h1>
     <p class="stage__sub">Design · Build · Maintain</p>
     <p class="stage__cta"><a class="btn" href="${href('projects')}">Explore our gardens</a><a class="stage__link" href="${href('contact')}">Discuss your garden</a></p>
-  </div>
+  </div>`;
+  const body = hasVideo ? `
+<section class="stage stage--video" aria-labelledby="hero-h">
+  <video class="stage__video" autoplay muted loop playsinline preload="metadata"${poster} aria-hidden="true" tabindex="-1"><source src="${asset('assets/video/hero.mp4')}" type="video/mp4"></video>
+  <div class="stage__veil"></div>${words}
+</section>` : `
+<section class="stage" aria-labelledby="hero-h">${words}
   <svg class="stage__grass" viewBox="0 0 1600 620" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">${grass()}</svg>
   <svg class="stage__wall" viewBox="0 0 1600 236" preserveAspectRatio="xMaxYMax slice" aria-hidden="true" focusable="false">${wall()}</svg>
 </section>`;

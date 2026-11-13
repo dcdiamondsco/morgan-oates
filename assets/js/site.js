@@ -72,3 +72,7 @@
     });
   }
 })();
+
+/* hero video: respect reduced motion (shows first frame only) */
+(function(){var v=document.querySelector('.stage__video');if(!v)return;
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();}})();
