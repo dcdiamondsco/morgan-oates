@@ -243,7 +243,7 @@ function wall() {
     <p class="stage__kicker">Garden design and landscaping · Cheltenham &amp; the Cotswolds</p>
     <h1 id="hero-h" class="stage__h">Gardens that belong<br><em>in the landscape.</em></h1>
     <p class="stage__sub">A family team. We design, build and maintain.</p>
-    <p class="stage__cta"><a class="btn" href="${href('projects')}">See our gardens</a><a class="stage__link" href="${href('contact')}">Discuss your garden</a></p>
+    <p class="stage__cta"><a class="stage__link" href="${href('projects')}">See our gardens</a><a class="stage__link" href="${href('contact')}">Discuss your garden</a></p>
   </div>`;
   const slides = [
     { f: 'cotswolds-1-900x600.jpg', w: 900, h: 600, alt: 'A Cotswold stone cottage with a brick path running between planted borders' },
