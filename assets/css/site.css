@@ -419,3 +419,4 @@ body{background:var(--chalk)}
 .wordmark small{color:#8dbb5a;font-weight:700;text-shadow:none}
 .stage__slide{animation:slide8 56s linear infinite;animation-delay:calc(var(--i) * 7s - 1.7s)}
 @media (prefers-reduced-motion:reduce){.stage__slide{animation:none;opacity:0}.stage__slide:first-of-type{opacity:1}}
+.wordmark small{color:#5f8f35;font-weight:700;text-shadow:none}
