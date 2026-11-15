@@ -253,9 +253,7 @@ function wall() {
     { f: 'wheat-sunset-1600x1200.jpg', w: 1600, h: 1200, pos: '50% 55%' },
     { f: 'cotswolds-3-900x600.jpg', w: 900, h: 600, alt: 'Wide stone steps and a dry-stone retaining wall above a paved terrace with planting' },
     { f: 'wheat-sunny-1600x2240.jpg', w: 1600, h: 2240, pos: '50% 62%' },
-    { f: 'wheat-bright-1600x2400.jpg', w: 1600, h: 2400, pos: '50% 72%' },
     { f: 'wheat-cloudy-1600x2400.jpg', w: 1600, h: 2400, pos: '50% 80%' },
-    { f: 'wheat-field-1600x2133.jpg', w: 1600, h: 2133, pos: '50% 75%' }
   ];
   const hasPhotos = fs.existsSync(path.join(ROOT, 'assets/photos/cotswolds-1-900x600.jpg'));
   const body = hasVideo ? `
