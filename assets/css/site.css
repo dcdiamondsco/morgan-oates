@@ -535,3 +535,7 @@ html:not(:has(.header--over)) body{background:radial-gradient(110% 38rem at 90% 
  .header--over~footer.footer--compact{position:absolute;bottom:0}
  .stage__in{padding-top:calc(5.6rem + env(safe-area-inset-top))}
 }
+/* accreditation logos */
+.accred{list-style:none;margin:0 0 .9rem;padding:0;display:flex;justify-content:center;align-items:center;gap:clamp(1.4rem,4vw,2.6rem)}
+.accred img{height:46px;width:auto;display:block;opacity:.95}
+@media (max-width:899px){.accred{margin-bottom:.7rem}.accred img{height:40px}}
