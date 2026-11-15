@@ -450,3 +450,10 @@ body{background:var(--chalk)}
 @media (max-width:899px){.stage__kicker .kbr{display:inline}.stage__kicker{letter-spacing:.14em;font-size:.72rem;line-height:1.7}}
 @media (min-width:900px){.stage__slide--sun{top:-26vh}}
 @media (min-width:900px){.stage__slide--sun{left:-13.6vw;top:-35vh}}
+/* font trial: Cormorant Garamond + Jost */
+:root{--serif:"Cormorant Garamond","Iowan Old Style",Palatino,Georgia,serif;--sans:"Jost","Avenir Next","Segoe UI",system-ui,sans-serif}
+body{font-size:1.06rem}
+h1,h2,h3,.stage__h,.wordmark{font-weight:500}
+.stage__h{font-size:clamp(2.6rem,6vw,5.2rem);line-height:1.02}
+.wordmark{font-size:2rem}
+p,li{font-weight:400}
