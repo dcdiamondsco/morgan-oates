@@ -246,9 +246,15 @@ function wall() {
     <p class="stage__sub">Design · Build · Maintain</p>
     <p class="stage__cta"><a class="btn" href="${href('projects')}">Explore our gardens</a><a class="stage__link" href="${href('contact')}">Discuss your garden</a></p>
   </div>`;
+  const hasPhotos = fs.existsSync(path.join(ROOT, 'assets/photos/wheat-close-2400x1800.jpg'));
   const body = hasVideo ? `
 <section class="stage stage--video" aria-labelledby="hero-h">
   <video class="stage__video" autoplay muted loop playsinline preload="metadata"${poster} aria-hidden="true" tabindex="-1"><source src="${asset('assets/video/hero.mp4')}" type="video/mp4"></video>
+  <div class="stage__veil"></div>${words}
+</section>` : hasPhotos ? `
+<section class="stage stage--video stage--photo" aria-labelledby="hero-h">
+  <img class="stage__slide stage__slide--a" src="${asset('assets/photos/wheat-close-2400x1800.jpg')}" width="2400" height="1800" fetchpriority="high" alt="">
+  <img class="stage__slide stage__slide--b" src="${asset('assets/photos/wheat-field-2400x1350.jpg')}" width="2400" height="1350" loading="lazy" decoding="async" alt="">
   <div class="stage__veil"></div>${words}
 </section>` : `
 <section class="stage" aria-labelledby="hero-h">${words}
