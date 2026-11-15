@@ -85,7 +85,7 @@
 if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();}})();
 /* mobile home: open already scrolled so the browser bars tuck away over the photo */
 (function(){try{
- if(!document.querySelector('.header--over:not([hidden])')||!matchMedia('(max-width:899px)').matches)return;
+ if(document.querySelector('.stage__hl')||!document.querySelector('.header--over:not([hidden])')||!matchMedia('(max-width:899px)').matches)return;
  if('scrollRestoration' in history)history.scrollRestoration='manual';
  var moved=false;addEventListener('touchstart',function(){moved=true},{passive:true});
  var go=function(){if(!moved&&window.scrollY<80)window.scrollTo(0,96)};

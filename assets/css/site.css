@@ -722,3 +722,11 @@ html:has(.header--over),html:has(.header--over) body{background:#2a1c10}
 .cfile__b .cfile__list::before{content:"· ";opacity:.7}
 /* mobile home: headline block sits lower */
 @media (max-width:899px){.stage__in:not(.stage__in--form){padding-top:calc(5.6rem + 96px + 4.5rem + env(safe-area-inset-top))}}
+/* mobile home: photo is a fixed full-bleed layer with extra image above and below; nothing scrolls, so everything stays put */
+@media (max-width:899px){
+ html:has(.stage__hl),html:has(.stage__hl) body{height:100%;overflow:hidden;overscroll-behavior:none;position:static}
+ html:has(.stage__hl) .stage{position:fixed;top:-14svh;left:0;right:0;bottom:auto;width:100%;height:calc(100lvh + 28svh);min-height:0;max-height:none}
+ html:has(.stage__hl) .header--over{position:fixed;top:0;left:0;right:0;padding-top:calc(env(safe-area-inset-top) + 1rem)}
+ html:has(.stage__hl) .stage__in{padding-top:calc(14svh + 5.6rem + 4.5rem)}
+ html:has(.stage__hl) .header--over~footer.footer--compact{position:fixed;bottom:0}
+}
