@@ -308,6 +308,7 @@ function serviceBody(s) {
 ${relatedBlock(s.related)}${cta()}`;
 }
 for (const s of Object.values(svc.pages)) {
+  CUR = s.path;
   add(s.path, layout({ title: s.metaTitle, desc: s.metaDescription, path: s.path, body: serviceBody(s), ogImage: s.image }));
 }
 {
