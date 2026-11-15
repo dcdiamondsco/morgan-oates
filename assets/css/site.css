@@ -764,3 +764,8 @@ html:has(.header--over),html:has(.header--over) body{background:#2a1c10}
 .stage__slide{animation:xfade 49s linear infinite;animation-delay:calc(var(--i) * 7s - 3.1s)}
 @media (prefers-reduced-motion:reduce){.stage__slide{animation:none;opacity:0}.stage__slide:first-of-type{opacity:1}}
 .stage__in{position:relative;z-index:4}
+/* crisp small text and logo: tight shadow only, no wide blurry glow */
+@media (max-width:899px){
+ html:has(.stage__hl) .stage__kicker,html:has(.stage__hl) .stage__sub,html:has(.stage__hl) .stage__link,html:has(.stage__hl) .header--over .wordmark,html:has(.stage__hl) .header--over .menu-btn,html:has(.stage__hl) .header--over .nav a,html:has(.stage__hl) .header--over .nav span,html:has(.stage__hl) footer.footer--compact,html:has(.stage__hl) footer.footer--compact *{text-shadow:0 0 1px rgba(30,18,8,.8),0 1px 3px rgba(30,18,8,.65)!important}
+ html:has(.stage__hl) .header--over .wordmark~*,html:has(.stage__hl) .header--over .tagline{text-shadow:0 0 1px rgba(30,18,8,.8),0 1px 3px rgba(30,18,8,.6)!important}
+}
