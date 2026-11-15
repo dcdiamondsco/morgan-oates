@@ -243,7 +243,7 @@ function wall() {
   <div class="wrap stage__in">
     <h1 id="hero-h" class="stage__h"><span class="stage__kicker">Multi-award-winning garden designer<br class="kbr"> &amp; landscaper<br class="kbr2"> <span class="kdot" aria-hidden="true">&middot; </span>in Cheltenham &amp; the Cotswolds</span><span class="stage__hl">Gardens that belong<br><em>in the landscape.</em></span></h1>
     <p class="stage__sub">A family team from Cheltenham. We design, build and maintain gardens across the Cotswolds.</p>
-    <p class="stage__cta"><a class="stage__link" href="${href('projects')}">See our gardens</a><a class="stage__link" href="${href('contact')}">Discuss your garden</a></p>
+    <p class="stage__cta"><a class="stage__link" href="${href('projects')}">See our work</a><a class="stage__link" href="${href('contact')}">Discuss your garden</a></p>
   </div>`;
   const slides = [
     { f: 'wheat-sunrise-1600x900.jpg', b: 0.62, w: 1600, h: 900, alt: 'Sunrise over a wheat field in warm golden light', pos: '50% 60%' },
