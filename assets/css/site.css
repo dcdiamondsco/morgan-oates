@@ -915,3 +915,5 @@ html:has(.close) .close{padding-bottom:calc(clamp(3.5rem,8vw,7rem) + var(--fh,10
 /* before/after: separated items with visible titles */
 html body .wrap.ba{background:none;gap:clamp(2.5rem,6vw,4.5rem)!important;padding-bottom:clamp(3rem,6vw,4.5rem)!important}
 html body .ba__h{position:static;width:auto;height:auto;margin:1rem 0 0;padding:0 clamp(1.25rem,4vw,3.5rem);overflow:visible;clip:auto;white-space:normal;font:400 clamp(1.4rem,3vw,2.1rem)/1.2 "Playfair Display",Georgia,serif;color:#2d2113}
+/* team photos melt into the background */
+html body .about .apanel--m .apanel__ph img{border-radius:0;-webkit-mask-image:radial-gradient(ellipse 72% 72% at 50% 50%,#000 52%,rgba(0,0,0,.55) 74%,transparent 100%);mask-image:radial-gradient(ellipse 72% 72% at 50% 50%,#000 52%,rgba(0,0,0,.55) 74%,transparent 100%);opacity:.96}
