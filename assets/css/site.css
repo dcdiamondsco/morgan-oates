@@ -644,3 +644,16 @@ html:not(:has(.header--over)) body{background:radial-gradient(110% 38rem at 90% 
 .header--over .nav .nav__off{color:#f0e2c4;text-shadow:0 1px 3px rgba(30,18,8,.6),0 1px 14px rgba(30,18,8,.5)}
 .header:not(.header--over) .nav .nav__off{color:var(--ink)}
 @media (max-width:899px){.nav__off{font-size:1.125rem;padding:.7rem 0}}
+/* contact form: richer panel, glass fields, gold accents */
+.cform{background:linear-gradient(180deg,rgba(52,33,18,.80) 0%,rgba(36,23,12,.88) 100%);border:1px solid rgba(236,199,154,.32);border-radius:3px;box-shadow:0 24px 60px -24px rgba(12,7,2,.7)}
+.cform__h{color:#f6ebd0}
+.cfield label{color:#e9d3a6}
+.cfield input,.cfield textarea{background:rgba(255,244,220,.09);color:#f6ebd0;border:1px solid rgba(236,199,154,.38);border-radius:2px;caret-color:#ecc79a}
+.cfield input:hover,.cfield textarea:hover{border-color:rgba(236,199,154,.6)}
+.cfield input:focus,.cfield textarea:focus{background:rgba(255,244,220,.14);border-color:#ecc79a;outline:0;box-shadow:0 0 0 3px rgba(236,199,154,.28)}
+.cfield input:-webkit-autofill{-webkit-text-fill-color:#f6ebd0;box-shadow:0 0 0 100px rgba(60,40,22,.95) inset}
+.cform__btn{background:#d9b77a;color:#2a1c10}
+.cform__btn:hover,.cform__btn:focus-visible{background:#e6c78f}
+.cform__b2{color:#ecc79a;border-color:rgba(236,199,154,.6)}
+.cform__b2:hover,.cform__b2:focus-visible{background:rgba(236,199,154,.14);color:#f6ebd0;border-color:#ecc79a}
+.cform__alt,.cform__alt a{color:#d9c49a}
