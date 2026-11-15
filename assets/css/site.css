@@ -684,3 +684,6 @@ html:has(.header--over),html:has(.header--over) body{background:#2a1c10}
 /* panels keep their own height; buttons sit right under the heading */
 .cgrid{align-items:flex-start}
 @media (min-width:900px){.cdiscuss .cform__or{margin-top:0;margin-bottom:0}}
+.cdiscuss{text-align:center}
+.cdiscuss__h{text-align:center}
+.cdiscuss .cform__or{align-items:stretch}
