@@ -577,3 +577,9 @@ html:not(:has(.header--over)) body{background:radial-gradient(110% 38rem at 90% 
 .stage__h .stage__kicker,.stage__sub{text-shadow:0 1px 3px rgba(30,18,8,.55),0 1px 14px rgba(30,18,8,.5)}
 .stage__h .stage__kicker{color:#f0e2c4}
 .stage .stage__sub,.stage--video .stage__sub{color:#f0e2c4}
+/* soften pure white on the home page */
+.header--over .nav a,.header--over .nav .nav__contact,.header--over .nav .nav__contact:hover,.wordmark,.header--over .menu-btn{color:#f0e2c4}
+.header--over .menu-btn{border-color:rgba(240,226,196,.75)}
+.stage__link,.stage .stage__link{color:#f0e2c4;border-bottom-color:rgba(240,226,196,.8)}
+.header--over~footer.footer--compact,.header--over~footer.footer--compact a,.header--over~footer.footer--compact p{color:#f0e2c4}
+@media (max-width:899px){.header--over .nav__sub a{color:#f0e2c4}}
