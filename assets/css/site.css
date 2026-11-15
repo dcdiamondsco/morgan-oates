@@ -928,3 +928,6 @@ html body .ba__h .ba__l,html body .ba__h .ba__r{flex:1 1 0;min-width:0;text-alig
 .ba__hint{display:none}
 .js .ba__hint{position:absolute;top:50%;left:var(--p);transform:translate(calc(-100% - 2.4rem),-50%);display:flex;align-items:center;gap:.5rem;color:#fbf5e8;font:600 .8rem/1 Inter,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.65);pointer-events:none;transition:opacity .3s}
 .ba--used .ba__hint{opacity:0}
+.js .ba__hint{flex-direction:column;align-items:flex-end;gap:.15rem;transform:translate(calc(-100% - 1.5rem),calc(-100% + .9rem));text-shadow:0 1px 8px rgba(0,0,0,.7)}
+.ba__hint-t{font:400 1.35rem/1 "Playfair Display",Georgia,serif;font-style:italic;letter-spacing:.02em;text-transform:none;margin-right:1.4rem}
+.ba__hint svg{display:block;filter:drop-shadow(0 1px 4px rgba(0,0,0,.6))}
