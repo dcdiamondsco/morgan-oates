@@ -86,7 +86,7 @@ ${robots}
 <meta property="og:url" content="${canon.replace(/\/$/, '')}">
 <meta property="og:locale" content="en_GB">
 ${og ? `<meta property="og:image" content="${og}">\n<meta name="twitter:card" content="summary_large_image">` : ''}
-${dark ? '' : '<meta name="theme-color" content="#f1ede4">'}
+${dark ? '' : '<meta name="theme-color" content="#bdb4ab">'}
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231f3d2f'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' text-anchor='middle' fill='%23f1ede4'%3EMO%3C/text%3E%3C/svg%3E">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Pinyon+Script&display=swap">
