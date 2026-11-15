@@ -37,12 +37,11 @@
   if (form) {
     var status = d.getElementById('form-status');
     var rules = {
-      name: function (v) { return v.trim() ? '' : 'Please enter your name.'; },
+      phone: function (v) { return v.replace(/[^0-9+]/g, '').length >= 7 ? '' : 'Please enter a phone number we can reach you on.'; },
       email: function (v) { return !v.trim() ? 'Please enter your email address.' : /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? '' : 'That email address doesn’t look right. Please check it.'; },
-      location: function (v) { return v.trim() ? '' : 'Please tell us where the garden is.'; },
-      message: function (v) { return v.trim() ? '' : 'Please tell us a little about the project.'; }
+      message: function (v) { return v.trim() ? '' : 'Please tell us a little about the work you would like.'; }
     };
-    var ids = { name: 'name', email: 'email', location: 'loc', message: 'msg' };
+    var ids = { phone: 'phone', email: 'email', message: 'msg' };
     var check = function (k) {
       var inp = form.elements[k], err = d.getElementById('e-' + ids[k]), m = rules[k](inp.value);
       err.hidden = !m; err.textContent = m; inp.setAttribute('aria-invalid', m ? 'true' : 'false'); return m;
@@ -57,7 +56,7 @@
       var ep = form.getAttribute('data-endpoint'), email = form.getAttribute('data-email'), phone = form.getAttribute('data-phone');
       var fd = new FormData(form);
       if (!ep) {
-        var body = 'Name: ' + fd.get('name') + '\nEmail: ' + fd.get('email') + '\nPhone: ' + (fd.get('phone') || '') + '\nLocation: ' + fd.get('location') + '\nInterested in: ' + (fd.get('service') || 'Not sure yet') + '\n\n' + fd.get('message');
+        var body = 'Phone: ' + fd.get('phone') + '\nEmail: ' + fd.get('email') + '\n\n' + fd.get('message');
         var mt = 'mailto:' + email + '?subject=' + encodeURIComponent('Garden enquiry') + '&body=' + encodeURIComponent(body);
         say('', '<p><strong>Nothing has been sent yet.</strong> This form isn’t connected to a sending service on this version of the website.</p><p><a href="' + mt + '">Open your email app with this message ready to send</a>, or email <a href="mailto:' + email + '">' + email + '</a> or call ' + phone + '.</p>');
         return;

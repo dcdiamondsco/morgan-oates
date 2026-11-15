@@ -598,3 +598,23 @@ html:not(:has(.header--over)) body{background:radial-gradient(110% 38rem at 90% 
 @media (min-width:900px){.stage__h .stage__kicker .kdot{display:none}.stage__h .stage__kicker .kbr{display:none}.stage__h .stage__kicker .kbr2{display:inline}}
 .header--over .nav a,.header--over .nav .nav__contact,.header--over .menu-btn,.header--over .wordmark{text-shadow:0 1px 3px rgba(30,18,8,.6),0 1px 14px rgba(30,18,8,.5)}
 .header--over .wordmark small{text-shadow:0 1px 3px rgba(30,18,8,.55)}
+/* contact page: same photo stage, form in place of the hero words */
+.stage__in--form{padding-bottom:8rem}
+.cform{max-width:30rem;background:rgba(34,22,12,.5);border:1px solid rgba(240,226,196,.28);border-radius:2px;padding:clamp(1.2rem,3vw,1.9rem);color:#f0e2c4;text-shadow:none}
+.cform__h{font-family:"Playfair Display","Cormorant Garamond",Georgia,serif;font-weight:400;font-size:clamp(1.9rem,4.2vw,2.7rem);line-height:1.1;margin:0 0 .5rem;color:#f6ebd0;letter-spacing:-.01em}
+.cform__lede{margin:0 0 1.2rem;font-size:.95rem;line-height:1.5;color:#f0e2c4}
+.cfield{margin-bottom:.9rem}
+.cfield label{display:block;font:600 .72rem/1.2 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#f0e2c4;margin-bottom:.35rem}
+.cfield input,.cfield textarea{width:100%;font:400 1rem/1.4 var(--sans);color:#2e2118;background:rgba(250,243,228,.94);border:1px solid transparent;border-radius:2px;padding:.7rem .8rem}
+.cfield textarea{resize:vertical;min-height:6.5rem}
+.cfield input:focus,.cfield textarea:focus{outline:2px solid #ecc79a;outline-offset:1px}
+.cform .field__e{margin:.3rem 0 0;font-size:.85rem;color:#ffd9b0}
+.cform__btn{font:600 .85rem/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;background:#f0e2c4;color:#2a1c10;border:0;border-radius:2px;padding:.95rem 1.6rem;cursor:pointer}
+.cform__btn:hover,.cform__btn:focus-visible{background:#f6ebd0}
+.cform__status:empty{display:none}
+.cform__status .msg{margin-top:1rem;padding:.8rem 1rem;background:rgba(250,243,228,.12);border-left:3px solid #ecc79a;font-size:.92rem;color:#f0e2c4}
+.cform__status a,.cform__alt a{color:#f6ebd0;text-decoration:underline;text-underline-offset:.15em}
+.cform__alt{margin:1.1rem 0 0;font-size:.82rem;line-height:1.5;color:#e6d6b4}
+@media (max-width:899px){.cform{max-width:none}.stage__in--form{padding-bottom:9rem}}
+/* sunrise slide must always reach the bottom of the screen */
+@media (min-width:900px){.stage__slide--sun{min-height:calc(100% + 35vh)}}

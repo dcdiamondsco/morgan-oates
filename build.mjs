@@ -257,6 +257,7 @@ function wall() {
     { f: 'wheat-cloudy-1600x2400.jpg', w: 1600, h: 2400, alt: 'A wheat field under a soft cloudy sky', pos: '50% 47%' },
     { f: 'cotswolds-3-900x600.jpg', w: 900, h: 600, alt: 'Wide stone steps and a dry-stone retaining wall above a paved terrace', pos: '50% 50%' },
   ];
+  var SLIDES_SHARED = slides;
   const hasPhotos = fs.existsSync(path.join(ROOT, 'assets/photos/cotswolds-1-900x600.jpg'));
   const body = hasVideo ? `
 <section class="stage stage--video" aria-labelledby="hero-h">
@@ -277,6 +278,15 @@ function wall() {
     path: '', body, ogImage: null, compact: true, dark: true,
     ld: { '@context': 'https://schema.org', '@type': ['LocalBusiness', 'LandscapingBusiness'], name: site.name, legalName: site.legalName, url: site.canonicalOrigin, logo: `${site.canonicalOrigin}/assets/photos/logo-659x239.png`, email: site.email, telephone: site.phoneTel, description: 'Family garden designers and landscapers in Cheltenham, serving the Cotswolds.', address: { '@type': 'PostalAddress', streetAddress: 'London Rd, Charlton Kings', addressLocality: 'Cheltenham', postalCode: 'GL54 4HG', addressCountry: 'GB' }, hasMap: site.mapUrl, identifier: site.companyNumber, areaServed: ['Cheltenham', 'The Cotswolds'], sameAs: site.social.map((s) => s.url), founder: [{ '@type': 'Person', name: 'Daniel Morgan Oates' }] }
   }));
+}
+
+
+function photoStage(words, labelId) {
+  return `
+<section class="stage stage--video stage--photo" aria-labelledby="${labelId}">
+  ${SLIDES_SHARED.map((s, i) => `<img class="stage__slide${s.f.includes('sunrise') ? ' stage__slide--sun' : ''}" style="--i:${i}${s.pos ? ';object-position:' + s.pos : ''}" src="${asset('assets/photos/' + s.f)}" width="${s.w}" height="${s.h}" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'} alt="${esc(s.alt || '')}">`).join('\n  ')}
+  <div class="stage__veil"></div>${words}
+</section>`;
 }
 
 // SERVICES
@@ -361,33 +371,25 @@ journal.forEach((a) => {
 });
 
 // CONTACT
+CUR = 'contact';
 add('contact', layout({
-  title: 'Contact | Morgan Oates', path: 'contact', desc: 'Contact Morgan Oates about garden design, landscaping or garden maintenance: email info@morganoates.co or call 07827 321373.',
-  body: `<section class="phead"><div class="wrap">${crumbs([['Home', ''], ['Contact', null]])}<p class="kicker">Contact · Cheltenham &amp; the Cotswolds</p><h1>Discuss your garden</h1><p class="lede">Tell us where the garden is and what you would like from it. We design, build and maintain gardens across the Cotswolds, and will reply to talk it through.</p></div></section>
-<div class="wrap contact">
-  <div class="contact__side">
-    <h2>Direct</h2>
-    <p><a class="contact__big" href="${mail}">${site.email}</a><br><a class="contact__big" href="${tel}">${site.phoneDisplay}</a></p>
-    <p><a href="${esc(site.mapUrl)}" rel="noopener">${esc(site.address)}</a></p>
-    <p>Based in Cheltenham, Gloucestershire, working across the Cotswolds.</p>
-    <p class="note">Messages from the form go to the same inbox as email. We use what you send only to reply to your enquiry. <a href="${href('privacy')}">Privacy</a></p>
-  </div>
-  <form class="form" id="enquiry" method="post" novalidate ${site.formEndpoint ? `action="${esc(site.formEndpoint)}"` : ''} data-endpoint="${esc(site.formEndpoint)}" data-email="${site.email}" data-phone="${site.phoneDisplay}" aria-labelledby="form-h">
-    <h2 id="form-h">Send an enquiry</h2>
-    <p class="form__req">Fields marked <span aria-hidden="true">*</span><span class="vh">with an asterisk</span> are required.</p>
-    <div class="field"><label for="f-name">Name <span aria-hidden="true">*</span></label><input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name"><p class="field__e" id="e-name" hidden></p></div>
-    <div class="field"><label for="f-email">Email <span aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="e-email"><p class="field__e" id="e-email" hidden></p></div>
-    <div class="field"><label for="f-phone">Phone <span class="opt">(optional)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" aria-describedby="e-phone"><p class="field__e" id="e-phone" hidden></p></div>
-    <div class="field"><label for="f-loc">Project location <span aria-hidden="true">*</span></label><input id="f-loc" name="location" type="text" required aria-describedby="h-loc e-loc"><p class="field__h" id="h-loc">Town or postcode area is enough.</p><p class="field__e" id="e-loc" hidden></p></div>
-    <div class="field"><label for="f-svc">What are you interested in?</label><select id="f-svc" name="service"><option value="">Not sure yet</option><option>Garden design</option><option>Landscaping (building a garden)</option><option>Irrigation and water features</option><option>Garden lighting</option><option>Living wall</option><option>Garden maintenance</option></select></div>
-    <div class="field"><label for="f-msg">About the project <span aria-hidden="true">*</span></label><textarea id="f-msg" name="message" rows="6" required aria-describedby="e-msg"></textarea><p class="field__e" id="e-msg" hidden></p></div>
-    <div class="field vh" aria-hidden="true"><label for="f-web">Leave this empty</label><input id="f-web" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-    <p class="form__priv">We use your details only to reply to this enquiry. <a href="${href('privacy')}">Read more</a>.</p>
-    <button class="btn" type="submit">Send enquiry</button>
-    <div class="form__status" role="status" aria-live="polite" id="form-status" tabindex="-1"></div>
-    <noscript><p class="note">This form needs JavaScript. Please email <a href="${mail}">${site.email}</a> or call <a href="${tel}">${site.phoneDisplay}</a>.</p></noscript>
-  </form>
-</div>`
+  title: 'Contact | Morgan Oates, garden designers and landscapers in Cheltenham and the Cotswolds', path: 'contact', dark: true, compact: true,
+  desc: 'Contact Morgan Oates about garden design, landscaping or garden maintenance in Cheltenham and the Cotswolds: email info@morganoates.co or call 07827 321373.',
+  body: photoStage(`
+  <div class="wrap stage__in stage__in--form">
+    <form class="cform" id="enquiry" method="post" novalidate ${site.formEndpoint ? `action="${esc(site.formEndpoint)}"` : ''} data-endpoint="${esc(site.formEndpoint)}" data-email="${site.email}" data-phone="${site.phoneDisplay}" aria-labelledby="contact-h">
+      <h1 id="contact-h" class="cform__h">Discuss your garden</h1>
+      <p class="cform__lede">Tell us what you would like done. We design, build and maintain gardens across the Cotswolds.</p>
+      <div class="cfield"><label for="f-phone">Phone number <span aria-hidden="true">*</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required aria-describedby="e-phone"><p class="field__e" id="e-phone" hidden></p></div>
+      <div class="cfield"><label for="f-email">Email <span aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="e-email"><p class="field__e" id="e-email" hidden></p></div>
+      <div class="cfield"><label for="f-msg">The work you would like <span aria-hidden="true">*</span></label><textarea id="f-msg" name="message" rows="4" required aria-describedby="e-msg"></textarea><p class="field__e" id="e-msg" hidden></p></div>
+      <div class="cfield vh" aria-hidden="true"><label for="f-web">Leave this empty</label><input id="f-web" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+      <button class="cform__btn" type="submit">Send enquiry</button>
+      <div class="form__status cform__status" role="status" aria-live="polite" id="form-status" tabindex="-1"></div>
+      <p class="cform__alt">Or call <a href="${tel}">${site.phoneDisplay}</a> or email <a href="${mail}">${site.email}</a>. We use your details only to reply. <a href="${href('privacy')}">Privacy</a></p>
+      <noscript><p class="cform__alt">This form needs JavaScript. Please email <a href="${mail}">${site.email}</a> or call <a href="${tel}">${site.phoneDisplay}</a>.</p></noscript>
+    </form>
+  </div>`, 'contact-h')
 }));
 
 // LEGAL (drafts needing owner review)
