@@ -100,6 +100,7 @@ ${ld ? `<script type="application/ld+json">${JSON.stringify(ld)}</script>` : ''}
   <div class="header__in">
     <a class="logo logo--text" href="${href('')}" aria-label="Morgan Oates, home"><span class="wordmark">Morgan Oates<small>Garden design &amp; landscape</small></span></a>
     
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span class="menu-btn__t">Menu</span><span class="menu-btn__i" aria-hidden="true"></span></button>
     ${NAV()}
   </div>
 </header>
