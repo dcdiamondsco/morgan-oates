@@ -433,3 +433,10 @@ body{background:var(--chalk)}
 .wordmark small{animation:tagcol2 56s linear infinite;animation-delay:-1.7s}
 .wordmark small{animation:none;color:#b8e08c}
 @media (prefers-reduced-motion:reduce){.wordmark small{color:#b8e08c}}
+/* footer: one line on desktop, two on mobile, pinned tight to the bottom */
+.footer--compact{padding:0 0 .7rem;line-height:1.35}
+.footer--compact .footer__row{display:flex;align-items:baseline;gap:.35rem 1.4rem;flex-wrap:nowrap;font-size:.86rem}
+.footer--compact .fc-a,.footer--compact .fc-b{margin:0;white-space:nowrap;font-size:inherit}
+.footer--compact .fc-a{margin-right:-.9rem}
+.footer--compact .footer__legal{margin:0 0 0 auto;padding:0;list-style:none;display:flex;gap:1.1rem;font-size:inherit;white-space:nowrap}
+@media (max-width:1100px){.footer--compact .footer__row{flex-wrap:wrap;font-size:.74rem;gap:.1rem 1rem}.footer--compact .fc-a{flex-basis:100%;margin-right:0;white-space:normal}.footer--compact .fc-b{white-space:normal;flex:1}.footer--compact .footer__legal{margin-left:0;gap:.8rem}}
