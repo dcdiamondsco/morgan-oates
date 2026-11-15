@@ -24,5 +24,17 @@
     "local": "assets/photos/team-anna-600x400.jpg",
     "w": 600,
     "h": 400
+  },
+  {
+    "name": "Stefan",
+    "role": "Site dog",
+    "image": "",
+    "alt": "Stefan the dog resting on the stone path of a finished London garden, with a bronze-glazed planter in the foreground",
+    "bio": [
+      "Stefan has no plans, no tools and no opinions on planting schemes, but he keeps a close eye on the finished work. Here he is testing a new path."
+    ],
+    "local": "assets/photos/team-stefan-600x480.jpg",
+    "w": 600,
+    "h": 480
   }
 ]
