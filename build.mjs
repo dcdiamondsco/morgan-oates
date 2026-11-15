@@ -397,7 +397,6 @@ add('before-and-after', layout({
     <span class="ba__bar" aria-hidden="true"><span class="ba__knob"></span></span>
     <input class="ba__range" type="range" min="0" max="100" value="88" aria-label="Compare before and after: ${esc(p.title)}">
   </div>
-  <p class="ba__cap">${esc(p.cap)}</p>
 </section>`).join('')}</div>${cta()}`
 }));
 
