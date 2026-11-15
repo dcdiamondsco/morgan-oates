@@ -542,3 +542,11 @@ html:not(:has(.header--over)) body{background:radial-gradient(110% 38rem at 90% 
 @media (max-width:899px){.header--over{position:fixed;left:0;right:0}}
 .accred li:nth-child(2) img{height:58px}
 @media (max-width:899px){.accred li:nth-child(2) img{height:50px}}
+/* accreditations sit in the footer row between phone and Privacy on desktop, above the text on mobile */
+.footer__row .accred{margin:0;gap:1.1rem;flex:0 0 auto}
+.footer__row .accred img{height:34px}
+.footer__row .accred li:nth-child(2) img{height:42px}
+@media (max-width:899px){
+ .footer__row .accred{order:-1;width:100%;justify-content:center;margin-bottom:.7rem;gap:1.6rem}
+ .footer__row .accred img{height:40px}.footer__row .accred li:nth-child(2) img{height:50px}
+}
