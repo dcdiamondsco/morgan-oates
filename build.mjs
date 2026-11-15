@@ -354,7 +354,7 @@ add('west-london-landscape-gardeners', layout({
 <div class="about">
  <section class="wrap about__in about__intro apanel" aria-labelledby="about-h">
   <p class="about__k">About us</p>
-  <h1 id="about-h" class="about__h">A family team that designs, builds and looks after gardens</h1>
+  <h1 id="about-h" class="about__h">A powerful team that designs, builds and looks after your garden with care</h1>
   <p class="about__lede">Morgan Oates is a garden design and landscaping company based in Cheltenham, working across the Cotswolds. Dan builds, Anna designs, and the two work side by side on every garden.</p>
  </section>
  <div class="wrap about__in about__team">
