@@ -564,3 +564,7 @@ html:not(:has(.header--over)) body{background:radial-gradient(110% 38rem at 90% 
  .header--over{position:absolute;top:0;left:0;right:0;padding-top:calc(48px + env(safe-area-inset-top))}
  .stage__in{padding-top:calc(5.6rem + 48px + env(safe-area-inset-top))}
 }
+@media (max-width:899px){
+ .header--over{padding-top:calc(96px + env(safe-area-inset-top))}
+ .stage__in{padding-top:calc(5.6rem + 96px + env(safe-area-inset-top))}
+}
