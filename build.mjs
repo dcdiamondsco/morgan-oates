@@ -107,7 +107,7 @@ ${ld ? `<script type="application/ld+json">${JSON.stringify(ld)}</script>` : ''}
 <main id="main" tabindex="-1">
 ${body}
 </main>
-${true ? `<footer class="footer footer--compact"><div class="wrap footer__base footer__base--only"><p>${esc(site.legalName)} · Registered in England and Wales No. ${site.companyNumber} · ${esc(site.address)} <a href="${tel}">${site.phoneDisplay}</a></p><ul class="footer__legal"><li><a href="${href('privacy')}">Privacy</a></li><li><a href="${href('terms')}">Terms</a></li></ul></div></footer>` : `<footer class="footer">
+${true ? `<footer class="footer footer--compact"><div class="wrap footer__base footer__base--only"><p>${esc(site.legalName)} · Registered in England and Wales No. <a href="https://find-and-update.company-information.service.gov.uk/company/${site.companyNumber}" rel="noopener">${site.companyNumber}</a> · <a href="${esc(site.mapUrl)}" rel="noopener">${esc(site.address)}</a> · <a href="${tel}">${site.phoneDisplay}</a> · <a href="${mail}">${site.email}</a></p><ul class="footer__legal"><li><a href="${href('privacy')}">Privacy</a></li><li><a href="${href('terms')}">Terms</a></li></ul></div></footer>` : `<footer class="footer">
   <div class="wrap footer__grid">
     <div class="footer__brand">
       <img class="footer__logo" src="${logoSrc}"${logoDims} height="40" alt="Morgan Oates" loading="lazy">
@@ -274,7 +274,7 @@ function wall() {
     title: 'Garden designers and landscapers in the Cotswolds | Morgan Oates',
     desc: 'Morgan Oates is a family team of garden designers and landscapers in Cheltenham, designing and building gardens across the Cotswolds.',
     path: '', body, ogImage: null, compact: true, dark: true,
-    ld: { '@context': 'https://schema.org', '@type': 'Organization', name: site.legalName, url: site.canonicalOrigin, logo: `${site.canonicalOrigin}/images/logo-web.png`, email: site.email, telephone: site.phoneTel, description: 'Garden design and landscaping based in Cheltenham, serving the Cotswolds.' }
+    ld: { '@context': 'https://schema.org', '@type': ['LocalBusiness', 'LandscapingBusiness'], name: site.name, legalName: site.legalName, url: site.canonicalOrigin, logo: `${site.canonicalOrigin}/assets/photos/logo-659x239.png`, email: site.email, telephone: site.phoneTel, description: 'Family garden designers and landscapers in Cheltenham, serving the Cotswolds.', address: { '@type': 'PostalAddress', streetAddress: 'London Rd, Charlton Kings', addressLocality: 'Cheltenham', postalCode: 'GL54 4HG', addressCountry: 'GB' }, hasMap: site.mapUrl, identifier: site.companyNumber, areaServed: ['Cheltenham', 'The Cotswolds'], sameAs: site.social.map((s) => s.url), founder: [{ '@type': 'Person', name: 'Daniel Morgan Oates' }] }
   }));
 }
 
@@ -367,6 +367,7 @@ add('contact', layout({
   <div class="contact__side">
     <h2>Direct</h2>
     <p><a class="contact__big" href="${mail}">${site.email}</a><br><a class="contact__big" href="${tel}">${site.phoneDisplay}</a></p>
+    <p><a href="${esc(site.mapUrl)}" rel="noopener">${esc(site.address)}</a></p>
     <p>Based in Cheltenham, Gloucestershire.</p>
     <p class="note">Messages from the form go to the same inbox as email. We use what you send only to reply to your enquiry. <a href="${href('privacy')}">Privacy</a></p>
   </div>
