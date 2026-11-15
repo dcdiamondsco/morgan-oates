@@ -524,3 +524,5 @@ body{background:linear-gradient(180deg,#f7f0e1 0%,#f1e6cf 55%,#ecdfc4 100%) fixe
 html{background:#ecdfc4}
 html:has(.header--over){background:#2a1c10}
 @media (max-width:899px){html:not(:has(.header--over)),html:not(:has(.header--over)) body{height:auto;min-height:100%}}
+.header:not(.header--over)~main .phead{background:none}
+html:not(:has(.header--over)) body{background:radial-gradient(110% 38rem at 90% 0%,rgba(224,176,108,.30),rgba(224,176,108,0) 70%) no-repeat,linear-gradient(180deg,#f7f0e1 0%,#f1e6cf 55%,#ecdfc4 100%)}
