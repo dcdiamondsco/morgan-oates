@@ -249,6 +249,7 @@ function wall() {
   const slides = [
     { f: 'wheat-sunrise-1600x900.jpg', w: 1600, h: 900, pos: '50% 60%' },
     { f: 'cotswolds-1-900x600.jpg', w: 900, h: 600, alt: 'A Cotswold stone cottage with a brick path running between planted borders' },
+    { f: 'wheat-field-1600x2133.jpg', w: 1600, h: 2133, pos: '50% 37%' },
     { f: 'g-main-green-900x551.jpg', w: 900, h: 551, alt: 'A lawn and planted borders in a garden by Morgan Oates', pos: '50% 50%' },
     { f: 'wheat-sunny-1600x2240.jpg', w: 1600, h: 2240, pos: '50% 62%' },
     { f: 'cotswolds-2-900x600.jpg', w: 900, h: 600, alt: 'Stone steps beside a Cotswold stone wall, with a white lily in the planting' },
