@@ -425,3 +425,7 @@ body{background:var(--chalk)}
 .header--over .nav .nav__contact,.header--over .nav .nav__contact:hover{border:0;background:none;color:#fff;padding-inline:0}
 .header--over .nav .nav__contact:hover{border-bottom:1px solid #ecc79a}
 .wordmark small{color:#7aa84a}
+/* tagline colour follows the slide behind it: deep green on light photos, soft green on dark ones */
+@keyframes tagcol{0%,37%{color:#24500f}39%,49.5%{color:#b4dc88}51%,87%{color:#24500f}89%,99%{color:#b4dc88}100%{color:#24500f}}
+.wordmark small{color:#24500f;animation:tagcol 56s linear infinite;animation-delay:-1.7s;text-shadow:none}
+@media (prefers-reduced-motion:reduce){.wordmark small{animation:none;color:#24500f}}
