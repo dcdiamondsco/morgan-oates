@@ -826,3 +826,6 @@ html:has(.about) .header--over{padding-top:1.2rem!important}
  .stage--photo .stage__veil{background:linear-gradient(180deg,rgba(36,22,12,.4) 0%,rgba(36,22,12,0) 24%),linear-gradient(90deg,rgba(36,22,12,.72) 0%,rgba(36,22,12,.5) 45%,rgba(36,22,12,.1) 100%)}
 }
 .apanel__t .about__k{margin:.2rem 0 1rem}
+.apanel__q{margin:1.6rem 0 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid rgba(240,226,196,.45)}
+.apanel__q p{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:1.15em;line-height:1.5;margin:0 0 .6rem}
+.apanel__q footer{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85}

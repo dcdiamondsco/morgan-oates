@@ -9,7 +9,11 @@
     ],
     "local": "assets/photos/team-dan-600x402.jpg",
     "w": 600,
-    "h": 402
+    "h": 402,
+    "quote": {
+      "text": "I have never known anyone to be so passionate about anything like Dan is with landscaping. He’s not just a great foreman, clients love him and so do his team. Thank you for all the love and support over the years.",
+      "by": "Morgan Oates team member"
+    }
   },
   {
     "name": "Ania Pawlowska",
