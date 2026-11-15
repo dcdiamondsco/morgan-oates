@@ -779,3 +779,9 @@ html:has(.header--over),html:has(.header--over) body{background:#2a1c10}
 .cform__btn{margin-top:1.8rem}
 .cdiscuss__h{font-size:clamp(1.05rem,1.7vw,1.3rem)}
 .cdiscuss__h{font-size:clamp(.95rem,1.3vw,1.1rem);white-space:nowrap}
+
+/* Hero: "See our gardens" is a plain text link like "Discuss your garden", with no box behind it */
+.stage .stage__cta .btn{background:none;border:0;border-bottom:1px solid currentColor;border-radius:0;padding:0 0 .1em;color:#3a2a1e;font-weight:600;font-size:inherit;letter-spacing:normal;line-height:inherit}
+.stage .stage__cta .btn:hover{background:none;color:#a4552f}
+.stage--video .stage__cta .btn,.stage--photo .stage__cta .btn{background:none;border:0;border-bottom:1px solid currentColor;color:#fbf5e8}
+.stage--video .stage__cta .btn:hover,.stage--photo .stage__cta .btn:hover{background:none;color:#ecc79a}
