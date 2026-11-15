@@ -737,7 +737,9 @@ html:has(.header--over),html:has(.header--over) body{background:#2a1c10}
 .header--over .wordmark,.header--over .menu-btn,.header--over .nav a,.header--over .nav .nav__contact{color:#f6ebd0}
 .accred img{opacity:1}
 @media (max-width:899px){.header--over .menu-btn,.header--over .menu-btn:hover,.header--over .menu-btn:focus-visible{border:0;background:none;box-shadow:none;padding-inline:0}}
-/* steady warm scrim so pale slides never wash out the headline; stronger headline shadow */
-.stage::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(42,28,16,.40) 0%,rgba(42,28,16,.34) 55%,rgba(42,28,16,.12) 100%)}
-.stage__h,.stage__h em{text-shadow:0 1px 3px rgba(30,18,8,.6),0 2px 22px rgba(30,18,8,.55)}
+/* headline legibility: text-only treatment, photos untouched */
+.stage__h{text-shadow:0 1px 2px rgba(30,18,8,.75),0 2px 10px rgba(30,18,8,.6),0 4px 34px rgba(30,18,8,.55)}
+.stage__h em{color:#f3d3a6;text-shadow:0 1px 2px rgba(30,18,8,.8),0 2px 10px rgba(30,18,8,.65),0 4px 34px rgba(30,18,8,.6)}
 .stage__h .stage__kicker,.stage__sub{text-shadow:0 1px 3px rgba(30,18,8,.7),0 1px 16px rgba(30,18,8,.6)}
+.stage__h,.stage__h em{text-shadow:0 1px 1px rgba(30,18,8,.9),0 2px 6px rgba(30,18,8,.75),0 3px 16px rgba(30,18,8,.7),0 6px 40px rgba(30,18,8,.65)}
+.stage__h{font-weight:500}
