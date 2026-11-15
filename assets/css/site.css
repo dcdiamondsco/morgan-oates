@@ -749,3 +749,6 @@ html:has(.header--over),html:has(.header--over) body{background:#2a1c10}
 .cform__btn,.cfield .cfile__b{background:rgba(217,183,122,.34);border:1px solid rgba(236,199,154,.7);color:#f6ebd0;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
 .cform__btn:hover,.cform__btn:focus-visible,.cfield .cfile__b:hover,.cfile__in:focus-visible+.cfile__b{background:rgba(217,183,122,.5);border-color:#f0d9b0;color:#fbf5e8}
 .cfile__b .cfile__list{color:rgba(246,235,208,.8)}
+/* no dark halo around homepage text */
+html:has(.stage__hl) .stage__in,html:has(.stage__hl) .stage__in *,html:has(.stage__hl) .header--over,html:has(.stage__hl) .header--over *,html:has(.stage__hl) footer.footer--compact,html:has(.stage__hl) footer.footer--compact *{text-shadow:none!important}
+html:has(.stage__hl) .stage__h,html:has(.stage__hl) .stage__h em{text-shadow:none!important}
