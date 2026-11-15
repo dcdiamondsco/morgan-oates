@@ -422,3 +422,6 @@ body{background:var(--chalk)}
 .wordmark small{color:#5f8f35;font-weight:700;text-shadow:none}
 .footer--compact p{white-space:normal}
 @media (min-width:1500px){.footer--compact p{white-space:nowrap}}
+.header--over .nav .nav__contact,.header--over .nav .nav__contact:hover{border:0;background:none;color:#fff;padding-inline:0}
+.header--over .nav .nav__contact:hover{border-bottom:1px solid #ecc79a}
+.wordmark small{color:#7aa84a}
