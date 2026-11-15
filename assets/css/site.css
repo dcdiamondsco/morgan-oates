@@ -756,3 +756,5 @@ html:has(.header--over),html:has(.header--over) body{background:#2a1c10}
 @media (min-width:900px){
  html:has(.stage__hl) .stage__in,html:has(.stage__hl) .stage__in *,html:has(.stage__hl) .header--over,html:has(.stage__hl) .header--over *,html:has(.stage__hl) footer.footer--compact,html:has(.stage__hl) footer.footer--compact *{text-shadow:none!important}
 }
+@media (max-width:899px){.stage__sub{margin-top:1.1rem}}
+@media (max-width:899px){html:has(.stage__hl) .stage__sub{margin-top:2.2rem!important}}
