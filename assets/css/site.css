@@ -540,3 +540,5 @@ html:not(:has(.header--over)) body{background:radial-gradient(110% 38rem at 90% 
 .accred img{height:46px;width:auto;display:block;opacity:.95}
 @media (max-width:899px){.accred{margin-bottom:.7rem}.accred img{height:40px}}
 @media (max-width:899px){.header--over{position:fixed;left:0;right:0}}
+.accred li:nth-child(2) img{height:58px}
+@media (max-width:899px){.accred li:nth-child(2) img{height:50px}}
