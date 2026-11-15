@@ -34,18 +34,15 @@ const asset = (to) => (LINKS === 'files' ? rel(to) : '/' + to);
 const dims = (key) => { const m = key.match(/-(\d+)x(\d+)(?:-q\d+)?$/); return m ? { w: +m[1], h: +m[2] } : { w: 0, h: 0 }; };
 const imgSrc = (key) => (IMAGE_MODE === 'remote' ? `${SRC}${key}.jpg` : asset(`images/${key}.jpg`));
 const pimg = (slug, name) => `projects/${slug}/${name}`;
-const logoSrc = IMAGE_MODE === 'remote' ? 'https://morganoates.co/dist/images/logo-web.png' : asset('images/logo-web.png');
+const logoSrc = asset('assets/photos/logo-659x239.png');
 
 // logo dimensions read from the PNG header if the file has been fetched (avoids stretching)
-let logoDims = '';
-try {
-  const b = fs.readFileSync(path.join(ROOT, 'assets/images/logo-web.png'));
-  if (b.toString('ascii', 1, 4) === 'PNG') logoDims = ` width="${b.readUInt32BE(16)}" height="${b.readUInt32BE(20)}"`;
-} catch {}
+const logoDims = ' width="659" height="239"';
 
 const manifest = new Map(); // key -> {key,w,h,source,used}
 function pic(key, { alt = '', sizes = '100vw', cls = '', eager = false, style = '' } = {}) {
   const { w, h } = dims(key);
+  if (key.startsWith('photos/')) return `<img${cls ? ` class="${cls}"` : ''} src="${asset('assets/' + key + '.jpg')}" width="${w}" height="${h}" alt="${esc(alt)}" sizes="${sizes}" ${eager ? 'fetchpriority="high" decoding="async"' : 'loading="lazy" decoding="async"'}${style ? ` style="${style}"` : ''}>`;
   manifest.set(key, { key, width: w, height: h, source: `${SRC}${key}.jpg`, local: `assets/images/${key}.jpg` });
   return `<img${cls ? ` class="${cls}"` : ''} src="${imgSrc(key)}" width="${w}" height="${h}" alt="${esc(alt)}" sizes="${sizes}" ${eager ? 'fetchpriority="high" decoding="async"' : 'loading="lazy" decoding="async"'}${style ? ` style="${style}"` : ''}>`;
 }
@@ -282,8 +279,8 @@ function wall() {
 }
 
 // SERVICES
-function relatedBlock(slugs) {
-  return `<section class="rel" aria-labelledby="rel-h"><div class="wrap"><h2 id="rel-h" class="rel__h">Related gardens</h2><div class="rel__grid">${slugs.map((s) => { const p = proj[s]; return `<a class="rel__card" href="${href('projects/' + p.slug)}"><figure>${pic(pimg(p.slug, p.cover || p.hero), { alt: p.alt, sizes: '(min-width: 900px) 30vw, 100vw' })}</figure><h3>${esc(p.title)}</h3><p>${esc(p.meta)}</p></a>`; }).join('')}</div></div></section>`;
+function relatedBlock() {
+  return `<section class="rel" aria-labelledby="rel-h"><div class="wrap"><h2 id="rel-h" class="rel__h">See the gardens</h2><p><a class="btn" href="${href('projects')}">Gardens and projects</a></p></div></section>`;
 }
 function serviceBody(s) {
   const secs = s.sections.map((sec) => {
@@ -316,36 +313,23 @@ for (const s of Object.values(svc.pages)) {
   }));
 }
 
-// PROJECTS
+// PROJECTS (gallery of the owner's own photographs)
 {
-  const groups = ['Town and city gardens', 'Country gardens', 'Show gardens'];
-  const card = (p, i) => `<a class="pi__card ${i === 0 ? 'pi__card--lead' : ''} reveal" href="${href('projects/' + p.slug)}"><figure>${pic(pimg(p.slug, p.cover || p.hero), { alt: p.alt, sizes: i === 0 ? '(min-width: 900px) 60vw, 100vw' : '(min-width: 900px) 30vw, 100vw' })}</figure><h3>${esc(p.title)}</h3><p>${esc(p.meta)}</p></a>`;
-  const blocks = groups.map((g) => `<section class="pi__group" aria-labelledby="g-${g[0]}${g.length}"><h2 id="g-${g[0]}${g.length}" class="pi__gh">${g}</h2><div class="pi__grid">${projects.filter((p) => p.group === g).map(card).join('')}</div></section>`).join('');
+  const G = [
+    ['Show gardens', 'Gardens built for show.', [['show-2','900x600'],['show-3','900x614'],['show-4','900x551'],['show-5','900x551']]],
+    ['Planting in green and brown', 'Soft planting set against warm stone and timber.', [['green-brown','900x600'],['green-brown-2','900x600'],['green-brown-3','900x604']]],
+    ['Green gardens', 'Lawns, borders and clipped greens.', [['main-green','900x551'],['main-green-2','900x551'],['main-green-3','829x551'],['green','900x599'],['green-2','900x599']]]
+  ];
+  const sec = G.map(([t, d, ims], gi) => `<section class="pi__group" aria-labelledby="gg${gi}"><h2 id="gg${gi}" class="pi__gh">${t}</h2><p class="lede">${d}</p><div class="pi__grid">${ims.map(([n, wh], k) => `<figure class="pi__card reveal">${pic('photos/g-' + n + '-' + wh, { alt: t + ', photograph ' + (k + 1) + ' of ' + ims.length + ' by Morgan Oates', sizes: '(min-width: 900px) 30vw, 100vw' })}</figure>`).join('')}</div></section>`).join('');
   add('projects', layout({
-    title: 'Gardens and projects | Morgan Oates', path: 'projects', ogImage: pimg('oasis-of-peace', 'cover-900x600'),
-    desc: 'Town gardens, country gardens and show gardens by Morgan Oates, with design and build credits stated on every project.',
-    body: `<section class="phead"><div class="wrap">${crumbs([['Home', ''], ['Gardens', null]])}<p class="kicker">Gardens</p><h1>Gardens and projects</h1><p class="lede">From a basement courtyard to a country house, and from Chelsea stands to a Moroccan-inspired show garden. Each page says what we designed, what we built, and who else was involved.</p></div></section><div class="wrap">${blocks}</div>${cta()}`
+    title: 'Gardens | Morgan Oates, Cheltenham and the Cotswolds', path: 'projects',
+    desc: 'Gardens designed and built by Morgan Oates, a family team of garden designers and landscapers in Cheltenham.',
+    body: `<section class="phead"><div class="wrap">${crumbs([['Home', ''], ['Gardens', null]])}<p class="kicker">Gardens</p><h1>Gardens</h1><p class="lede">A selection of our own photographs, from show gardens to planted family gardens.</p></div></section>
+<div class="wrap">${sec}</div>${cta()}`
   }));
 }
-projects.forEach((p, idx) => {
-  const rel2 = proj[p.related];
-  const ldb = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [['Home', ''], ['Gardens', 'projects'], [p.title, `projects/${p.slug}`]].map(([n, u], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: `${site.canonicalOrigin}/${u}` })) };
-  const facts = p.facts.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('');
-  const credits = p.credits.length ? `<section class="proj__credits" aria-labelledby="cr-h"><h2 id="cr-h">Credits</h2><dl>${p.credits.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl></section>` : '';
-  const prev = projects[(idx + projects.length - 1) % projects.length], next = projects[(idx + 1) % projects.length];
-  add(`projects/${p.slug}`, layout({
-    title: `${p.title} | Morgan Oates`, desc: `${p.title}: ${p.summary}`.slice(0, 200), path: `projects/${p.slug}`, ld: ldb, ogImage: pimg(p.slug, p.hero),
-    body: `
-<section class="phead phead--proj"><div class="wrap">${crumbs([['Home', ''], ['Gardens', 'projects'], [p.title, null]])}
-  <p class="kicker">${esc(p.meta)}</p><h1>${esc(p.title)}</h1></div></section>
-<div class="wrap"><figure class="proj__hero reveal" style="--w:${dims(p.hero).w}">${pic(pimg(p.slug, p.hero), { alt: p.alt, eager: true, sizes: '(min-width: 900px) 80vw, 100vw' })}</figure></div>
-<div class="wrap proj__intro"><div class="proj__text">${para(p.intro)}</div><dl class="proj__facts">${facts}</dl></div>
-<div class="wrap seq" aria-label="Photographs of ${esc(p.title)}">${sequence(p)}</div>
-<div class="wrap">${credits}</div>
-<nav class="wrap pn" aria-label="More gardens"><a class="pn__a" href="${href('projects/' + prev.slug)}"><span>Previous garden</span>${esc(prev.title)}</a><a class="pn__a pn__a--r" href="${href('projects/' + next.slug)}"><span>Next garden</span>${esc(next.title)}</a></nav>
-${relatedBlock([p.related])}${cta()}`
-  }));
-});
+projects.length = 0;
+for (const k of Object.keys(proj)) delete proj[k];
 
 // ABOUT
 add('west-london-landscape-gardeners', layout({

@@ -8,3 +8,4 @@
 /about                 /west-london-landscape-gardeners   301
 /services              /london-landscape-gardening        301
 /gardens               /projects                          301
+/projects/*  /projects  301
