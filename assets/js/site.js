@@ -102,3 +102,13 @@ if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.
  [150,400,900].forEach(function(t){setTimeout(go,t)});
  addEventListener('pageshow',function(){setTimeout(go,50)});
 }catch(e){}})();
+
+/* About page: gentle reveal on scroll (skipped for reduced motion) */
+(function(){
+  try{
+    var els=document.querySelectorAll('.about__intro,.apanel--m,.about__more>*,.about__cta');
+    if(!els.length||!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(el){el.classList.add('rv');io.observe(el);});
+  }catch(_){}
+})();
