@@ -242,7 +242,7 @@ function wall() {
   const poster = fs.existsSync(path.join(ROOT, 'assets/video/hero-poster.jpg')) ? ` poster="${asset('assets/video/hero-poster.jpg')}"` : '';
   const words = `
   <div class="wrap stage__in">
-    <h1 id="hero-h" class="stage__h"><span class="stage__kicker">Multi-award-winning garden designer<br class="kbr"> &amp; landscaper<br class="kbr2"> <span class="kdot" aria-hidden="true">&middot; </span>in Cheltenham &amp; the Cotswolds</span><span class="stage__hl">Gardens that belong<br><em>in the landscape.</em></span></h1>
+    <h1 id="hero-h" class="stage__h"><span class="stage__kicker">Multi-award-winning garden design<br class="kbr"> &amp; landscaping<br class="kbr2"> <span class="kdot" aria-hidden="true">&middot; </span>in Cheltenham &amp; the Cotswolds</span><span class="stage__hl">Gardens that belong<br><em>in the landscape.</em></span></h1>
     <p class="stage__sub">A family team from Cheltenham. We design, build and maintain gardens across the Cotswolds. From dry stone walls to outdoor kitchens, we weave new spaces into their beautiful surroundings.</p>
     <p class="stage__cta"><a class="stage__link" href="${href('projects')}">See our work</a><a class="stage__link" href="${href('contact')}">Discuss your garden</a></p>
   </div>`;
