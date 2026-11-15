@@ -743,22 +743,6 @@ html:has(.header--over),html:has(.header--over) body{background:#2a1c10}
 .stage__h .stage__kicker,.stage__sub{text-shadow:0 1px 3px rgba(30,18,8,.7),0 1px 16px rgba(30,18,8,.6)}
 .stage__h,.stage__h em{text-shadow:0 1px 1px rgba(30,18,8,.9),0 2px 6px rgba(30,18,8,.75),0 3px 16px rgba(30,18,8,.7),0 6px 40px rgba(30,18,8,.65)}
 .stage__h{font-weight:500}
-@media (max-width:899px){html:has(.stage__hl){background:#8f7757}html:has(.stage__hl) body{background:transparent}}
+@media (max-width:899px){html:has(.stage__hl){background:#dccfba}html:has(.stage__hl) body{background:transparent}}
 
 
-/* mobile home: long page, opened in the middle. Everything visible is fixed, so scrolling moves nothing; Safari sees a scrollable page with the photo running to its edges */
-@media (max-width:899px){
- html:has(.stage__hl),html:has(.stage__hl) body{height:auto;overflow-x:hidden;overflow-y:auto;overscroll-behavior-y:none}
- html:has(.stage__hl) body{min-height:400lvh}
- html:has(.stage__hl) .stage__in{padding-top:calc(10svh + 5.6rem + 8.5rem)}
-}
-/* mobile home, final: normal scrolling page over a fixed photo. Header, headline and footer scroll with the swipe; page is two screens long */
-@media (max-width:899px){
- html:has(.stage__hl),html:has(.stage__hl) body{height:auto;overflow:visible;overscroll-behavior-y:auto;position:relative}
- html:has(.stage__hl) body{min-height:0}
- html:has(.stage__hl) .stage{position:relative;top:auto;left:auto;right:auto;bottom:auto;width:100%;height:auto;min-height:190lvh;max-height:none;overflow:visible}
- html:has(.stage__hl) .stage__slide{position:fixed;inset:auto;top:-10svh;left:0;width:100%;height:calc(100lvh + 20svh)}
- html:has(.stage__hl) .header--over{position:absolute;top:0;left:0;right:0}
- html:has(.stage__hl) .stage__in{padding-top:calc(5.6rem + 4.5rem + 4.5rem)}
- html:has(.stage__hl) .header--over~footer.footer--compact{position:absolute;bottom:0;left:0;right:0}
-}
