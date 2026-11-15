@@ -720,3 +720,5 @@ html:has(.header--over),html:has(.header--over) body{background:#2a1c10}
 .cfield .cfile__b{flex-direction:row;gap:.6rem;height:2.5rem;min-height:0;padding:0 1.1rem;align-items:center;white-space:nowrap}
 .cfile__b .cfile__list{max-width:12rem}
 .cfile__b .cfile__list::before{content:"· ";opacity:.7}
+/* mobile home: headline block sits lower */
+@media (max-width:899px){.stage__in:not(.stage__in--form){padding-top:calc(5.6rem + 96px + 4.5rem + env(safe-area-inset-top))}}
