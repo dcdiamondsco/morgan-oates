@@ -871,7 +871,7 @@ html body .about .about__in.about__more{margin-top:clamp(3rem,7vw,5rem)}
 /* Before and after */
 .ba{display:grid;gap:clamp(3rem,7vw,5.5rem);padding-bottom:clamp(3rem,6vw,5rem)}
 .ba__h{font:400 clamp(1.6rem,3vw,2.2rem)/1.15 "Playfair Display",Georgia,serif;margin:0 0 1rem}
-.ba__cmp{position:relative;aspect-ratio:var(--r);max-width:min(100%,62rem);overflow:hidden;background:#d9d1c0;box-shadow:0 18px 40px -22px rgba(40,25,10,.5);--p:88%;touch-action:pan-y}
+.ba__cmp{position:relative;aspect-ratio:var(--r);max-width:min(100%,62rem);overflow:hidden;background:#d9d1c0;box-shadow:0 18px 40px -22px rgba(40,25,10,.5);--p:94%;touch-action:pan-y}
 .ba__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;user-select:none}
 .ba__cap{margin:.9rem 0 0;color:#5a4d3c;font-size:.95rem}
 .ba__tag,.ba__bar,.ba__range{display:none}
@@ -903,3 +903,6 @@ html body .ba__h,html body .ba__cap{padding-inline:clamp(1.25rem,4vw,3.5rem)}
 }
 .ba__item:nth-of-type(3) .ba__img--a{object-position:50% 20%}
 .ba__item:nth-of-type(3) .ba__img--b{object-position:50% 40%}
+html body .wrap.ba{gap:0!important;padding-bottom:0!important;margin-bottom:0}
+html body .ba__item{margin:0}
+html body .ba__cmp{display:block}
