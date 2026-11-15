@@ -349,13 +349,13 @@ function bgStage() {
 CUR = 'west-london-landscape-gardeners';
 add('west-london-landscape-gardeners', layout({
   title: 'About Morgan Oates | Family garden designers and landscapers, Cheltenham and the Cotswolds', path: 'west-london-landscape-gardeners', dark: true, ogImage: team[0].image,
-  desc: 'Meet Daniel Morgan Oates, Director, and Anna Pawlowska, Garden Designer: a family team designing, building and maintaining gardens from Cheltenham across the Cotswolds.',
+  desc: 'Meet Daniel Morgan Oates, Director, and Ania Pawlowska, Garden Designer: a family team designing, building and maintaining gardens from Cheltenham across the Cotswolds.',
   body: bgStage() + `
 <div class="about">
  <section class="wrap about__in about__intro apanel" aria-labelledby="about-h">
   <p class="about__k">About us</p>
   <h1 id="about-h" class="about__h">A powerful team that designs, builds and looks after your garden with care</h1>
-  <p class="about__lede">Morgan Oates is a garden design and landscaping company based in Cheltenham, working across the Cotswolds. Dan builds, Anna designs, and the two work side by side on every garden.</p>
+  <p class="about__lede">Morgan Oates is a garden design and landscaping company based in Cheltenham, working across the Cotswolds. Dan builds, Ania designs, and the two work side by side on every garden.</p>
  </section>
  <div class="wrap about__in about__team">
   ${team.map((m) => `<article class="apanel apanel--m" aria-labelledby="m-${esc(m.name.split(' ')[0].toLowerCase())}">
