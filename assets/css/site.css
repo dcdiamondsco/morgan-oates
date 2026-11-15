@@ -912,3 +912,6 @@ html body .wrap.ba{gap:8px!important;padding-bottom:8px!important}
 html:has(.close) footer.footer--compact{position:relative!important;z-index:3;background:transparent!important;border:0!important;margin-top:calc(-1 * var(--fh,10rem))!important;color:#fbf5e8!important;text-shadow:0 1px 10px rgba(30,18,8,.7)}
 html:has(.close) footer.footer--compact a,html:has(.close) footer.footer--compact p{color:#fbf5e8!important}
 html:has(.close) .close{padding-bottom:calc(clamp(3.5rem,8vw,7rem) + var(--fh,10rem))!important}
+/* before/after: separated items with visible titles */
+html body .wrap.ba{background:none;gap:clamp(2.5rem,6vw,4.5rem)!important;padding-bottom:clamp(3rem,6vw,4.5rem)!important}
+html body .ba__h{position:static;width:auto;height:auto;margin:1rem 0 0;padding:0 clamp(1.25rem,4vw,3.5rem);overflow:visible;clip:auto;white-space:normal;font:400 clamp(1.4rem,3vw,2.1rem)/1.2 "Playfair Display",Georgia,serif;color:#2d2113}
