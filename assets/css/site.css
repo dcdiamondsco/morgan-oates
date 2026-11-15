@@ -479,3 +479,9 @@ h1,h2,h3,.stage__h,.wordmark,.pi__gh{font-family:"Playfair Display","Cormorant G
  .stage .stage__cta{margin-bottom:0}
  .stage__in{padding-top:5.6rem}
 }
+.stage__h em{font-family:inherit;font-style:italic;font-size:1em;line-height:inherit;letter-spacing:inherit}
+@media (max-width:899px){
+ .footer--compact .footer__row{justify-content:center;text-align:center}
+ .footer--compact .fc-a,.footer--compact .fc-b{text-align:center}
+ .footer--compact .footer__legal{justify-content:center;margin-left:0;width:100%}
+}
