@@ -523,3 +523,4 @@ body{background:linear-gradient(180deg,#f7f0e1 0%,#f1e6cf 55%,#ecdfc4 100%) fixe
 @media (max-width:899px){.header:not(.header--over)~footer.footer--compact{padding-bottom:calc(1rem + env(safe-area-inset-bottom))}}
 html{background:#ecdfc4}
 html:has(.header--over){background:#2a1c10}
+@media (max-width:899px){html:not(:has(.header--over)),html:not(:has(.header--over)) body{height:auto;min-height:100%}}
