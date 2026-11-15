@@ -446,3 +446,5 @@ body{background:var(--chalk)}
 @media (min-width:900px){.stage__slide--sun{inset:auto;left:0;top:-37vh;width:131%;height:auto;max-width:none;object-fit:fill}}
 @media (max-width:1100px){.footer--compact p span{display:inline}.footer--compact .fc-long{display:none}.footer--compact .fc-short{display:inline}}
 @media (min-width:900px){.stage__slide--sun{left:-13.6vw;top:-36vh}}
+.stage__kicker .kbr{display:none}
+@media (max-width:899px){.stage__kicker .kbr{display:inline}.stage__kicker{letter-spacing:.14em;font-size:.72rem;line-height:1.7}}
