@@ -415,3 +415,5 @@ body{background:var(--chalk)}
 @keyframes slide8{0%{opacity:0;transform:scale(1)}2.5%{opacity:1}12.5%{opacity:1}15%{opacity:0;transform:scale(1.06)}100%{opacity:0;transform:scale(1.06)}}
 .stage__slide{animation:slide8 56s linear infinite;animation-delay:calc(var(--i) * 7s - 1.7s)}
 @media (prefers-reduced-motion:reduce){.stage__slide{animation:none;opacity:0}.stage__slide:first-of-type{opacity:1}}
+.wordmark{color:#fff;text-shadow:none}
+.wordmark small{color:#8dbb5a;font-weight:700;text-shadow:none}
