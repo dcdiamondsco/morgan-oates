@@ -4,7 +4,7 @@
   var d = document;
 
   /* mobile menu */
-  var btn = d.querySelector('.menu-btn'), nav = d.getElementById('site-nav');
+  var btn = d.querySelector('button.menu-btn'), nav = d.getElementById('site-nav');
   if (btn && nav) {
     var setOpen = function (o) { nav.classList.toggle('is-open', o); btn.setAttribute('aria-expanded', String(o)); btn.querySelector('.menu-btn__t').textContent = o ? 'Close' : 'Menu'; };
     btn.addEventListener('click', function () { setOpen(btn.getAttribute('aria-expanded') !== 'true'); });
