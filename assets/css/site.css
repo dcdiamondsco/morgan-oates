@@ -508,3 +508,16 @@ html:has(.header--over){background:#2a1c10}
 /* wordmark on light inner pages */
 .header:not(.header--over) .wordmark{color:#2f2214;font-size:1.6rem}
 .header:not(.header--over) .wordmark small{color:#4f7a2c;font-weight:700}
+/* inner pages: warmer backgrounds, photo closing band, footer joined to it */
+body{background:linear-gradient(180deg,#f7f0e1 0%,#f1e6cf 55%,#ecdfc4 100%) fixed,#f1e6cf}
+.header:not(.header--over)~main .phead{background:radial-gradient(120% 90% at 85% 0%,rgba(224,176,108,.28),rgba(224,176,108,0) 60%);padding-bottom:clamp(2rem,4vw,3.5rem)}
+.phead h1{font-size:clamp(2.3rem,5.4vw,4rem);line-height:1.08}
+.phead .lede{max-width:46ch}
+.kicker{color:#8a5a36}
+.close{background:linear-gradient(rgba(42,28,16,.84),rgba(42,28,16,.74)),url("../photos/cotswolds-2-900x600.jpg") center 60%/cover no-repeat;color:#f5eddd}
+.close__h{font-family:"Playfair Display",Georgia,serif;font-weight:400}
+.prose__sec,.pi__group{border-color:rgba(138,90,54,.35)}
+.pi__card figure,.team__m img,.phead__fig img{box-shadow:0 10px 30px -14px rgba(60,38,18,.45)}
+.header:not(.header--over)~footer.footer--compact{background:#2a1c10;color:#e9dcc2;border-top:0;padding:1.4rem 0}
+.header:not(.header--over)~footer.footer--compact a,.header:not(.header--over)~footer.footer--compact p{color:#e9dcc2}
+@media (max-width:899px){.header:not(.header--over)~footer.footer--compact{padding-bottom:calc(1rem + env(safe-area-inset-bottom))}}
