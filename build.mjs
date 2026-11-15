@@ -395,7 +395,7 @@ add('before-and-after', layout({
     ${baImg(p.after, p.w, p.h, p.aAlt, 'ba__img ba__img--a')}
     <span class="ba__tag ba__tag--b" aria-hidden="true">Before</span><span class="ba__tag ba__tag--a" aria-hidden="true">After</span>
     <span class="ba__bar" aria-hidden="true"><span class="ba__knob"></span></span>
-    <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="Compare before and after: ${esc(p.title)}">
+    <input class="ba__range" type="range" min="0" max="100" value="88" aria-label="Compare before and after: ${esc(p.title)}">
   </div>
   <p class="ba__cap">${esc(p.cap)}</p>
 </section>`).join('')}</div>${cta()}`
@@ -422,7 +422,7 @@ journal.forEach((a) => {
 // CONTACT
 CUR = 'contact';
 add('contact', layout({
-  title: 'Contact | Morgan Oates, garden designers and landscapers in Cheltenham and the Cotswolds', path: 'contact', dark: true, compact: true, bare: true,
+  title: 'Contact | Morgan Oates, garden designers and landscapers in Cheltenham and the Cotswolds', path: 'contact', dark: true, compact: true,
   desc: 'Contact Morgan Oates about garden design, landscaping or garden maintenance in Cheltenham and the Cotswolds: email info@morganoates.co or call 07827 321373.',
   body: photoStage(`
   <div class="wrap stage__in stage__in--form">
