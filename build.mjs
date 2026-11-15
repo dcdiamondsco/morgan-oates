@@ -382,7 +382,7 @@ const BA = [
     before: 'assets/photos/ba-london-before-960x1200', after: 'assets/photos/ba-london-after-960x1200',
     bAlt: 'London garden before: dark worn decking, a small shed and a barbecue under a bare, leaf-covered garden',
     aAlt: 'London garden after: new timber decking and paving, planted borders, garden chairs and a barrel sauna' },
-  { id: 'lawn', tb: 'Muddy puddles', ta: 'Fresh lawn in 24 hrs', title: 'Muddy puddles to fresh lawn in 24 hrs', cap: '', w: 1200, h: 900,
+  { id: 'lawn', tb: 'Muddy puddles', ta: 'Fresh lawn', title: 'Muddy puddles to fresh lawn', cap: '', w: 1200, h: 900,
     before: 'assets/photos/ba-lawn-before-1200x900', after: 'assets/photos/ba-lawn-after-1200x900',
     bAlt: 'Before: bare, churned-up muddy ground with puddles',
     aAlt: 'After: a newly laid striped lawn with a greenhouse and a row of young trees behind' }
