@@ -11,6 +11,14 @@
     d.addEventListener('keydown', function (e) { if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') { setOpen(false); btn.focus(); } });
   }
 
+  /* launch-hold: only Contact (and tel/mail/WhatsApp) links go anywhere */
+  d.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
+    var h = a.getAttribute('href');
+    if (/^(tel:|mailto:|https?:\/\/wa\.me)/.test(h) || /contact/.test(h) || h.charAt(0) === '#') return;
+    e.preventDefault();
+  });
+
   /* gentle image reveals */
   var els = [].slice.call(d.querySelectorAll('.reveal'));
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
