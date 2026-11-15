@@ -402,3 +402,7 @@ body{background:var(--chalk)}
 .stage__slide{animation:slide4 28s linear infinite;animation-delay:calc(var(--i) * 7s - 1.7s)}
 @media (prefers-reduced-motion:reduce){.stage__slide{animation:none;opacity:0}.stage__slide:first-of-type{opacity:1}}
 .wordmark small{color:#86a85f;text-shadow:0 1px 3px rgba(20,14,6,.7),0 1px 12px rgba(20,14,6,.55)}
+@keyframes slide6b{0%{opacity:0;transform:scale(1)}3.5%{opacity:1}16.7%{opacity:1}20%{opacity:0;transform:scale(1.06)}100%{opacity:0;transform:scale(1.06)}}
+.stage__slide{animation:slide6b 42s linear infinite;animation-delay:calc(var(--i) * 7s - 1.7s)}
+@media (prefers-reduced-motion:reduce){.stage__slide{animation:none;opacity:0}.stage__slide:first-of-type{opacity:1}}
+.wordmark small{color:#6f9246;text-shadow:0 1px 2px rgba(15,10,4,.8),0 1px 12px rgba(15,10,4,.6)}
