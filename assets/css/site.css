@@ -444,3 +444,4 @@ body{background:var(--chalk)}
 @media (max-width:1100px){.fc-long{display:none}.fc-short{display:inline}.footer--compact .footer__row{font-size:.66rem;line-height:1.4;gap:0}.footer--compact .fc-a,.footer--compact .fc-b{flex-basis:100%;flex:none;width:100%;white-space:nowrap}.footer--compact .fc-a{margin:0}.footer--compact .footer__legal{margin-top:.15rem}}
 /* sunrise slide: zoom in and place the sun beneath the word "belong" (desktop) */
 @media (min-width:900px){.stage__slide--sun{inset:auto;left:0;top:-37vh;width:131%;height:auto;max-width:none;object-fit:fill}}
+@media (max-width:1100px){.footer--compact p span{display:inline}.footer--compact .fc-long{display:none}.footer--compact .fc-short{display:inline}}
