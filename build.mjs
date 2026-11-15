@@ -250,7 +250,6 @@ function wall() {
     { f: 'wheat-sunrise-1600x900.jpg', w: 1600, h: 900, pos: '50% 60%' },
     { f: 'cotswolds-1-900x600.jpg', w: 900, h: 600, alt: 'A Cotswold stone cottage with a brick path running between planted borders' },
     { f: 'cotswolds-2-900x600.jpg', w: 900, h: 600, alt: 'Stone steps beside a Cotswold stone wall, with a white lily in the planting' },
-    { f: 'wheat-sunset-1600x1200.jpg', w: 1600, h: 1200, pos: '50% 55%' },
     { f: 'cotswolds-3-900x600.jpg', w: 900, h: 600, alt: 'Wide stone steps and a dry-stone retaining wall above a paved terrace with planting' },
     { f: 'wheat-sunny-1600x2240.jpg', w: 1600, h: 2240, pos: '50% 62%' },
     { f: 'wheat-cloudy-1600x2400.jpg', w: 1600, h: 2400, pos: '50% 80%' },
