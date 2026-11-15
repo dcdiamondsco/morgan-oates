@@ -785,3 +785,33 @@ html:has(.header--over),html:has(.header--over) body{background:#2a1c10}
 .stage .stage__cta .btn:hover{background:none;color:#a4552f}
 .stage--video .stage__cta .btn,.stage--photo .stage__cta .btn{background:none;border:0;border-bottom:1px solid currentColor;color:#fbf5e8}
 .stage--video .stage__cta .btn:hover,.stage--photo .stage__cta .btn:hover{background:none;color:#ecc79a}
+/* ABOUT: fixed slideshow behind, translucent panels scroll over it */
+main .stage--bgfix{position:fixed;inset:0;width:100%;height:100%;min-height:0;z-index:0;display:block}
+.about{position:relative;z-index:4;padding:7.5rem 0 8rem;color:#f0e2c4}
+.about__in{max-width:70rem}
+.about__intro{max-width:46rem;text-align:center;margin-bottom:2.2rem}
+.about__k{font:600 .72rem/1.2 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#ecc79a;margin:0 0 .7rem}
+.about__h{font:400 clamp(2rem,5vw,3.3rem)/1.1 "Playfair Display","Cormorant Garamond",Georgia,serif;color:#f6ebd0;margin:0 0 1rem;letter-spacing:-.01em}
+.about__lede{font-size:clamp(1rem,1.6vw,1.12rem);line-height:1.65;color:#f0e2c4;margin:0}
+.apanel{background:rgba(34,22,12,.5);border:1px solid rgba(240,226,196,.28);border-radius:2px;padding:clamp(1.2rem,3vw,1.9rem);color:#f0e2c4;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
+.apanel p{margin:0 0 .9rem;line-height:1.65}.apanel p:last-child{margin-bottom:0}
+.apanel__h{font:400 clamp(1.4rem,2.6vw,1.9rem)/1.15 "Playfair Display","Cormorant Garamond",Georgia,serif;color:#f6ebd0;margin:0 0 .8rem}
+.about__team{display:grid;gap:1.4rem;margin-bottom:1.4rem}
+.apanel--m{display:grid;gap:1.4rem;align-items:start}
+.apanel__ph{margin:0}.apanel__ph img{display:block;width:100%;height:auto;border-radius:2px}
+.about__more{display:grid;gap:1.4rem;margin-bottom:2.4rem}
+.about__link,.about__btn{display:inline-block;color:#f0e2c4;border:1px solid rgba(236,199,154,.7);background:rgba(217,183,122,.34);padding:.8rem 1.5rem;font:600 .8rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border-radius:2px}
+.about__link:hover,.about__btn:hover,.about__link:focus-visible,.about__btn:focus-visible{background:rgba(217,183,122,.5);border-color:#f0d9b0;color:#fbf5e8}
+.about__cta{text-align:center}
+@media (min-width:900px){
+ .apanel--m{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+ .about__team .apanel--m:nth-child(even){grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+ .about__team .apanel--m:nth-child(even) .apanel__ph{order:2}
+ .about__more{grid-template-columns:1fr 1fr}
+}
+@media (max-width:899px){.about{padding:6rem 0 9rem}.about__intro{text-align:left}html:has(.about) .header--over{position:absolute}html:has(.about) .header--over~footer.footer--compact{position:absolute}}
+html:has(.about) body{position:relative;min-height:100vh}
+.about__intro.apanel{max-width:46rem;margin-inline:auto;padding:clamp(1.4rem,3.5vw,2.2rem);margin-bottom:1.6rem;width:calc(100% - 2.5rem)}
+html body main .stage.stage--bgfix{position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:0!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important}
+html:has(.about) .header--over{padding-top:1.2rem!important}
+@media (max-width:899px){.about{padding:6.2rem 0 15rem}}

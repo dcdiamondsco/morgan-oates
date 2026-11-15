@@ -15,7 +15,7 @@
   d.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
     var h = a.getAttribute('href');
-    if (/^(tel:|mailto:|https?:\/\/wa\.me)/.test(h) || /contact/.test(h) || h.charAt(0) === '#') return;
+    if (/^(tel:|mailto:|https?:\/\/wa\.me)/.test(h) || /contact|west-london-landscape-gardeners/.test(h) || h.charAt(0) === '#') return;
     e.preventDefault();
   });
 

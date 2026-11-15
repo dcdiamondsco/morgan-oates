@@ -28,7 +28,7 @@ const proj = Object.fromEntries(projects.map((p) => [p.slug, p]));
 let CUR = ''; // path of the page being rendered ('' = home)
 
 const rel = (to) => '../'.repeat(CUR.split('/').filter(Boolean).length) + to;
-const LOCAL_ONLY = new Set(['privacy', 'terms', 'contact']);
+const LOCAL_ONLY = new Set(['privacy', 'terms', 'contact', 'west-london-landscape-gardeners']);
 const href = (to) => (to && !LOCAL_ONLY.has(to) ? 'https://morganoates.co/' + to : LINKS === 'files' ? rel(to ? to + '/index.html' : 'index.html') : '/' + to);
 const asset = (to) => (LINKS === 'files' ? rel(to) : '/' + to);
 
@@ -59,7 +59,7 @@ const NAV = () => `
   <ul class="nav__list">
     <li><span class="nav__off">Gardens</span></li>
     <li><span class="nav__off">Services</span></li>
-    <li><span class="nav__off">About</span></li>
+    <li><a class="nav__about" href="${href('west-london-landscape-gardeners')}"${CUR === 'west-london-landscape-gardeners' ? ' aria-current="page"' : ''}>About</a></li>
     <li><span class="nav__off">Journal</span></li>
     <li><a class="nav__contact" href="${href('contact')}"${CUR === 'contact' ? ' aria-current="page"' : ''}>Contact</a></li>
   </ul>
@@ -340,13 +340,35 @@ projects.length = 0;
 for (const k of Object.keys(proj)) delete proj[k];
 
 // ABOUT
+function bgStage() {
+  return `<div class="stage stage--video stage--photo stage--bgfix" aria-hidden="true">
+  ${SLIDES_SHARED.map((s, i) => `<img class="stage__slide${s.f.includes('sunrise') ? ' stage__slide--sun' : ''}" style="--i:${i};--b:${s.b || 1}${s.pos ? ';object-position:' + s.pos : ''}" src="${asset('assets/photos/' + s.f)}" width="${s.w}" height="${s.h}" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'} alt="">`).join('\n  ')}
+  <div class="stage__veil"></div>
+</div>`;
+}
+CUR = 'west-london-landscape-gardeners';
 add('west-london-landscape-gardeners', layout({
-  title: 'About Morgan Oates and the team | Cheltenham, Cotswolds', path: 'west-london-landscape-gardeners', ogImage: team[0].image,
-  desc: 'Meet Daniel Morgan Oates, Director, Anna Pawlowska, Garden Designer, and the Morgan Oates team: garden design and landscaping from Cheltenham.',
-  body: `<section class="phead"><div class="wrap">${crumbs([['Home', ''], ['About', null]])}<p class="kicker">About</p><h1>A small studio that designs, builds and looks after gardens</h1><p class="lede">Morgan Oates is a landscape gardening and garden design company based in Cheltenham, working across the Cotswolds. It is a family team: Dan builds, Anna designs, and the two work side by side on every garden.</p></div></section>
-<div class="wrap team">${team.map((m, i) => `<article class="team__m ${i % 2 ? 'team__m--r' : ''}"><figure class="reveal">${m.local ? `<img src="${asset(m.local)}" width="${m.w}" height="${m.h}" alt="${esc(m.alt)}" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">` : pic(m.image, { alt: m.alt, sizes: '(min-width: 900px) 40vw, 100vw', eager: i === 0 })}</figure><div><p class="kicker">${esc(m.role)}</p><h2>${esc(m.name)}</h2>${para(m.bio)}</div></article>`).join('')}</div>
-<section class="wrap prose"><section class="prose__sec"><h2>The crew</h2><div><p>The people on site are friendly, experienced and professional. Site foremen oversee health and safety, keep sites tidy and keep noise down. Project management is about regular communication: if something comes up, you hear about it from us.</p></div></section>
-<section class="prose__sec"><h2>Design, build and aftercare</h2><div><p>We take on garden design, the construction of designs by others, and maintenance of established gardens, together or separately. <a href="${href(svc.overview.path)}">See the services</a>, or <a href="${href('contact')}">get in touch</a>.</p></div></section></section>${cta()}`
+  title: 'About Morgan Oates | Family garden designers and landscapers, Cheltenham and the Cotswolds', path: 'west-london-landscape-gardeners', dark: true, ogImage: team[0].image,
+  desc: 'Meet Daniel Morgan Oates, Director, and Anna Pawlowska, Garden Designer: a family team designing, building and maintaining gardens from Cheltenham across the Cotswolds.',
+  body: bgStage() + `
+<div class="about">
+ <section class="wrap about__in about__intro apanel" aria-labelledby="about-h">
+  <p class="about__k">About us</p>
+  <h1 id="about-h" class="about__h">A family team that designs, builds and looks after gardens</h1>
+  <p class="about__lede">Morgan Oates is a garden design and landscaping company based in Cheltenham, working across the Cotswolds. Dan builds, Anna designs, and the two work side by side on every garden.</p>
+ </section>
+ <div class="wrap about__in about__team">
+  ${team.map((m) => `<article class="apanel apanel--m" aria-labelledby="m-${esc(m.name.split(' ')[0].toLowerCase())}">
+   <figure class="apanel__ph"><img src="${asset(m.local)}" width="${m.w}" height="${m.h}" alt="${esc(m.alt)}" loading="lazy" decoding="async"></figure>
+   <div class="apanel__t"><p class="about__k">${esc(m.role)}</p><h2 id="m-${esc(m.name.split(' ')[0].toLowerCase())}" class="apanel__h">${esc(m.name)}</h2>${para(m.bio)}</div>
+  </article>`).join('')}
+ </div>
+ <div class="wrap about__in about__more">
+  <section class="apanel" aria-labelledby="crew-h"><h2 id="crew-h" class="apanel__h">The crew</h2><p>The people on site are friendly, experienced and professional. Site foremen oversee health and safety, keep sites tidy and keep noise down. Project management is about regular communication: if something comes up, you hear about it from us.</p></section>
+  <section class="apanel" aria-labelledby="dba-h"><h2 id="dba-h" class="apanel__h">Design, build and aftercare</h2><p>We take on garden design, the construction of designs by others, and maintenance of established gardens, together or separately.</p><p><a class="about__link" href="${href(svc.overview.path)}">See our services</a></p></section>
+ </div>
+ <div class="wrap about__in about__cta"><a class="about__btn" href="${href('contact')}">Discuss your garden</a></div>
+</div>`
 }));
 
 // JOURNAL
