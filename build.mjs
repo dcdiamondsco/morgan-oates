@@ -240,10 +240,10 @@ function wall() {
   const poster = fs.existsSync(path.join(ROOT, 'assets/video/hero-poster.jpg')) ? ` poster="${asset('assets/video/hero-poster.jpg')}"` : '';
   const words = `
   <div class="wrap stage__in">
-    <p class="stage__kicker">Cheltenham &amp; the Cotswolds</p>
-    <h1 id="hero-h" class="stage__h">Gardens,<br><em>considered.</em></h1>
-    <p class="stage__sub">Design · Build · Maintain</p>
-    <p class="stage__cta"><a class="btn" href="${href('projects')}">Explore our gardens</a><a class="stage__link" href="${href('contact')}">Discuss your garden</a></p>
+    <p class="stage__kicker">Garden design and landscaping · Cheltenham &amp; the Cotswolds</p>
+    <h1 id="hero-h" class="stage__h">Gardens that belong<br><em>in the landscape.</em></h1>
+    <p class="stage__sub">A family team. We design, build and maintain.</p>
+    <p class="stage__cta"><a class="btn" href="${href('projects')}">See our gardens</a><a class="stage__link" href="${href('contact')}">Discuss your garden</a></p>
   </div>`;
   const slides = [
     { f: 'cotswolds-1-900x600.jpg', w: 900, h: 600, alt: 'A Cotswold stone cottage with a brick path running between planted borders' },
