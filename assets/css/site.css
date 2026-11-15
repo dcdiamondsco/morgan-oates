@@ -923,3 +923,5 @@ html body .ba__h{display:flex;justify-content:space-between;align-items:baseline
 html body .ba__h{padding:0 1.5rem;gap:1rem;justify-content:center;align-items:flex-start}
 html body .ba__h .ba__l,html body .ba__h .ba__r{flex:1 1 0;min-width:0;text-align:center}
 }
+.ba__br{display:none}
+@media (max-width:700px){.ba__br{display:inline}}

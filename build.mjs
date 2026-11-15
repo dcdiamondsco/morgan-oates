@@ -374,11 +374,11 @@ add('west-london-landscape-gardeners', layout({
 // BEFORE AND AFTER
 CUR = 'before-and-after';
 const BA = [
-  { id: 'woodmancote', tb: 'Builders rubble', ta: 'Limestone courtyard', title: 'Builders rubble to Limestone courtyard', cap: 'A building site becomes a finished stone-paved courtyard.', w: 1200, h: 900,
+  { id: 'woodmancote', tb: 'Builders<br class="ba__br"> rubble', ta: 'Limestone courtyard', title: 'Builders rubble to Limestone courtyard', cap: 'A building site becomes a finished stone-paved courtyard.', w: 1200, h: 900,
     before: 'assets/photos/ba-woodmancote-before-1200x900', after: 'assets/photos/ba-woodmancote-after-1200x900',
     bAlt: 'Woodmancote before: a bare, rubble-strewn courtyard in front of stone buildings with boarded-up openings',
     aAlt: 'Woodmancote after: a finished paved courtyard in front of the stone buildings, with glazed doors and planting' },
-  { id: 'london', start: 80, tb: 'Rotting timber', ta: 'Barrel sauna sanctuary', title: 'Rotting timber to barrel sauna sanctuary', cap: 'A tired, shaded garden becomes a planted deck and seating area.', w: 960, h: 1200,
+  { id: 'london', start: 80, tb: 'Rotting<br class="ba__br"> timber', ta: 'Barrel sauna sanctuary', title: 'Rotting timber to barrel sauna sanctuary', cap: 'A tired, shaded garden becomes a planted deck and seating area.', w: 960, h: 1200,
     before: 'assets/photos/ba-london-before-960x1200', after: 'assets/photos/ba-london-after-960x1200',
     bAlt: 'London garden before: dark worn decking, a small shed and a barbecue under a bare, leaf-covered garden',
     aAlt: 'London garden after: new timber decking and paving, planted borders, garden chairs and a barrel sauna' },
@@ -400,7 +400,7 @@ add('before-and-after', layout({
     <span class="ba__bar" aria-hidden="true"><span class="ba__knob"></span></span>
     <input class="ba__range" type="range" min="0" max="100" value="${p.start || 90}" aria-label="Compare before and after: ${esc(p.title)}">
   </div>
-  <h2 id="ba-${p.id}" class="ba__h"><span class="ba__l">${esc(p.tb)}</span><span class="vh"> to </span><span class="ba__r">${esc(p.ta)}</span></h2>
+  <h2 id="ba-${p.id}" class="ba__h"><span class="ba__l">${p.tb.includes("<br") ? p.tb : esc(p.tb)}</span><span class="vh"> to </span><span class="ba__r">${esc(p.ta)}</span></h2>
 </section>`).join('')}</div>${cta()}`
 }));
 
