@@ -337,7 +337,7 @@ figcaption span a{color:inherit;text-decoration:none;border-bottom:1px solid cur
 .header--over~main .stage{min-height:100dvh}
 .stage{min-height:100dvh}
 .stage__in{padding-top:clamp(7rem,24vh,12rem)}
-.stage::after{content:"";position:absolute;left:0;right:0;bottom:0;height:24%;background:linear-gradient(180deg,rgba(245,237,221,0) 0%,var(--chalk) 100%);z-index:1;pointer-events:none}
+.stage::after{content:none}
 .stage .stage__cta{margin-bottom:clamp(2rem,8vh,4rem)}
 .footer--compact{background:var(--chalk);border-top:0}
 @media (max-width:899px){.stage{min-height:100dvh}.stage__in{padding-top:7rem}.js .header--over .nav.is-open{background:rgba(30,20,12,.9);padding:1rem 1.2rem .8rem;border-top:0;margin-top:.6rem}.header--over .nav__sub a{color:#fff}}
@@ -362,3 +362,4 @@ figcaption span a{color:inherit;text-decoration:none;border-bottom:1px solid cur
 .practice{background:transparent;color:var(--text)}
 .footer__addr{font-style:normal;margin-top:.6rem;opacity:.85}
 .footer__base p{max-width:60ch}
+.footer--compact{border-top:0}
