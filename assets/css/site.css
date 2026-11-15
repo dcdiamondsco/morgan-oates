@@ -385,3 +385,4 @@ html{background:#2a1c10}
 body{background:var(--chalk)}
 .header--over~footer.footer--compact{z-index:5}
 @media (max-width:899px){.stage__in{padding-inline:1.25rem;max-width:100%}.stage__sub{max-width:100%;overflow-wrap:anywhere;letter-spacing:.08em;font-size:.95rem}.footer--compact .footer__co{font-size:.68rem;line-height:1.35}.footer--compact{padding-bottom:1rem}}
+@media (max-width:899px){.footer--compact p{font-size:.78rem;line-height:1.45}}
