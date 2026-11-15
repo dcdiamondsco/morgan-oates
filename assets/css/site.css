@@ -707,3 +707,9 @@ html:has(.header--over),html:has(.header--over) body{background:#2a1c10}
 /* WhatsApp: clearly light green */
 .cdiscuss .cform__b2--wa{background:rgba(176,232,192,.82);border-color:#b8ecc5;color:#16301f;text-shadow:none}
 .cdiscuss .cform__b2--wa:hover,.cdiscuss .cform__b2--wa:focus-visible{background:rgba(196,242,208,.95);border-color:#d3f6dc;color:#0f2417}
+/* two panels centred as a pair, equal space either side */
+@media (min-width:900px){
+ .cgrid{justify-content:center;gap:clamp(1.5rem,4vw,3.5rem)}
+ .cform{flex:0 1 28rem;max-width:28rem}
+ .cdiscuss{flex:0 1 22rem;max-width:22rem;margin-left:0}
+}
