@@ -354,9 +354,8 @@ add('west-london-landscape-gardeners', layout({
   body: bgStage() + `
 <div class="about">
  <section class="wrap about__in about__intro apanel" aria-labelledby="about-h">
-  <p class="about__k">About us</p>
   <h1 id="about-h" class="about__h">We design, build and look after your garden with care</h1>
-  <p class="about__lede">Morgan Oates is a garden design and landscaping company based in Cheltenham, working across the Cotswolds. We design and build gardens, from dry stone walls, patios and driveways to ponds, water features, garden rooms, pergolas, outdoor kitchens, planting, lighting and irrigation, and we look after them with garden maintenance and lawn care. Dan builds, Ania designs, and the two work side by side on every garden.</p>
+  <p class="about__lede">Morgan Oates is a garden design and landscaping company based in Cheltenham, working across the Cotswolds. We design and build gardens, from dry stone walls, patios and driveways to ponds, water features, garden rooms, pergolas, outdoor kitchens, planting, lighting and irrigation, and we look after them with garden maintenance and lawn care.</p>
  </section>
  <div class="wrap about__in about__team">
   ${team.map((m) => `<article class="apanel apanel--m" aria-labelledby="m-${esc(m.name.split(' ')[0].toLowerCase())}">
