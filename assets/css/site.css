@@ -559,3 +559,8 @@ html:not(:has(.header--over)) body{background:radial-gradient(110% 38rem at 90% 
  .footer__row .accred li:nth-child(2) img{height:50px}
 }
 @media (max-width:899px){.footer__row .accred li:nth-child(2) img{height:50px}.footer__row .accred{flex:none}}
+/* mobile home: header scrolls with the page; extra top room offsets the small opening scroll */
+@media (max-width:899px){
+ .header--over{position:absolute;top:0;left:0;right:0;padding-top:calc(48px + env(safe-area-inset-top))}
+ .stage__in{padding-top:calc(5.6rem + 48px + env(safe-area-inset-top))}
+}
