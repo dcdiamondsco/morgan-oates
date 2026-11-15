@@ -124,3 +124,14 @@ if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.
     });
   }catch(_){}
 })();
+
+
+/* footer overlaps the closing photo: tell CSS how tall it is */
+(function(){
+  try{
+    var f=document.querySelector('footer.footer--compact');if(!f||!document.querySelector('.close'))return;
+    var set=function(){document.documentElement.style.setProperty('--fh',f.offsetHeight+'px');};
+    set();addEventListener('resize',set);addEventListener('load',set);
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(set);
+  }catch(_){}
+})();

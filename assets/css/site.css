@@ -908,3 +908,7 @@ html body .ba__item{margin:0}
 html body .ba__cmp{display:block}
 html body .wrap.ba{background:#fbf5e8;gap:2px!important;padding-bottom:2px!important}
 html body .wrap.ba{gap:8px!important;padding-bottom:8px!important}
+/* footer sits over the closing photo (pages that end with the enquiry band) */
+html:has(.close) footer.footer--compact{position:relative!important;z-index:3;background:transparent!important;border:0!important;margin-top:calc(-1 * var(--fh,10rem))!important;color:#fbf5e8!important;text-shadow:0 1px 10px rgba(30,18,8,.7)}
+html:has(.close) footer.footer--compact a,html:has(.close) footer.footer--compact p{color:#fbf5e8!important}
+html:has(.close) .close{padding-bottom:calc(clamp(3.5rem,8vw,7rem) + var(--fh,10rem))!important}
