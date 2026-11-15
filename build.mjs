@@ -365,7 +365,7 @@ add('west-london-landscape-gardeners', layout({
   </article>`).join('')}
  </div>
  <div class="wrap about__in about__more">
-  <section class="apanel" aria-labelledby="crew-h"><h2 id="crew-h" class="apanel__h">The crew</h2><p>The people on site are friendly, experienced and professional. Site foremen oversee health and safety, keep sites tidy and keep noise down. Project management is about regular communication: if something comes up, you hear about it from us.</p></section>
+  <section class="apanel" aria-labelledby="crew-h"><h2 id="crew-h" class="apanel__h">The crew</h2><p>The team on site are particularly friendly, experienced and professional. Dan oversees health and safety, keeps sites tidy and keeps noise down. Project management is about regular communication: if something comes up, you hear about it from us.</p></section>
  </div>
  <div class="wrap about__in about__cta"><a class="about__btn" href="${href('contact')}">Discuss your garden</a></div>
 </div>`
