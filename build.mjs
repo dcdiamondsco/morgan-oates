@@ -28,7 +28,7 @@ const proj = Object.fromEntries(projects.map((p) => [p.slug, p]));
 let CUR = ''; // path of the page being rendered ('' = home)
 
 const rel = (to) => '../'.repeat(CUR.split('/').filter(Boolean).length) + to;
-const LOCAL_ONLY = new Set(['privacy', 'terms', 'contact', 'west-london-landscape-gardeners']);
+const LOCAL_ONLY = new Set(['privacy', 'terms', 'contact', 'west-london-landscape-gardeners', 'before-and-after']);
 const href = (to) => (to && !LOCAL_ONLY.has(to) ? 'https://morganoates.co/' + to : LINKS === 'files' ? rel(to ? to + '/index.html' : 'index.html') : '/' + to);
 const asset = (to) => (LINKS === 'files' ? rel(to) : '/' + to);
 
@@ -123,6 +123,7 @@ ${true ? `<footer class="footer footer--compact"><div class="wrap footer__row"><
       <ul>
         <li><a href="${href('projects')}">Gardens</a></li>
         <li><a href="${href('west-london-landscape-gardeners')}">About and team</a></li>
+        <li><a href="${href('before-and-after')}">Before and after</a></li>
         <li><a href="${href('blog')}">Journal</a></li>
         <li><a href="${href('contact')}">Contact</a></li>
       </ul>
@@ -368,6 +369,36 @@ add('west-london-landscape-gardeners', layout({
  </div>
  <div class="wrap about__in about__cta"><a class="about__btn" href="${href('contact')}">Discuss your garden</a></div>
 </div>`
+}));
+
+// BEFORE AND AFTER
+CUR = 'before-and-after';
+const BA = [
+  { id: 'woodmancote', title: 'Woodmancote', cap: 'A building site becomes a finished stone-paved courtyard.', w: 1200, h: 900,
+    before: 'assets/photos/ba-woodmancote-before-1200x900', after: 'assets/photos/ba-woodmancote-after-1200x900',
+    bAlt: 'Woodmancote before: a bare, rubble-strewn courtyard in front of stone buildings with boarded-up openings',
+    aAlt: 'Woodmancote after: a finished paved courtyard in front of the stone buildings, with glazed doors and planting' },
+  { id: 'london', title: 'London garden', cap: 'A tired, shaded garden becomes a planted deck and seating area.', w: 960, h: 1200,
+    before: 'assets/photos/ba-london-before-960x1200', after: 'assets/photos/ba-london-after-960x1200',
+    bAlt: 'London garden before: dark worn decking, a small shed and a barbecue under a bare, leaf-covered garden',
+    aAlt: 'London garden after: new timber decking and paving, planted borders, garden chairs and a barrel-shaped cabin' }
+];
+const baImg = (src, w, h, alt, cls) => `<img class="${cls}" src="${asset(src + '.jpg')}" width="${w}" height="${h}" alt="${esc(alt)}" loading="lazy" decoding="async" draggable="false">`;
+add('before-and-after', layout({
+  title: 'Before and after | Garden transformations | Morgan Oates', path: 'before-and-after',
+  desc: 'Drag to compare before and after photographs of garden and landscaping projects by Morgan Oates, from Woodmancote in the Cotswolds to a London garden.',
+  body: `<section class="phead"><div class="wrap">${crumbs([['Home', ''], ['Before and after', null]])}<p class="kicker">Transformations</p><h1>Before and after</h1><p class="lede">Drag the handle to see how each space changed.</p></div></section>
+<div class="wrap ba">${BA.map((p) => `<section class="ba__item" aria-labelledby="ba-${p.id}">
+  <h2 id="ba-${p.id}" class="ba__h">${esc(p.title)}</h2>
+  <div class="ba__cmp" style="--r:${p.w}/${p.h}">
+    ${baImg(p.before, p.w, p.h, p.bAlt, 'ba__img ba__img--b')}
+    ${baImg(p.after, p.w, p.h, p.aAlt, 'ba__img ba__img--a')}
+    <span class="ba__tag ba__tag--b" aria-hidden="true">Before</span><span class="ba__tag ba__tag--a" aria-hidden="true">After</span>
+    <span class="ba__bar" aria-hidden="true"><span class="ba__knob"></span></span>
+    <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="Compare before and after: ${esc(p.title)}">
+  </div>
+  <p class="ba__cap">${esc(p.cap)}</p>
+</section>`).join('')}</div>${cta()}`
 }));
 
 // JOURNAL

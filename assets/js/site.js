@@ -15,7 +15,7 @@
   d.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
     var h = a.getAttribute('href');
-    if (/^(tel:|mailto:|https?:\/\/wa\.me)/.test(h) || /contact|west-london-landscape-gardeners/.test(h) || h.charAt(0) === '#') return;
+    if (/^(tel:|mailto:|https?:\/\/wa\.me)/.test(h) || /contact|west-london-landscape-gardeners|before-and-after/.test(h) || h.charAt(0) === '#') return;
     e.preventDefault();
   });
 
@@ -110,5 +110,17 @@ if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.
     if(!els.length||!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
     els.forEach(function(el){el.classList.add('rv');io.observe(el);});
+  }catch(_){}
+})();
+
+
+/* Before / after sliders */
+(function(){
+  try{
+    document.querySelectorAll('.ba__cmp').forEach(function(c){
+      var r=c.querySelector('.ba__range');if(!r)return;
+      var set=function(){c.style.setProperty('--p',r.value+'%');};
+      r.addEventListener('input',set);set();
+    });
   }catch(_){}
 })();
