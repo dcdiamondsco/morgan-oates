@@ -886,3 +886,5 @@ html body .about .about__in.about__more{margin-top:clamp(3rem,7vw,5rem)}
 .ba__range{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;-webkit-appearance:none;appearance:none}
 .ba__cmp:focus-within .ba__knob{outline:3px solid #8a5a2b;outline-offset:2px}
 @media (prefers-reduced-motion:no-preference){.ba__bar{transition:none}}
+html body .ba__tag{display:none!important}
+html body .ba__h{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
