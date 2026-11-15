@@ -449,3 +449,4 @@ body{background:var(--chalk)}
 .stage__kicker .kbr{display:none}
 @media (max-width:899px){.stage__kicker .kbr{display:inline}.stage__kicker{letter-spacing:.14em;font-size:.72rem;line-height:1.7}}
 @media (min-width:900px){.stage__slide--sun{top:-26vh}}
+@media (min-width:900px){.stage__slide--sun{left:-13.6vw;top:-35vh}}
