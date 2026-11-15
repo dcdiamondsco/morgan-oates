@@ -378,7 +378,7 @@ const BA = [
     before: 'assets/photos/ba-woodmancote-before-1200x900', after: 'assets/photos/ba-woodmancote-after-1200x900',
     bAlt: 'Woodmancote before: a bare, rubble-strewn courtyard in front of stone buildings with boarded-up openings',
     aAlt: 'Woodmancote after: a finished paved courtyard in front of the stone buildings, with glazed doors and planting' },
-  { id: 'london', title: 'Rotting timber to barrel sauna sanctuary', cap: 'A tired, shaded garden becomes a planted deck and seating area.', w: 960, h: 1200,
+  { id: 'london', start: 80, title: 'Rotting timber to barrel sauna sanctuary', cap: 'A tired, shaded garden becomes a planted deck and seating area.', w: 960, h: 1200,
     before: 'assets/photos/ba-london-before-960x1200', after: 'assets/photos/ba-london-after-960x1200',
     bAlt: 'London garden before: dark worn decking, a small shed and a barbecue under a bare, leaf-covered garden',
     aAlt: 'London garden after: new timber decking and paving, planted borders, garden chairs and a barrel sauna' },
@@ -393,12 +393,12 @@ add('before-and-after', layout({
   desc: 'Drag to compare before and after photographs of garden and landscaping projects by Morgan Oates, from Woodmancote in the Cotswolds to a London garden.',
   body: `<section class="phead phead--ba"><div class="wrap"><h1 class="vh">Before and after</h1><p class="lede">Drag the arrows to see how each space changed.</p></div></section>
 <div class="wrap ba">${BA.map((p) => `<section class="ba__item" aria-labelledby="ba-${p.id}">
-  <div class="ba__cmp" style="--r:${p.w}/${p.h}">
+  <div class="ba__cmp" style="--r:${p.w}/${p.h};--p:${p.start || 90}%">
     ${baImg(p.before, p.w, p.h, p.bAlt, 'ba__img ba__img--b')}
     ${baImg(p.after, p.w, p.h, p.aAlt, 'ba__img ba__img--a')}
     <span class="ba__tag ba__tag--b" aria-hidden="true">Before</span><span class="ba__tag ba__tag--a" aria-hidden="true">After</span>
     <span class="ba__bar" aria-hidden="true"><span class="ba__knob"></span></span>
-    <input class="ba__range" type="range" min="0" max="100" value="90" aria-label="Compare before and after: ${esc(p.title)}">
+    <input class="ba__range" type="range" min="0" max="100" value="${p.start || 90}" aria-label="Compare before and after: ${esc(p.title)}">
   </div>
   <h2 id="ba-${p.id}" class="ba__h">${esc(p.title)}</h2>
 </section>`).join('')}</div>${cta()}`
