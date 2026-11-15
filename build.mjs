@@ -374,18 +374,23 @@ add('contact', layout({
   desc: 'Contact Morgan Oates about garden design, landscaping or garden maintenance in Cheltenham and the Cotswolds: email info@morganoates.co or call 07827 321373.',
   body: photoStage(`
   <div class="wrap stage__in stage__in--form">
+   <div class="cgrid">
     <form class="cform" id="enquiry" method="post" novalidate ${site.formEndpoint ? `action="${esc(site.formEndpoint)}"` : ''} data-endpoint="${esc(site.formEndpoint)}" data-email="${site.email}" data-phone="${site.phoneDisplay}" aria-labelledby="contact-h">
       <h1 id="contact-h" class="cform__h">Discuss your garden</h1>
-      <div class="cfield"><label for="f-phone">Phone number</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" aria-describedby="e-phone"><p class="field__e" id="e-phone" hidden></p></div>
+      <div class="cfield"><label for="f-phone">Phone number <span aria-hidden="true">*</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required aria-describedby="e-phone"><p class="field__e" id="e-phone" hidden></p></div>
       <div class="cfield"><label for="f-email">Email <span aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="e-email"><p class="field__e" id="e-email" hidden></p></div>
-      <div class="cfield"><label for="f-msg">The work you would like <span aria-hidden="true">*</span></label><textarea id="f-msg" name="message" rows="4" required aria-describedby="e-msg"></textarea><p class="field__e" id="e-msg" hidden></p></div>
+      <div class="cfield"><label for="f-msg">What are you looking to have done? <span aria-hidden="true">*</span></label><textarea id="f-msg" name="message" rows="4" required aria-describedby="e-msg"></textarea><p class="field__e" id="e-msg" hidden></p></div>
       <div class="cfield vh" aria-hidden="true"><label for="f-web">Leave this empty</label><input id="f-web" name="website" type="text" tabindex="-1" autocomplete="off"></div>
       <button class="cform__btn" type="submit">Send enquiry</button>
       <div class="form__status cform__status" role="status" aria-live="polite" id="form-status" tabindex="-1"></div>
-      <p class="cform__or"><a class="cform__b2" href="${tel}" aria-label="Call us on ${site.phoneDisplay}">Call us</a><a class="cform__b2" href="${mail}" aria-label="Email us at ${site.email}">Email us</a></p>
       <p class="cform__alt">We use your details only to reply. <a href="${href('privacy')}">Privacy</a></p>
       <noscript><p class="cform__alt">This form needs JavaScript. Please email <a href="${mail}">${site.email}</a> or call <a href="${tel}">${site.phoneDisplay}</a>.</p></noscript>
     </form>
+    <aside class="cdiscuss" aria-labelledby="disc-h">
+      <h2 id="disc-h" class="cdiscuss__h">Would you like to discuss now?</h2>
+      <p class="cform__or"><a class="cform__b2" href="${tel}" aria-label="Call us on ${site.phoneDisplay}">Call us</a><a class="cform__b2" href="${mail}" aria-label="Email us at ${site.email}">Email us</a><a class="cform__b2 cform__b2--wa" href="https://wa.me/${site.phoneTel.replace(/\D/g, '')}" rel="noopener" aria-label="Message us on WhatsApp">WhatsApp</a></p>
+    </aside>
+   </div>
   </div>`, 'contact-h')
 }));
 

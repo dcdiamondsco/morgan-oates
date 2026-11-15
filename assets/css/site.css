@@ -663,3 +663,11 @@ html:not(:has(.header--over)) body{background:radial-gradient(110% 38rem at 90% 
 .cfield input:focus,.cfield textarea:focus{background:rgba(255,246,224,.2)}
 .cform,.cform__h,.cfield label,.cform__alt{text-shadow:0 1px 3px rgba(20,12,5,.55)}
 .cform__h{text-shadow:0 1px 4px rgba(20,12,5,.55),0 1px 16px rgba(20,12,5,.35)}
+/* contact: form left, "discuss now" panel right on desktop */
+.cgrid{display:flex;gap:clamp(1.2rem,3vw,2.2rem);align-items:flex-start}
+.cdiscuss{max-width:20rem;margin-left:auto;padding:clamp(1.2rem,3vw,1.9rem);background:linear-gradient(180deg,rgba(60,40,22,.38),rgba(44,28,15,.46));border:1px solid rgba(246,235,208,.35);border-radius:3px;color:#f0e2c4;text-shadow:0 1px 3px rgba(20,12,5,.55)}
+.cdiscuss__h{font:400 clamp(1.3rem,2.4vw,1.7rem)/1.2 "Playfair Display",Georgia,serif;color:#f6ebd0;margin:0 0 1.1rem}
+.cdiscuss .cform__or{flex-direction:column;margin:0}
+.cdiscuss .cform__b2{flex:none;width:100%}
+.cdiscuss .cform__b2--wa{background:rgba(236,199,154,.14)}
+@media (max-width:899px){.cgrid{flex-direction:column;align-items:stretch}.cdiscuss{max-width:none;margin-left:0;width:100%}}
