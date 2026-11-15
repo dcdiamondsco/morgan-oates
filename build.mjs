@@ -60,7 +60,7 @@ const NAV = () => `
     <li><span class="nav__off">Gardens</span></li>
     <li><span class="nav__off">Services</span></li>
     <li><a class="nav__about" href="${href('west-london-landscape-gardeners')}"${CUR === 'west-london-landscape-gardeners' ? ' aria-current="page"' : ''}>About</a></li>
-    <li><span class="nav__off">Journal</span></li>
+    ${CUR === '' ? '' : '<li><span class="nav__off">Journal</span></li>'}
     <li><a class="nav__contact" href="${href('contact')}"${CUR === 'contact' ? ' aria-current="page"' : ''}>Contact</a></li>
   </ul>
 </nav>`;
