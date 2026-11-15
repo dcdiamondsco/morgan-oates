@@ -752,3 +752,7 @@ html:has(.header--over),html:has(.header--over) body{background:#2a1c10}
 /* one cream for all small text, logos and buttons */
 .header--over .wordmark,.header--over .menu-btn,.header--over .nav a,.header--over .nav .nav__contact,.header--over .nav .nav__contact:hover{color:#f0e2c4}
 .cdiscuss .cform__b2--wa,.cdiscuss .cform__b2--wa:hover,.cdiscuss .cform__b2--wa:focus-visible{color:#f0e2c4}
+/* desktop: no dark halo around homepage text (mobile keeps its shadow for legibility) */
+@media (min-width:900px){
+ html:has(.stage__hl) .stage__in,html:has(.stage__hl) .stage__in *,html:has(.stage__hl) .header--over,html:has(.stage__hl) .header--over *,html:has(.stage__hl) footer.footer--compact,html:has(.stage__hl) footer.footer--compact *{text-shadow:none!important}
+}
