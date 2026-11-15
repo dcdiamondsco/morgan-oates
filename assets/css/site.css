@@ -374,3 +374,9 @@ figcaption span a{color:inherit;text-decoration:none;border-bottom:1px solid cur
 @media (max-width:899px){.footer--compact p span{display:block}.footer--compact .fc2{font-size:.85rem}.footer--compact p{font-size:.8rem}.footer--compact .footer__base{flex-direction:column;align-items:flex-start;gap:.4rem}}
 body{position:relative}
 .footer--compact{position:absolute;left:0;right:0;bottom:0;margin:0;padding:1.2rem 0 1.4rem}
+
+.footer--compact{position:static;color:var(--text);text-shadow:none;border-top:1px solid var(--rule);padding:1.4rem 0;margin:0}
+.footer--compact a,.footer--compact p{color:var(--text)}
+.footer--compact .footer__co{max-width:none;white-space:normal;font-size:.78rem;opacity:.8;margin-top:.5rem;padding-inline:var(--pad)}
+.header--over~footer.footer--compact{position:absolute;left:0;right:0;bottom:0;border-top:0;color:#fbf5e8;text-shadow:0 1px 8px rgba(30,18,8,.6);padding:1.2rem 0 1.4rem}
+.header--over~footer.footer--compact a,.header--over~footer.footer--compact p{color:#fbf5e8}
