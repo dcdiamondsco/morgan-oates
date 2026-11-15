@@ -623,3 +623,8 @@ html:not(:has(.header--over)) body{background:radial-gradient(110% 38rem at 90% 
 .cform__b2{flex:1 1 8rem;text-align:center;font:600 .85rem/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:#f0e2c4;border:1px solid rgba(240,226,196,.7);border-radius:2px;padding:.95rem 1rem;text-decoration:none}
 .cform__b2:hover,.cform__b2:focus-visible{background:rgba(240,226,196,.14);color:#f6ebd0;border-color:#f6ebd0}
 .cform .cform__alt{margin-top:.9rem}
+/* softer form fields */
+.cfield input,.cfield textarea{background:rgba(226,208,170,.82);color:#2a1c10;border:1px solid rgba(240,226,196,.25)}
+.cfield input:focus,.cfield textarea:focus{background:rgba(232,216,180,.92)}
+.cform__btn{background:#e3d0a4}
+.cform__btn:hover,.cform__btn:focus-visible{background:#ecdcb4}
