@@ -750,3 +750,9 @@ html:has(.header--over),html:has(.header--over) body{background:#2a1c10}
 .edge{position:fixed;left:0;right:0;height:3px;z-index:2;pointer-events:none;background:#8f7757;transition:background-color 1.2s linear}
 .edge--t{top:0}.edge--b{bottom:0}
 @media (min-width:900px){.edge{display:none}}
+/* mobile home: long page, opened in the middle. Everything visible is fixed, so scrolling moves nothing; Safari sees a scrollable page with the photo running to its edges */
+@media (max-width:899px){
+ html:has(.stage__hl),html:has(.stage__hl) body{height:auto;overflow-x:hidden;overflow-y:auto;overscroll-behavior-y:none}
+ html:has(.stage__hl) body{min-height:400lvh}
+ html:has(.stage__hl) .stage__in{padding-top:calc(10svh + 5.6rem + 8.5rem)}
+}
