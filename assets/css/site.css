@@ -521,3 +521,5 @@ body{background:linear-gradient(180deg,#f7f0e1 0%,#f1e6cf 55%,#ecdfc4 100%) fixe
 .header:not(.header--over)~footer.footer--compact{background:#2a1c10;color:#e9dcc2;border-top:0;padding:1.4rem 0}
 .header:not(.header--over)~footer.footer--compact a,.header:not(.header--over)~footer.footer--compact p{color:#e9dcc2}
 @media (max-width:899px){.header:not(.header--over)~footer.footer--compact{padding-bottom:calc(1rem + env(safe-area-inset-bottom))}}
+html{background:#ecdfc4}
+html:has(.header--over){background:#2a1c10}
