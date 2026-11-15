@@ -919,3 +919,7 @@ html body .ba__h{position:static;width:auto;height:auto;margin:1rem 0 0;padding:
 html body .about .apanel--m .apanel__ph img{border-radius:0;-webkit-mask-image:radial-gradient(ellipse 72% 72% at 50% 50%,#000 52%,rgba(0,0,0,.55) 74%,transparent 100%);mask-image:radial-gradient(ellipse 72% 72% at 50% 50%,#000 52%,rgba(0,0,0,.55) 74%,transparent 100%);opacity:.96}
 html body .ba__h{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;width:auto}
 .ba__r{text-align:right}
+@media (max-width:700px){
+html body .ba__h{padding:0 1.5rem;gap:1rem;justify-content:center;align-items:flex-start}
+html body .ba__h .ba__l,html body .ba__h .ba__r{flex:1 1 0;min-width:0;text-align:center}
+}
