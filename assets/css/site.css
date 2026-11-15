@@ -901,3 +901,5 @@ html body .ba__h,html body .ba__cap{padding-inline:clamp(1.25rem,4vw,3.5rem)}
  .ba__item:nth-of-type(2) .ba__img--b{object-position:50% 68%}
  .ba__item:nth-of-type(2) .ba__img--a{object-position:50% 42%}
 }
+.ba__item:nth-of-type(3) .ba__img--a{object-position:50% 20%}
+.ba__item:nth-of-type(3) .ba__img--b{object-position:50% 40%}

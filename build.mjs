@@ -381,7 +381,11 @@ const BA = [
   { id: 'london', title: 'London garden', cap: 'A tired, shaded garden becomes a planted deck and seating area.', w: 960, h: 1200,
     before: 'assets/photos/ba-london-before-960x1200', after: 'assets/photos/ba-london-after-960x1200',
     bAlt: 'London garden before: dark worn decking, a small shed and a barbecue under a bare, leaf-covered garden',
-    aAlt: 'London garden after: new timber decking and paving, planted borders, garden chairs and a barrel-shaped cabin' }
+    aAlt: 'London garden after: new timber decking and paving, planted borders, garden chairs and a barrel-shaped cabin' },
+  { id: 'lawn', title: 'New lawn', cap: '', w: 1200, h: 900,
+    before: 'assets/photos/ba-lawn-before-1200x900', after: 'assets/photos/ba-lawn-after-1200x900',
+    bAlt: 'Before: bare, churned-up muddy ground with puddles',
+    aAlt: 'After: a newly laid striped lawn with a greenhouse and a row of young trees behind' }
 ];
 const baImg = (src, w, h, alt, cls) => `<img class="${cls}" src="${asset(src + '.jpg')}" width="${w}" height="${h}" alt="${esc(alt)}" loading="lazy" decoding="async" draggable="false">`;
 add('before-and-after', layout({
