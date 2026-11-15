@@ -769,3 +769,10 @@ html:has(.header--over),html:has(.header--over) body{background:#2a1c10}
  html:has(.stage__hl) .stage__kicker,html:has(.stage__hl) .stage__sub,html:has(.stage__hl) .stage__link,html:has(.stage__hl) .header--over .wordmark,html:has(.stage__hl) .header--over .menu-btn,html:has(.stage__hl) .header--over .nav a,html:has(.stage__hl) .header--over .nav span,html:has(.stage__hl) footer.footer--compact,html:has(.stage__hl) footer.footer--compact *{text-shadow:0 0 1px rgba(30,18,8,.8),0 1px 3px rgba(30,18,8,.65)!important}
  html:has(.stage__hl) .header--over .wordmark~*,html:has(.stage__hl) .header--over .tagline{text-shadow:0 0 1px rgba(30,18,8,.8),0 1px 3px rgba(30,18,8,.6)!important}
 }
+
+/* mobile: each photo is toned to suit the text over it (pale skies darker), and text uses a soft light shadow instead of outlines */
+@media (max-width:899px){
+ .stage__slide{filter:brightness(var(--b,1))}
+ html:has(.stage__hl) .stage__kicker,html:has(.stage__hl) .stage__sub,html:has(.stage__hl) .stage__link,html:has(.stage__hl) .header--over .wordmark,html:has(.stage__hl) .header--over .menu-btn,html:has(.stage__hl) .header--over .nav a,html:has(.stage__hl) .header--over .nav span,html:has(.stage__hl) footer.footer--compact,html:has(.stage__hl) footer.footer--compact *,html:has(.stage__hl) .header--over .wordmark~*,html:has(.stage__hl) .header--over .tagline{text-shadow:0 1px 3px rgba(25,15,6,.38)!important}
+ html:has(.stage__hl) .stage__h,html:has(.stage__hl) .stage__h em{text-shadow:0 1px 4px rgba(25,15,6,.35)!important}
+}

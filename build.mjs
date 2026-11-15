@@ -246,13 +246,13 @@ function wall() {
     <p class="stage__cta"><a class="stage__link" href="${href('projects')}">See our gardens</a><a class="stage__link" href="${href('contact')}">Discuss your garden</a></p>
   </div>`;
   const slides = [
-    { f: 'wheat-sunrise-1600x900.jpg', w: 1600, h: 900, alt: 'Sunrise over a wheat field in warm golden light', pos: '50% 60%' },
-    { f: 'cotswolds-1-900x600.jpg', w: 900, h: 600, alt: 'A Cotswold stone cottage garden with a brick path running between planted borders' },
-    { f: 'wheat-field-1600x2133.jpg', w: 1600, h: 2133, alt: 'Ripe wheat in a field at golden hour', pos: '50% 37%' },
-    { f: 'wheat-sunny-1600x2240.jpg', w: 1600, h: 2240, alt: 'Wheat ears in warm afternoon sunshine', pos: '50% 62%' },
-    { f: 'cotswolds-2-900x600.jpg', w: 900, h: 600, alt: 'Stone steps beside a Cotswold stone wall, with a white lily in the planting' },
-    { f: 'wheat-cloudy-1600x2400.jpg', w: 1600, h: 2400, alt: 'A wheat field under a soft cloudy sky', pos: '50% 47%' },
-    { f: 'cotswolds-3-900x600.jpg', w: 900, h: 600, alt: 'Wide stone steps and a dry-stone retaining wall above a paved terrace', pos: '50% 50%' },
+    { f: 'wheat-sunrise-1600x900.jpg', b: 0.62, w: 1600, h: 900, alt: 'Sunrise over a wheat field in warm golden light', pos: '50% 60%' },
+    { f: 'cotswolds-1-900x600.jpg', b: 0.74, w: 900, h: 600, alt: 'A Cotswold stone cottage garden with a brick path running between planted borders' },
+    { f: 'wheat-field-1600x2133.jpg', b: 0.68, w: 1600, h: 2133, alt: 'Ripe wheat in a field at golden hour', pos: '50% 37%' },
+    { f: 'wheat-sunny-1600x2240.jpg', b: 0.72, w: 1600, h: 2240, alt: 'Wheat ears in warm afternoon sunshine', pos: '50% 62%' },
+    { f: 'cotswolds-2-900x600.jpg', b: 0.78, w: 900, h: 600, alt: 'Stone steps beside a Cotswold stone wall, with a white lily in the planting' },
+    { f: 'wheat-cloudy-1600x2400.jpg', b: 0.72, w: 1600, h: 2400, alt: 'A wheat field under a soft cloudy sky', pos: '50% 47%' },
+    { f: 'cotswolds-3-900x600.jpg', b: 1, w: 900, h: 600, alt: 'Wide stone steps and a dry-stone retaining wall above a paved terrace', pos: '50% 50%' },
   ];
   var SLIDES_SHARED = slides;
   const hasPhotos = fs.existsSync(path.join(ROOT, 'assets/photos/cotswolds-1-900x600.jpg'));
@@ -262,7 +262,7 @@ function wall() {
   <div class="stage__veil"></div>${words}
 </section>` : hasPhotos ? `
 <section class="stage stage--video stage--photo" aria-labelledby="hero-h">
-  ${slides.map((s, i) => `<img class="stage__slide${s.f.includes('sunrise') ? ' stage__slide--sun' : ''}" style="--i:${i}${s.pos ? ';object-position:' + s.pos : ''}" src="${asset('assets/photos/' + s.f)}" width="${s.w}" height="${s.h}" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'} alt="${esc(s.alt || '')}">`).join('\n  ')}
+  ${slides.map((s, i) => `<img class="stage__slide${s.f.includes('sunrise') ? ' stage__slide--sun' : ''}" style="--i:${i};--b:${s.b || 1}${s.pos ? ';object-position:' + s.pos : ''}" src="${asset('assets/photos/' + s.f)}" width="${s.w}" height="${s.h}" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'} alt="${esc(s.alt || '')}">`).join('\n  ')}
   <div class="stage__veil"></div>${words}
 </section>` : `
 <section class="stage" aria-labelledby="hero-h">${words}
@@ -281,7 +281,7 @@ function wall() {
 function photoStage(words, labelId) {
   return `
 <section class="stage stage--video stage--photo" aria-labelledby="${labelId}">
-  ${SLIDES_SHARED.map((s, i) => `<img class="stage__slide${s.f.includes('sunrise') ? ' stage__slide--sun' : ''}" style="--i:${i}${s.pos ? ';object-position:' + s.pos : ''}" src="${asset('assets/photos/' + s.f)}" width="${s.w}" height="${s.h}" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'} alt="${esc(s.alt || '')}">`).join('\n  ')}
+  ${SLIDES_SHARED.map((s, i) => `<img class="stage__slide${s.f.includes('sunrise') ? ' stage__slide--sun' : ''}" style="--i:${i};--b:${s.b || 1}${s.pos ? ';object-position:' + s.pos : ''}" src="${asset('assets/photos/' + s.f)}" width="${s.w}" height="${s.h}" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'} alt="${esc(s.alt || '')}">`).join('\n  ')}
   <div class="stage__veil"></div>${words}
 </section>`;
 }
