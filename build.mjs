@@ -109,7 +109,7 @@ ${ld ? `<script type="application/ld+json">${JSON.stringify(ld)}</script>` : ''}
 <main id="main" tabindex="-1">
 ${body}
 </main>
-${true ? `<footer class="footer footer--compact"><div class="wrap footer__row"><p class="fc-a">${esc(site.legalName)} · <span class="fc-long">Registered in England and Wales</span><span class="fc-short">Reg. England &amp; Wales</span> No. ${site.companyNumber} ·</p><p class="fc-b">${esc(site.address)} · <a href="${tel}">${site.phoneDisplay}</a></p><ul class="accred" aria-label="Accreditations and memberships"><li><img src="${asset('assets/photos/bali-accredited.png')}" width="308" height="160" alt="British Association of Landscape Industries (BALI), accredited" loading="lazy" decoding="async"></li><li><img src="${asset('assets/photos/apl.png')}" width="133" height="200" alt="Association of Professional Landscapers (APL)" loading="lazy" decoding="async"></li></ul><ul class="footer__legal"><li><a href="${href('privacy')}">Privacy</a></li><li><a href="${href('terms')}">Terms</a></li></ul></div></footer>` : `<footer class="footer">
+${true ? `<footer class="footer footer--compact"><div class="wrap footer__row"><p class="fc-a">${esc(site.legalName)} · <span class="fc-long">Registered in England and Wales</span><span class="fc-short">Reg. England &amp; Wales</span> No. ${site.companyNumber} ·</p><p class="fc-b">${esc(site.address)} · <a href="${tel}">${site.phoneDisplay}</a></p><ul class="accred" aria-label="Accreditations and memberships"><li><img src="${asset('assets/photos/bali-accredited.png') + '?v=' + BUILD_V}" width="308" height="160" alt="British Association of Landscape Industries (BALI), accredited" loading="lazy" decoding="async"></li><li><img src="${asset('assets/photos/apl.png') + '?v=' + BUILD_V}" width="133" height="200" alt="Association of Professional Landscapers (APL)" loading="lazy" decoding="async"></li></ul><ul class="footer__legal"><li><a href="${href('privacy')}">Privacy</a></li><li><a href="${href('terms')}">Terms</a></li></ul></div></footer>` : `<footer class="footer">
   <div class="wrap footer__grid">
     <div class="footer__brand">
       <img class="footer__logo" src="${asset('assets/photos/logo-659x239.png')}"${logoDims} height="40" alt="Morgan Oates" loading="lazy">
@@ -243,8 +243,7 @@ function wall() {
   const poster = fs.existsSync(path.join(ROOT, 'assets/video/hero-poster.jpg')) ? ` poster="${asset('assets/video/hero-poster.jpg')}"` : '';
   const words = `
   <div class="wrap stage__in">
-    <p class="stage__kicker">Multi-award-winning garden designer<br class="kbr"> &amp; landscaper</p>
-    <h1 id="hero-h" class="stage__h">Gardens that belong<br><em>in the landscape.</em></h1>
+    <h1 id="hero-h" class="stage__h"><span class="stage__kicker">Multi-award-winning garden designer<br class="kbr"> &amp; landscaper<br class="kbr"> <span class="kdot" aria-hidden="true">&middot; </span>in Cheltenham &amp; the Cotswolds</span><span class="stage__hl">Gardens that belong<br><em>in the landscape.</em></span></h1>
     <p class="stage__sub">A family team in Cheltenham. We design, build and maintain gardens across the Cotswolds.</p>
     <p class="stage__cta"><a class="stage__link" href="${href('projects')}">See our gardens</a><a class="stage__link" href="${href('contact')}">Discuss your garden</a></p>
   </div>`;

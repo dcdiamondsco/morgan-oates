@@ -568,3 +568,11 @@ html:not(:has(.header--over)) body{background:radial-gradient(110% 38rem at 90% 
  .header--over{padding-top:calc(96px + env(safe-area-inset-top))}
  .stage__in{padding-top:calc(5.6rem + 96px + env(safe-area-inset-top))}
 }
+/* kicker now lives inside the h1 for search */
+.stage__h .stage__kicker{display:block;font-family:var(--sans);font-style:normal;font-weight:600;font-size:.74rem;line-height:1.7;letter-spacing:.22em;text-transform:uppercase;margin:0 0 1.6rem}
+.stage__h .stage__kicker .kdot{display:none}
+@media (min-width:900px){.stage__h .stage__kicker .kdot{display:inline}.stage__h .stage__kicker .kbr{display:none}}
+@media (max-width:899px){.stage__h .stage__kicker{font-size:.72rem;letter-spacing:.14em;margin-bottom:1.1rem}}
+.stage__hl{display:block}
+.stage__h .stage__kicker,.stage__sub{text-shadow:0 1px 3px rgba(30,18,8,.55),0 1px 14px rgba(30,18,8,.5)}
+.stage__h .stage__kicker{color:#f0e2c4}
