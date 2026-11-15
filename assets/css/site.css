@@ -687,3 +687,7 @@ html:has(.header--over),html:has(.header--over) body{background:#2a1c10}
 .cdiscuss{text-align:center}
 .cdiscuss__h{text-align:center}
 .cdiscuss .cform__or{align-items:stretch}
+/* upload: one button box, "Optional" tucked underneath inside it */
+.cfield .cfile__b{flex-direction:column;gap:.3rem;height:auto;min-height:3.6rem;padding:.7rem 1.4rem;max-width:100%}
+.cfile__t{font:600 .8rem/1 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+.cfile__b .cfile__list{margin:0;font:400 .75rem/1.2 var(--sans);letter-spacing:.04em;text-transform:none;color:rgba(236,199,154,.8);max-width:16rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
