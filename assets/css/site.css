@@ -671,3 +671,9 @@ html:not(:has(.header--over)) body{background:radial-gradient(110% 38rem at 90% 
 .cdiscuss .cform__b2{flex:none;width:100%}
 .cdiscuss .cform__b2--wa{background:rgba(236,199,154,.14)}
 @media (max-width:899px){.cgrid{flex-direction:column;align-items:stretch}.cdiscuss{max-width:none;margin-left:0;width:100%}}
+.cfile{margin-bottom:1rem}
+.cfile__in{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;clip:rect(0 0 0 0)}
+.cfile__b{display:inline-block;flex:none;cursor:pointer}
+.cfile__in:focus-visible+.cfile__b{outline:2px solid #ecc79a;outline-offset:2px}
+.cfile__list{margin:.5rem 0 0;font-size:.82rem;line-height:1.45;color:#d9c49a;overflow-wrap:anywhere}
+.cfield .cfile__b{display:inline-block;width:auto;margin:0;padding:.8rem 1.4rem;color:#ecc79a;font-size:.8rem}

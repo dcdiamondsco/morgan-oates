@@ -47,6 +47,14 @@
       err.hidden = !m; err.textContent = m; inp.setAttribute('aria-invalid', m ? 'true' : 'false'); return m;
     };
     Object.keys(rules).forEach(function (k) { form.elements[k].addEventListener('blur', function () { check(k); }); });
+    var fi = d.getElementById('f-img'), fl = d.getElementById('h-img'), fe = d.getElementById('e-img'), fdef = fl ? fl.textContent : '';
+    if (fi) fi.addEventListener('change', function () {
+      var fs = Array.prototype.slice.call(fi.files), bad = '';
+      if (fs.length > 5) bad = 'Please choose up to 5 images.';
+      else if (fs.some(function (f) { return f.size > 10 * 1024 * 1024; })) bad = 'Each image must be under 10 MB.';
+      if (bad) { fi.value = ''; fe.hidden = false; fe.textContent = bad; fl.textContent = fdef; return; }
+      fe.hidden = true; fl.textContent = fs.length ? fs.map(function (f) { return f.name; }).join(', ') : fdef;
+    });
     var say = function (cls, html) { status.innerHTML = '<div class="msg ' + cls + '">' + html + '</div>'; status.focus(); };
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -58,7 +66,7 @@
       if (!ep) {
         var body = 'Phone: ' + fd.get('phone') + '\nEmail: ' + fd.get('email') + '\n\n' + fd.get('message');
         var mt = 'mailto:' + email + '?subject=' + encodeURIComponent('Garden enquiry') + '&body=' + encodeURIComponent(body);
-        say('', '<p><strong>Nothing has been sent yet.</strong> This form isn’t connected to a sending service on this version of the website.</p><p><a href="' + mt + '">Open your email app with this message ready to send</a>, or email <a href="mailto:' + email + '">' + email + '</a> or call ' + phone + '.</p>');
+        say('', '<p><strong>Nothing has been sent yet.</strong> This form isn’t connected to a sending service on this version of the website.</p><p><a href="' + mt + '">Open your email app with this message ready to send</a>, or email <a href="mailto:' + email + '">' + email + '</a> or call ' + phone + '.</p>' + (fi && fi.files.length ? '<p>Photos can’t be attached from here, so please attach them to your email.</p>' : ''));
         return;
       }
       var sb = form.querySelector('button[type=submit]'); sb.disabled = true; sb.textContent = 'Sending…';
