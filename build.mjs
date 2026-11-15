@@ -365,7 +365,6 @@ add('west-london-landscape-gardeners', layout({
  </div>
  <div class="wrap about__in about__more">
   <section class="apanel" aria-labelledby="crew-h"><h2 id="crew-h" class="apanel__h">The crew</h2><p>The people on site are friendly, experienced and professional. Site foremen oversee health and safety, keep sites tidy and keep noise down. Project management is about regular communication: if something comes up, you hear about it from us.</p></section>
-  <section class="apanel" aria-labelledby="dba-h"><h2 id="dba-h" class="apanel__h">Design, build and aftercare</h2><p>We take on garden design, the construction of designs by others, and maintenance of established gardens, together or separately.</p><p><a class="about__link" href="${href(svc.overview.path)}">See our services</a></p></section>
  </div>
  <div class="wrap about__in about__cta"><a class="about__btn" href="${href('contact')}">Discuss your garden</a></div>
 </div>`

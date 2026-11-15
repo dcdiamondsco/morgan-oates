@@ -862,3 +862,4 @@ html body .about .about__intro .about__k{font-size:clamp(1rem,1.6vw,1.3rem)!impo
  html:has(.stage__hl) .stage__in{padding-top:clamp(5.5rem,17vh,12rem)!important}
 }
 @media (min-width:900px){html body .about .about__team .apanel--m:nth-child(n){align-items:center}}
+@media (min-width:900px){html body .about .about__in.about__more{grid-template-columns:1fr}html body .about .about__more .apanel{max-width:46rem}}
