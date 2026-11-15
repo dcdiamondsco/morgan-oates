@@ -583,3 +583,5 @@ html:not(:has(.header--over)) body{background:radial-gradient(110% 38rem at 90% 
 .stage__link,.stage .stage__link{color:#f0e2c4;border-bottom-color:rgba(240,226,196,.8)}
 .header--over~footer.footer--compact,.header--over~footer.footer--compact a,.header--over~footer.footer--compact p{color:#f0e2c4}
 @media (max-width:899px){.header--over .nav__sub a{color:#f0e2c4}}
+.stage__h,.stage--video .stage__h,.stage__hl{color:#f6ebd0}
+.stage__h em{color:#ecc79a}
