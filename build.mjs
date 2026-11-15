@@ -379,7 +379,6 @@ add('contact', layout({
   <div class="wrap stage__in stage__in--form">
     <form class="cform" id="enquiry" method="post" novalidate ${site.formEndpoint ? `action="${esc(site.formEndpoint)}"` : ''} data-endpoint="${esc(site.formEndpoint)}" data-email="${site.email}" data-phone="${site.phoneDisplay}" aria-labelledby="contact-h">
       <h1 id="contact-h" class="cform__h">Discuss your garden</h1>
-      <p class="cform__lede">Tell us what you would like done. We design, build and maintain gardens across the Cotswolds.</p>
       <div class="cfield"><label for="f-phone">Phone number <span aria-hidden="true">*</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required aria-describedby="e-phone"><p class="field__e" id="e-phone" hidden></p></div>
       <div class="cfield"><label for="f-email">Email <span aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="e-email"><p class="field__e" id="e-email" hidden></p></div>
       <div class="cfield"><label for="f-msg">The work you would like <span aria-hidden="true">*</span></label><textarea id="f-msg" name="message" rows="4" required aria-describedby="e-msg"></textarea><p class="field__e" id="e-msg" hidden></p></div>

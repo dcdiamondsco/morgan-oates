@@ -618,3 +618,4 @@ html:not(:has(.header--over)) body{background:radial-gradient(110% 38rem at 90% 
 @media (max-width:899px){.cform{max-width:none}.stage__in--form{padding-bottom:9rem}}
 /* sunrise slide must always reach the bottom of the screen */
 @media (min-width:900px){.stage__slide--sun{min-height:calc(100% + 35vh)}}
+.cform__h{margin-bottom:1.1rem}
