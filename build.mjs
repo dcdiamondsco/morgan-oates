@@ -100,7 +100,7 @@ ${ld ? `<script type="application/ld+json">${JSON.stringify(ld)}</script>` : ''}
 <a class="skip" href="#main">Skip to content</a>
 <header class="header${dark ? ' header--over' : ''}">
   <div class="header__in">
-    <a class="logo${dark ? ' logo--text' : ''}" href="${href('')}" aria-label="Morgan Oates, home">${dark ? '<span class="wordmark">Morgan Oates<small>Garden design &amp; landscape</small></span>' : `<img src="${logoSrc}"${logoDims} height="48" alt="Morgan Oates">`}</a>
+    <a class="logo logo--text" href="${href('')}" aria-label="Morgan Oates, home"><span class="wordmark">Morgan Oates<small>Garden design &amp; landscape</small></span></a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span class="menu-btn__t">Menu</span><span class="menu-btn__i" aria-hidden="true"></span></button>
     ${NAV()}
   </div>
@@ -111,7 +111,7 @@ ${body}
 ${true ? `<footer class="footer footer--compact"><div class="wrap footer__row"><p class="fc-a">${esc(site.legalName)} · <span class="fc-long">Registered in England and Wales</span><span class="fc-short">Reg. England &amp; Wales</span> No. ${site.companyNumber} ·</p><p class="fc-b">${esc(site.address)} · <a href="${tel}">${site.phoneDisplay}</a></p><ul class="footer__legal"><li><a href="${href('privacy')}">Privacy</a></li><li><a href="${href('terms')}">Terms</a></li></ul></div></footer>` : `<footer class="footer">
   <div class="wrap footer__grid">
     <div class="footer__brand">
-      <img class="footer__logo" src="${logoSrc}"${logoDims} height="40" alt="Morgan Oates" loading="lazy">
+      <img class="footer__logo" src="${asset('assets/photos/logo-659x239.png')}"${logoDims} height="40" alt="Morgan Oates" loading="lazy">
       <p>Garden design, landscaping and maintenance across the Cotswolds.</p>
       <address class="footer__addr">${esc(site.address)}</address>
     </div>

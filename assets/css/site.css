@@ -505,3 +505,6 @@ html:has(.header--over){background:#2a1c10}
 .stage__h{font-family:"Playfair Display","Cormorant Garamond",Georgia,serif;font-weight:400;letter-spacing:-.01em;font-size:clamp(2.3rem,5.2vw,4.5rem);line-height:1.08}
 .stage__h em{font-family:inherit;font-style:italic;letter-spacing:inherit;font-size:1em}
 @media (max-width:899px){.stage__h{font-size:clamp(2rem,9vw,2.7rem)}}
+/* wordmark on light inner pages */
+.header:not(.header--over) .wordmark{color:#2f2214;font-size:1.6rem}
+.header:not(.header--over) .wordmark small{color:#4f7a2c;font-weight:700}
