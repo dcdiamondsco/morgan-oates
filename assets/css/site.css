@@ -892,3 +892,12 @@ html body .stage__in.stage__in--form{padding-top:6.5rem!important}
 @media (max-width:899px){html body .stage__in.stage__in--form{padding-top:calc(6.2rem + env(safe-area-inset-top))!important}}
 @media (max-width:899px){html:has(.stage__in--form) .header--over{padding-top:calc(1.2rem + env(safe-area-inset-top))!important}}
 .vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+html body .wrap.ba{max-width:none;width:100%;padding-inline:0}
+html body .ba__cmp{max-width:none;width:100%;box-shadow:none}
+html body .ba__h,html body .ba__cap{padding-inline:clamp(1.25rem,4vw,3.5rem)}
+@media (min-width:900px){html body .ba__cmp{aspect-ratio:16/10;max-height:92vh}.ba__img{object-position:50% 60%}}
+@media (min-width:900px){
+ html body .ba__item:nth-of-type(2) .ba__cmp{aspect-ratio:4/3;max-height:94vh}
+ .ba__item:nth-of-type(2) .ba__img--b{object-position:50% 68%}
+ .ba__item:nth-of-type(2) .ba__img--a{object-position:50% 42%}
+}
