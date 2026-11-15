@@ -746,10 +746,6 @@ html:has(.header--over),html:has(.header--over) body{background:#2a1c10}
 @media (max-width:899px){html:has(.stage__hl){background:#8f7757}html:has(.stage__hl) body{background:transparent}}
 
 
-/* edge strips: thin fixed bands whose colour follows the top and bottom of the photo showing (Safari tints its bars from fixed edge elements) */
-.edge{position:fixed;left:0;right:0;height:3px;z-index:2;pointer-events:none;background:#8f7757;transition:background-color 1.2s linear}
-.edge--t{top:0}.edge--b{bottom:0}
-@media (min-width:900px){.edge{display:none}}
 /* mobile home: long page, opened in the middle. Everything visible is fixed, so scrolling moves nothing; Safari sees a scrollable page with the photo running to its edges */
 @media (max-width:899px){
  html:has(.stage__hl),html:has(.stage__hl) body{height:auto;overflow-x:hidden;overflow-y:auto;overscroll-behavior-y:none}
