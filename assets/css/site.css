@@ -360,3 +360,5 @@ figcaption span a{color:inherit;text-decoration:none;border-bottom:1px solid cur
 .footer{background:transparent;border-top:1px solid var(--rule)}
 .people{background:transparent;border-top:1px solid var(--rule)}
 .practice{background:transparent;color:var(--text)}
+.footer__addr{font-style:normal;margin-top:.6rem;opacity:.85}
+.footer__base p{max-width:60ch}

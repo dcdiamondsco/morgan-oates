@@ -109,11 +109,12 @@ ${ld ? `<script type="application/ld+json">${JSON.stringify(ld)}</script>` : ''}
 <main id="main" tabindex="-1">
 ${body}
 </main>
-${compact ? `<footer class="footer footer--compact"><div class="wrap footer__base footer__base--only"><p>© ${YEAR} ${esc(site.legalName)} · <a href="${mail}">${site.email}</a> · <a href="${tel}">${site.phoneDisplay}</a></p><ul class="footer__legal"><li><a href="${href('privacy')}">Privacy</a></li><li><a href="${href('terms')}">Terms</a></li></ul></div></footer>` : `<footer class="footer">
+${compact ? `<footer class="footer footer--compact"><div class="wrap footer__base footer__base--only"><p>${esc(site.name)} · ${esc(site.address)} · <a href="${mail}">${site.email}</a> · <a href="${tel}">${site.phoneDisplay}</a></p><ul class="footer__legal"><li><a href="${href('privacy')}">Privacy</a></li><li><a href="${href('terms')}">Terms</a></li></ul></div></footer>` : `<footer class="footer">
   <div class="wrap footer__grid">
     <div class="footer__brand">
       <img class="footer__logo" src="${logoSrc}"${logoDims} height="40" alt="Morgan Oates" loading="lazy">
-      <p>Garden design, landscaping and maintenance from Chiswick, West London.</p>
+      <p>Garden design, landscaping and maintenance across the Cotswolds.</p>
+      <address class="footer__addr">${esc(site.address)}</address>
     </div>
     <div>
       <h2 class="footer__h">Services</h2>
@@ -138,7 +139,7 @@ ${compact ? `<footer class="footer footer--compact"><div class="wrap footer__bas
     </div>
   </div>
   <div class="wrap footer__base">
-    <p>© ${YEAR} ${esc(site.legalName)}</p>
+    <p>© ${YEAR} ${esc(site.legalName)} · Registered in England and Wales No. ${site.companyNumber} · Registered office: ${esc(site.registeredOffice)}</p>
     <ul class="footer__legal"><li><a href="${href('privacy')}">Privacy</a></li><li><a href="${href('terms')}">Terms</a></li></ul>
   </div>
 </footer>`}
@@ -349,7 +350,7 @@ ${relatedBlock([p.related])}${cta()}`
 // ABOUT
 add('west-london-landscape-gardeners', layout({
   title: 'About Morgan Oates and the team | Cheltenham, Cotswolds', path: 'west-london-landscape-gardeners', ogImage: team[0].image,
-  desc: 'Meet Daniel Morgan Oates, Director, Anna Pawlowska, Garden Designer, and the Morgan Oates team: garden design and landscaping from Chiswick.',
+  desc: 'Meet Daniel Morgan Oates, Director, Anna Pawlowska, Garden Designer, and the Morgan Oates team: garden design and landscaping from Cheltenham.',
   body: `<section class="phead"><div class="wrap">${crumbs([['Home', ''], ['About', null]])}<p class="kicker">About</p><h1>A small studio that designs, builds and looks after gardens</h1><p class="lede">Morgan Oates is a landscape gardening and garden design company based in Cheltenham, working across the Cotswolds. It is a family team: Dan builds, Anna designs, and the two work side by side on every garden.</p></div></section>
 <div class="wrap team">${team.map((m, i) => `<article class="team__m ${i % 2 ? 'team__m--r' : ''}"><figure class="reveal">${m.local ? `<img src="${asset(m.local)}" width="${m.w}" height="${m.h}" alt="${esc(m.alt)}" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">` : pic(m.image, { alt: m.alt, sizes: '(min-width: 900px) 40vw, 100vw', eager: i === 0 })}</figure><div><p class="kicker">${esc(m.role)}</p><h2>${esc(m.name)}</h2>${para(m.bio)}</div></article>`).join('')}</div>
 <section class="wrap prose"><section class="prose__sec"><h2>The crew</h2><div><p>The people on site are friendly, experienced and professional. Site foremen oversee health and safety, keep sites tidy and keep noise down. Project management is about regular communication: if something comes up, you hear about it from us.</p></div></section>
@@ -382,7 +383,7 @@ add('contact', layout({
   <div class="contact__side">
     <h2>Direct</h2>
     <p><a class="contact__big" href="${mail}">${site.email}</a><br><a class="contact__big" href="${tel}">${site.phoneDisplay}</a></p>
-    <p>Based in Chiswick, West London.</p>
+    <p>Based in Cheltenham, Gloucestershire.</p>
     <p class="note">Messages from the form go to the same inbox as email. We use what you send only to reply to your enquiry. <a href="${href('privacy')}">Privacy</a></p>
   </div>
   <form class="form" id="enquiry" method="post" novalidate ${site.formEndpoint ? `action="${esc(site.formEndpoint)}"` : ''} data-endpoint="${esc(site.formEndpoint)}" data-email="${site.email}" data-phone="${site.phoneDisplay}" aria-labelledby="form-h">
