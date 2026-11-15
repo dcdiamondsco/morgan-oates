@@ -619,3 +619,7 @@ html:not(:has(.header--over)) body{background:radial-gradient(110% 38rem at 90% 
 /* sunrise slide must always reach the bottom of the screen */
 @media (min-width:900px){.stage__slide--sun{min-height:calc(100% + 35vh)}}
 .cform__h{margin-bottom:1.1rem}
+.cform__or{display:flex;gap:.8rem;margin:1.2rem 0 0;flex-wrap:wrap}
+.cform__b2{flex:1 1 8rem;text-align:center;font:600 .85rem/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:#f0e2c4;border:1px solid rgba(240,226,196,.7);border-radius:2px;padding:.95rem 1rem;text-decoration:none}
+.cform__b2:hover,.cform__b2:focus-visible{background:rgba(240,226,196,.14);color:#f6ebd0;border-color:#f6ebd0}
+.cform .cform__alt{margin-top:.9rem}

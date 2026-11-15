@@ -385,7 +385,8 @@ add('contact', layout({
       <div class="cfield vh" aria-hidden="true"><label for="f-web">Leave this empty</label><input id="f-web" name="website" type="text" tabindex="-1" autocomplete="off"></div>
       <button class="cform__btn" type="submit">Send enquiry</button>
       <div class="form__status cform__status" role="status" aria-live="polite" id="form-status" tabindex="-1"></div>
-      <p class="cform__alt">Or call <a href="${tel}">${site.phoneDisplay}</a> or email <a href="${mail}">${site.email}</a>. We use your details only to reply. <a href="${href('privacy')}">Privacy</a></p>
+      <p class="cform__or"><a class="cform__b2" href="${tel}" aria-label="Call us on ${site.phoneDisplay}">Call us</a><a class="cform__b2" href="${mail}" aria-label="Email us at ${site.email}">Email us</a></p>
+      <p class="cform__alt">We use your details only to reply. <a href="${href('privacy')}">Privacy</a></p>
       <noscript><p class="cform__alt">This form needs JavaScript. Please email <a href="${mail}">${site.email}</a> or call <a href="${tel}">${site.phoneDisplay}</a>.</p></noscript>
     </form>
   </div>`, 'contact-h')
