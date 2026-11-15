@@ -21,7 +21,7 @@ jobs:
         with: { node-version: 22 }
       - name: Download photographs from the existing site
         run: node scripts/fetch-assets.mjs
-      - name: Build (preview: noindex, relative links)
+      - name: "Build (preview, noindex, relative links)"
         run: LINKS=files node build.mjs
       - uses: actions/upload-pages-artifact@v3
         with: { path: dist }
