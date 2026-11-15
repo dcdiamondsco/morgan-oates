@@ -550,3 +550,12 @@ html:not(:has(.header--over)) body{background:radial-gradient(110% 38rem at 90% 
  .footer__row .accred{order:-1;width:100%;justify-content:center;margin-bottom:.7rem;gap:1.6rem}
  .footer__row .accred img{height:40px}.footer__row .accred li:nth-child(2) img{height:50px}
 }
+/* logos centred evenly in the gap between phone and Privacy (desktop) */
+@media (min-width:1101px){
+ .footer--compact .footer__row{align-items:center}
+ .footer__row .accred{flex:1 1 auto;justify-content:center;gap:2rem}
+ .footer--compact .footer__legal{margin-left:0}
+ .footer__row .accred img{height:36px}
+ .footer__row .accred li:nth-child(2) img{height:50px}
+}
+@media (max-width:899px){.footer__row .accred li:nth-child(2) img{height:50px}.footer__row .accred{flex:none}}
