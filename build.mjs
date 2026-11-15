@@ -241,7 +241,7 @@ function wall() {
   const poster = fs.existsSync(path.join(ROOT, 'assets/video/hero-poster.jpg')) ? ` poster="${asset('assets/video/hero-poster.jpg')}"` : '';
   const words = `
   <div class="wrap stage__in">
-    <p class="stage__kicker">Chiswick, West London</p>
+    <p class="stage__kicker">Cheltenham &amp; the Cotswolds</p>
     <h1 id="hero-h" class="stage__h">Gardens,<br><em>considered.</em></h1>
     <p class="stage__sub">Design · Build · Maintain</p>
     <p class="stage__cta"><a class="btn" href="${href('projects')}">Explore our gardens</a><a class="stage__link" href="${href('contact')}">Discuss your garden</a></p>
@@ -262,10 +262,10 @@ function wall() {
   <svg class="stage__wall" viewBox="0 0 1600 236" preserveAspectRatio="xMaxYMax slice" aria-hidden="true" focusable="false">${wall()}</svg>
 </section>`;
   add('', layout({
-    title: 'Garden designers and landscapers in London | Morgan Oates',
-    desc: 'Morgan Oates designs, builds and maintains gardens from Chiswick, West London, across West, Central and South London: town gardens, rooftops and country gardens.',
+    title: 'Garden designers and landscapers in the Cotswolds | Morgan Oates',
+    desc: 'Morgan Oates is a family team of garden designers and landscapers in Cheltenham, designing and building gardens across the Cotswolds.',
     path: '', body, ogImage: null, compact: true,
-    ld: { '@context': 'https://schema.org', '@type': 'Organization', name: site.legalName, url: site.canonicalOrigin, logo: `${site.canonicalOrigin}/images/logo-web.png`, email: site.email, telephone: site.phoneTel, description: 'Garden design, landscaping and garden maintenance based in Chiswick, West London.' }
+    ld: { '@context': 'https://schema.org', '@type': 'Organization', name: site.legalName, url: site.canonicalOrigin, logo: `${site.canonicalOrigin}/images/logo-web.png`, email: site.email, telephone: site.phoneTel, description: 'Garden design and landscaping based in Cheltenham, serving the Cotswolds.' }
   }));
 }
 
@@ -337,9 +337,9 @@ ${relatedBlock([p.related])}${cta()}`
 
 // ABOUT
 add('west-london-landscape-gardeners', layout({
-  title: 'About Morgan Oates and the team | Chiswick, West London', path: 'west-london-landscape-gardeners', ogImage: team[0].image,
+  title: 'About Morgan Oates and the team | Cheltenham, Cotswolds', path: 'west-london-landscape-gardeners', ogImage: team[0].image,
   desc: 'Meet Daniel Morgan Oates, Director, Anna Pawlowska, Garden Designer, and the Morgan Oates team: garden design and landscaping from Chiswick.',
-  body: `<section class="phead"><div class="wrap">${crumbs([['Home', ''], ['About', null]])}<p class="kicker">About</p><h1>A small studio that designs, builds and looks after gardens</h1><p class="lede">Morgan Oates is a landscape gardening and garden design company based in Chiswick, West London, working across West, Central and South London and further afield on request. It is a family team: Dan builds, Anna designs, and the two work side by side on every garden.</p></div></section>
+  body: `<section class="phead"><div class="wrap">${crumbs([['Home', ''], ['About', null]])}<p class="kicker">About</p><h1>A small studio that designs, builds and looks after gardens</h1><p class="lede">Morgan Oates is a landscape gardening and garden design company based in Cheltenham, working across the Cotswolds. It is a family team: Dan builds, Anna designs, and the two work side by side on every garden.</p></div></section>
 <div class="wrap team">${team.map((m, i) => `<article class="team__m ${i % 2 ? 'team__m--r' : ''}"><figure class="reveal">${m.local ? `<img src="${asset(m.local)}" width="${m.w}" height="${m.h}" alt="${esc(m.alt)}" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">` : pic(m.image, { alt: m.alt, sizes: '(min-width: 900px) 40vw, 100vw', eager: i === 0 })}</figure><div><p class="kicker">${esc(m.role)}</p><h2>${esc(m.name)}</h2>${para(m.bio)}</div></article>`).join('')}</div>
 <section class="wrap prose"><section class="prose__sec"><h2>The crew</h2><div><p>The people on site are friendly, experienced and professional. Site foremen oversee health and safety, keep sites tidy and keep noise down. Project management is about regular communication: if something comes up, you hear about it from us.</p></div></section>
 <section class="prose__sec"><h2>Design, build and aftercare</h2><div><p>We take on garden design, the construction of designs by others, and maintenance of established gardens, together or separately. <a href="${href(svc.overview.path)}">See the services</a>, or <a href="${href('contact')}">get in touch</a>.</p></div></section></section>${cta()}`
