@@ -857,3 +857,7 @@ html body .about .about__intro .about__k{font-size:clamp(1rem,1.6vw,1.3rem)!impo
 .apanel--m.rv .apanel__ph{transition:transform 1.2s cubic-bezier(.2,.6,.2,1);transform:scale(1.04)}
 .apanel--m.rv.is-in .apanel__ph{transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+@media (min-width:900px){
+ html body .header--over~footer.footer--compact{padding:.5rem 0 .6rem!important}
+ html:has(.stage__hl) .stage__in{padding-top:clamp(5.5rem,17vh,12rem)!important}
+}
