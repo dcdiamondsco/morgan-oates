@@ -470,3 +470,5 @@ h1,h2,h3,.stage__h,.wordmark,.pi__gh{font-family:"Playfair Display","Cormorant G
 .stage__h{font-size:clamp(2.3rem,5.2vw,4.5rem);line-height:1.08}
 .wordmark{font-size:1.75rem}
 @media (max-width:899px){.stage__h{font-size:clamp(2rem,9vw,2.7rem)}}
+/* font trial 3: calligraphic accent */
+.stage__h em{font-family:"Pinyon Script","Playfair Display",cursive;font-style:normal;font-weight:400;font-size:1.28em;line-height:1.05;letter-spacing:0}
