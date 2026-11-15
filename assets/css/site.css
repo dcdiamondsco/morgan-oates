@@ -380,3 +380,8 @@ body{position:relative}
 .footer--compact .footer__co{max-width:none;white-space:normal;font-size:.78rem;opacity:.8;margin-top:.5rem;padding-inline:var(--pad)}
 .header--over~footer.footer--compact{position:absolute;left:0;right:0;bottom:0;border-top:0;color:#fbf5e8;text-shadow:0 1px 8px rgba(30,18,8,.6);padding:1.2rem 0 1.4rem}
 .header--over~footer.footer--compact a,.header--over~footer.footer--compact p{color:#fbf5e8}
+.header--over~main .stage{min-height:100vh;min-height:100lvh}
+html{background:#2a1c10}
+body{background:var(--chalk)}
+.header--over~footer.footer--compact{z-index:5}
+@media (max-width:899px){.stage__in{padding-inline:1.25rem;max-width:100%}.stage__sub{max-width:100%;overflow-wrap:anywhere;letter-spacing:.08em;font-size:.95rem}.footer--compact .footer__co{font-size:.68rem;line-height:1.35}.footer--compact{padding-bottom:1rem}}
