@@ -485,3 +485,19 @@ h1,h2,h3,.stage__h,.wordmark,.pi__gh{font-family:"Playfair Display","Cormorant G
  .footer--compact .fc-a,.footer--compact .fc-b{text-align:center}
  .footer--compact .footer__legal{justify-content:center;margin-left:0;width:100%}
 }
+/* menu button: even box */
+.menu-btn{justify-content:center;text-indent:.06em;padding:.65rem 1.1rem}
+/* headline: loopy script for both lines */
+.stage__h,.stage__h em{font-family:"Pinyon Script","Playfair Display",cursive;font-style:normal;font-weight:400;letter-spacing:0}
+.stage__h{font-size:clamp(2.9rem,6.4vw,5.6rem);line-height:1.12}
+.stage__h em{font-size:1em;line-height:inherit}
+@media (max-width:899px){.stage__h{font-size:clamp(2.6rem,12.4vw,3.6rem)}}
+/* photo runs under status bar and bottom toolbar */
+html:has(.header--over){background:#2a1c10}
+@media (max-width:899px){
+ html:has(.header--over),html:has(.header--over) body{overflow:hidden;height:100%}
+ .header--over~main .stage,.stage{position:fixed;top:0;left:0;right:0;bottom:auto;height:100vh;height:100lvh;min-height:100lvh;max-height:none}
+ .header--over{position:fixed;padding-top:env(safe-area-inset-top)}
+ .header--over~footer.footer--compact{position:fixed;bottom:0}
+ .stage__in{padding-top:calc(5.6rem + env(safe-area-inset-top))}
+}
