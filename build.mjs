@@ -65,7 +65,7 @@ const NAV = () => `
   </ul>
 </nav>`;
 
-function layout({ title, desc, path: p, body, ogImage, ld, dark = false, noindex = false, compact = false }) {
+function layout({ title, desc, path: p, body, ogImage, ld, dark = false, noindex = false, compact = false, bare = false }) {
   CUR = p;
   const canon = `${site.canonicalOrigin}/${p}`;
   const robots = !LAUNCH || noindex ? '<meta name="robots" content="noindex, nofollow">' : '';
@@ -96,7 +96,7 @@ ${ld ? `<script type="application/ld+json">${JSON.stringify(ld)}</script>` : ''}
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="ink-brown" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 .43  0 0 0 0 .26  0 0 0 0 .15  -1.3 -1.3 -1.3 0 2.6"/></filter><filter id="ink-white" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -1.3 -1.3 -1.3 0 2.6"/></filter></defs></svg>
 <a class="skip" href="#main">Skip to content</a>
-<header class="header${dark ? ' header--over' : ''}">
+<header class="header${dark ? ' header--over' : ''}"${bare ? ' hidden' : ''}>
   <div class="header__in">
     <a class="logo logo--text" href="${href('')}" aria-label="Morgan Oates, home"><span class="wordmark">Morgan Oates<small>Garden design &amp; landscape</small></span></a>
     
@@ -371,7 +371,7 @@ journal.forEach((a) => {
 // CONTACT
 CUR = 'contact';
 add('contact', layout({
-  title: 'Contact | Morgan Oates, garden designers and landscapers in Cheltenham and the Cotswolds', path: 'contact', dark: true, compact: true,
+  title: 'Contact | Morgan Oates, garden designers and landscapers in Cheltenham and the Cotswolds', path: 'contact', dark: true, compact: true, bare: true,
   desc: 'Contact Morgan Oates about garden design, landscaping or garden maintenance in Cheltenham and the Cotswolds: email info@morganoates.co or call 07827 321373.',
   body: photoStage(`
   <div class="wrap stage__in stage__in--form">
@@ -389,7 +389,7 @@ add('contact', layout({
       <noscript><p class="cform__alt">This form needs JavaScript. Please email <a href="${mail}">${site.email}</a> or call <a href="${tel}">${site.phoneDisplay}</a>.</p></noscript>
     </form>
     <aside class="cdiscuss" aria-labelledby="disc-h">
-      <h2 id="disc-h" class="cdiscuss__h">Would you like to discuss now?</h2>
+      <h2 id="disc-h" class="cdiscuss__h">Would you like to discuss it now?</h2>
       <p class="cform__or"><a class="cform__b2" href="${tel}" aria-label="Call us on ${site.phoneDisplay}">Call us</a><a class="cform__b2" href="${mail}" aria-label="Email us at ${site.email}">Email us</a><a class="cform__b2 cform__b2--wa" href="https://wa.me/${site.phoneTel.replace(/\D/g, '')}" rel="noopener" aria-label="Message us on WhatsApp">WhatsApp</a></p>
     </aside>
    </div>

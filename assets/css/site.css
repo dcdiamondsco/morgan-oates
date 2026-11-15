@@ -691,3 +691,7 @@ html:has(.header--over),html:has(.header--over) body{background:#2a1c10}
 .cfield .cfile__b{flex-direction:column;gap:.3rem;height:auto;min-height:3.6rem;padding:.7rem 1.4rem;max-width:100%}
 .cfile__t{font:600 .8rem/1 var(--sans);letter-spacing:.12em;text-transform:uppercase}
 .cfile__b .cfile__list{margin:0;font:400 .75rem/1.2 var(--sans);letter-spacing:.04em;text-transform:none;color:rgba(236,199,154,.8);max-width:16rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* contact page has no header: boxes sit at the top */
+.header[hidden]{display:none}
+.stage__in.stage__in--form{padding-top:clamp(1.5rem,5vh,3rem)}
+@media (max-width:899px){.stage__in.stage__in--form{padding-top:calc(1.2rem + env(safe-area-inset-top))}}
