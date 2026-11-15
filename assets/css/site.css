@@ -844,3 +844,9 @@ html body .about .about__intro>*{margin-inline:0;max-width:none;text-align:left}
 html body .about .about__intro .about__lede{max-width:46rem}
 html body .about .about__intro .about__h{max-width:22ch}
 html body .about .about__cta{text-align:left}
+@media (min-width:900px){html body .about .about__team .apanel--m:nth-child(n){grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr)}html body .about .apanel--m .apanel__ph{max-width:24rem}.about__team .apanel--m:nth-child(even){grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr)}html body .about .about__team .apanel--m:nth-child(even) .apanel__ph{justify-self:end}}
+@media (max-width:899px){html body .about .apanel--m .apanel__ph{max-width:15rem}}
+@media (min-width:900px){
+html body .about .about__team .apanel--m:nth-child(n){grid-template-columns:22rem minmax(0,1fr);align-items:start;gap:clamp(2rem,5vw,4.5rem)}
+html body .about .about__team .apanel--m:nth-child(n) .apanel__ph{order:0;max-width:none;justify-self:stretch}
+html body .about .apanel--m .apanel__t{max-width:44rem}}
