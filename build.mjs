@@ -389,7 +389,7 @@ add('contact', layout({
       <noscript><p class="cform__alt">This form needs JavaScript. Please email <a href="${mail}">${site.email}</a> or call <a href="${tel}">${site.phoneDisplay}</a>.</p></noscript>
     </form>
     <aside class="cdiscuss" aria-labelledby="disc-h">
-      <h2 id="disc-h" class="cdiscuss__h">Would you like to discuss now?</h2>
+      <h2 id="disc-h" class="cdiscuss__h">Would you like to discuss it now?</h2>
       <p class="cform__or"><a class="cform__b2" href="${tel}" aria-label="Call us on ${site.phoneDisplay}">Call us</a><a class="cform__b2" href="${mail}" aria-label="Email us at ${site.email}">Email us</a><a class="cform__b2 cform__b2--wa" href="https://wa.me/${site.phoneTel.replace(/\D/g, '')}" rel="noopener" aria-label="Message us on WhatsApp">WhatsApp</a></p>
     </aside>
    </div>
