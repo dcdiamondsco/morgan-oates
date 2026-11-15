@@ -41,17 +41,6 @@
   })();
 
 
-  /* mobile home: start in the middle of a long page and quietly re-centre when scrolling stops, so the bars always have photo above and below */
-  (function(){
-    if(!d.querySelector('.stage__hl')||!matchMedia('(max-width:899px)').matches)return;
-    if('scrollRestoration' in history)history.scrollRestoration='manual';
-    var de=d.documentElement,t;
-    function range(){return de.scrollHeight-innerHeight;}
-    function mid(){window.scrollTo(0,Math.round(range()/2));}
-    mid();addEventListener('load',mid);addEventListener('pageshow',mid);
-    addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(function(){var r=range(),y=window.scrollY;if(y<r*.25||y>r*.75)mid();},180);},{passive:true});
-  })();
-
   /* gentle image reveals */
   var els = [].slice.call(d.querySelectorAll('.reveal'));
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {

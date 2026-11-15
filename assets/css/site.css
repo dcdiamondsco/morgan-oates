@@ -756,3 +756,13 @@ html:has(.header--over),html:has(.header--over) body{background:#2a1c10}
  html:has(.stage__hl) body{min-height:400lvh}
  html:has(.stage__hl) .stage__in{padding-top:calc(10svh + 5.6rem + 8.5rem)}
 }
+/* mobile home, final: normal scrolling page over a fixed photo. Header, headline and footer scroll with the swipe; page is two screens long */
+@media (max-width:899px){
+ html:has(.stage__hl),html:has(.stage__hl) body{height:auto;overflow:visible;overscroll-behavior-y:auto;position:relative}
+ html:has(.stage__hl) body{min-height:0}
+ html:has(.stage__hl) .stage{position:relative;top:auto;left:auto;right:auto;bottom:auto;width:100%;height:auto;min-height:190lvh;max-height:none;overflow:visible}
+ html:has(.stage__hl) .stage__slide{position:fixed;inset:auto;top:-10svh;left:0;width:100%;height:calc(100lvh + 20svh)}
+ html:has(.stage__hl) .header--over{position:absolute;top:0;left:0;right:0}
+ html:has(.stage__hl) .stage__in{padding-top:calc(5.6rem + 4.5rem + 4.5rem)}
+ html:has(.stage__hl) .header--over~footer.footer--compact{position:absolute;bottom:0;left:0;right:0}
+}
