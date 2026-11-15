@@ -576,3 +576,4 @@ html:not(:has(.header--over)) body{background:radial-gradient(110% 38rem at 90% 
 .stage__hl{display:block}
 .stage__h .stage__kicker,.stage__sub{text-shadow:0 1px 3px rgba(30,18,8,.55),0 1px 14px rgba(30,18,8,.5)}
 .stage__h .stage__kicker{color:#f0e2c4}
+.stage .stage__sub,.stage--video .stage__sub{color:#f0e2c4}
