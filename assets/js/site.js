@@ -118,7 +118,7 @@ if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.
 (function(){
   try{
     document.querySelectorAll('.ba__cmp').forEach(function(c){
-      var r=c.querySelector('.ba__range');if(!r)return;
+      var r=c.querySelector('.ba__range');if(!r)return;var hide=function(){c.classList.add('ba--used')};r.addEventListener('input',hide,{once:true});r.addEventListener('pointerdown',hide,{once:true});
       var set=function(){c.style.setProperty('--p',r.value+'%');};
       r.addEventListener('input',set);set();
     });

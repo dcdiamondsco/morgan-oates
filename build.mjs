@@ -391,13 +391,13 @@ const baImg = (src, w, h, alt, cls) => `<img class="${cls}" src="${asset(src + '
 add('before-and-after', layout({
   title: 'Before and after | Garden transformations | Morgan Oates', path: 'before-and-after',
   desc: 'Drag to compare before and after photographs of garden and landscaping projects by Morgan Oates, from Woodmancote in the Cotswolds to a London garden.',
-  body: `<section class="phead phead--ba"><div class="wrap"><h1 class="vh">Before and after</h1><p class="lede">Drag the arrows to see how each space changed.</p></div></section>
+  body: `<section class="phead phead--ba"><div class="wrap"><h1 class="vh">Before and after</h1></div></section>
 <div class="wrap ba">${BA.map((p) => `<section class="ba__item" aria-labelledby="ba-${p.id}">
   <div class="ba__cmp" style="--r:${p.w}/${p.h};--p:${p.start || 90}%">
     ${baImg(p.before, p.w, p.h, p.bAlt, 'ba__img ba__img--b')}
     ${baImg(p.after, p.w, p.h, p.aAlt, 'ba__img ba__img--a')}
     <span class="ba__tag ba__tag--b" aria-hidden="true">Before</span><span class="ba__tag ba__tag--a" aria-hidden="true">After</span>
-    <span class="ba__bar" aria-hidden="true"><span class="ba__knob"></span></span>
+    <span class="ba__bar" aria-hidden="true"><span class="ba__knob"></span></span><span class="ba__hint" aria-hidden="true">Drag<svg viewBox="0 0 28 10" width="28" height="10"><path d="M0 5h25M21 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <input class="ba__range" type="range" min="0" max="100" value="${p.start || 90}" aria-label="Compare before and after: ${esc(p.title)}">
   </div>
   <h2 id="ba-${p.id}" class="ba__h"><span class="ba__l">${p.tb.includes("<br") ? p.tb : esc(p.tb)}</span><span class="vh"> to </span><span class="ba__r">${esc(p.ta)}</span></h2>

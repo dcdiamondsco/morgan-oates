@@ -925,3 +925,6 @@ html body .ba__h .ba__l,html body .ba__h .ba__r{flex:1 1 0;min-width:0;text-alig
 }
 .ba__br{display:none}
 @media (max-width:700px){.ba__br{display:inline}}
+.ba__hint{display:none}
+.js .ba__hint{position:absolute;top:50%;left:var(--p);transform:translate(calc(-100% - 2.4rem),-50%);display:flex;align-items:center;gap:.5rem;color:#fbf5e8;font:600 .8rem/1 Inter,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.65);pointer-events:none;transition:opacity .3s}
+.ba--used .ba__hint{opacity:0}
