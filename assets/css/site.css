@@ -863,3 +863,8 @@ html body .about .about__intro .about__k{font-size:clamp(1rem,1.6vw,1.3rem)!impo
 }
 @media (min-width:900px){html body .about .about__team .apanel--m:nth-child(n){align-items:center}}
 @media (min-width:900px){html body .about .about__in.about__more{grid-template-columns:1fr}html body .about .about__more .apanel{max-width:46rem}}
+html body .about .about__more .apanel,html body .about .about__more .apanel *{text-align:center}
+html body .about .about__more .apanel{margin-inline:auto}
+html body .about .about__cta{text-align:center}
+html body .about .about__cta .about__btn{margin-inline:auto}
+html body .about .about__in.about__more{margin-top:clamp(3rem,7vw,5rem)}
