@@ -906,3 +906,4 @@ html body .ba__h,html body .ba__cap{padding-inline:clamp(1.25rem,4vw,3.5rem)}
 html body .wrap.ba{gap:0!important;padding-bottom:0!important;margin-bottom:0}
 html body .ba__item{margin:0}
 html body .ba__cmp{display:block}
+html body .wrap.ba{background:#fbf5e8;gap:2px!important;padding-bottom:2px!important}
