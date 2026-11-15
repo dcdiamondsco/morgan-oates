@@ -57,6 +57,10 @@ const para = (arr) => arr.map((t) => `<p>${esc(t)}</p>`).join('');
 const NAV = () => `
 <nav class="nav" id="site-nav" aria-label="Main">
   <ul class="nav__list">
+    <li><span class="nav__off">Gardens</span></li>
+    <li><span class="nav__off">Services</span></li>
+    <li><span class="nav__off">About</span></li>
+    <li><span class="nav__off">Journal</span></li>
     <li><a class="nav__contact" href="${href('contact')}"${CUR === 'contact' ? ' aria-current="page"' : ''}>Contact</a></li>
   </ul>
 </nav>`;

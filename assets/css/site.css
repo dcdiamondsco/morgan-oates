@@ -639,3 +639,8 @@ html:not(:has(.header--over)) body{background:radial-gradient(110% 38rem at 90% 
  .header--over .nav a.nav__contact:hover{background:rgba(42,28,16,.25)}
 }
 @media (max-width:899px){.header--over .nav a.nav__contact{background:rgba(42,28,16,.32);border-color:rgba(240,226,196,.85)}}
+/* menu items other than Contact are labels only (not links) for now */
+.nav__off{display:block;cursor:default;font:inherit;color:inherit;padding:.4rem 0}
+.header--over .nav .nav__off{color:#f0e2c4;text-shadow:0 1px 3px rgba(30,18,8,.6),0 1px 14px rgba(30,18,8,.5)}
+.header:not(.header--over) .nav .nav__off{color:var(--ink)}
+@media (max-width:899px){.nav__off{font-size:1.125rem;padding:.7rem 0}}
