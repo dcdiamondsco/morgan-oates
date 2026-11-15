@@ -465,3 +465,8 @@ p,li{font-weight:400}
  .stage .stage__cta{gap:1.2rem 1.6rem;margin-bottom:5rem}
  .footer--compact{padding-bottom:calc(.7rem + env(safe-area-inset-bottom))}
 }
+/* font trial 2: Playfair Display headings */
+h1,h2,h3,.stage__h,.wordmark,.pi__gh{font-family:"Playfair Display","Cormorant Garamond",Georgia,serif;font-weight:400;letter-spacing:-.01em}
+.stage__h{font-size:clamp(2.3rem,5.2vw,4.5rem);line-height:1.08}
+.wordmark{font-size:1.75rem}
+@media (max-width:899px){.stage__h{font-size:clamp(2rem,9vw,2.7rem)}}
