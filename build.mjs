@@ -250,11 +250,11 @@ function wall() {
     { f: 'wheat-sunrise-1600x900.jpg', w: 1600, h: 900, pos: '50% 60%' },
     { f: 'cotswolds-1-900x600.jpg', w: 900, h: 600, alt: 'A Cotswold stone cottage with a brick path running between planted borders' },
     { f: 'wheat-field-1600x2133.jpg', w: 1600, h: 2133, pos: '50% 37%' },
-    { f: 'g-main-green-900x551.jpg', w: 900, h: 551, alt: 'A lawn and planted borders in a garden by Morgan Oates', pos: '50% 50%' },
+    { f: 'g-main-green-2-900x551.jpg', w: 900, h: 551, alt: 'A green garden by Morgan Oates', pos: '50% 50%' },
     { f: 'wheat-sunny-1600x2240.jpg', w: 1600, h: 2240, pos: '50% 62%' },
     { f: 'cotswolds-2-900x600.jpg', w: 900, h: 600, alt: 'Stone steps beside a Cotswold stone wall, with a white lily in the planting' },
     { f: 'wheat-cloudy-1600x2400.jpg', w: 1600, h: 2400, pos: '50% 47%' },
-    { f: 'g-main-green-2-900x551.jpg', w: 900, h: 551, alt: 'A green garden by Morgan Oates', pos: '50% 50%' },
+    { f: 'cotswolds-3-900x600.jpg', w: 900, h: 600, alt: 'Wide stone steps and a dry-stone retaining wall above a paved terrace', pos: '50% 50%' },
   ];
   const hasPhotos = fs.existsSync(path.join(ROOT, 'assets/photos/cotswolds-1-900x600.jpg'));
   const body = hasVideo ? `
