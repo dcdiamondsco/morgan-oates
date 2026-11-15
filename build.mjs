@@ -387,7 +387,7 @@ const baImg = (src, w, h, alt, cls) => `<img class="${cls}" src="${asset(src + '
 add('before-and-after', layout({
   title: 'Before and after | Garden transformations | Morgan Oates', path: 'before-and-after',
   desc: 'Drag to compare before and after photographs of garden and landscaping projects by Morgan Oates, from Woodmancote in the Cotswolds to a London garden.',
-  body: `<section class="phead"><div class="wrap">${crumbs([['Home', ''], ['Before and after', null]])}<p class="kicker">Transformations</p><h1>Before and after</h1><p class="lede">Drag the handle to see how each space changed.</p></div></section>
+  body: `<section class="phead phead--ba"><div class="wrap"><h1 class="vh">Before and after</h1><p class="lede">Drag the handle to see how each space changed.</p></div></section>
 <div class="wrap ba">${BA.map((p) => `<section class="ba__item" aria-labelledby="ba-${p.id}">
   <h2 id="ba-${p.id}" class="ba__h">${esc(p.title)}</h2>
   <div class="ba__cmp" style="--r:${p.w}/${p.h}">
