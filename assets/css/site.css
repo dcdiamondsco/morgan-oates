@@ -698,3 +698,12 @@ html:has(.header--over),html:has(.header--over) body{background:#2a1c10}
 /* WhatsApp button: soft green */
 .cdiscuss .cform__b2--wa{background:rgba(120,196,140,.28);border-color:rgba(168,224,184,.8);color:#d9f2de}
 .cdiscuss .cform__b2--wa:hover,.cdiscuss .cform__b2--wa:focus-visible{background:rgba(120,196,140,.42);border-color:#c3ebcc;color:#effaf1}
+/* centred upload, hint under it, centred send + privacy */
+.cfile__row{flex-direction:column;align-items:center;gap:.55rem;text-align:center}
+.cfile__hint{text-align:center}
+.cform__btn{display:flex;margin-inline:auto;justify-content:center}
+.cform .cform__alt{text-align:center}
+.cform .form__status{text-align:center}
+/* WhatsApp: clearly light green */
+.cdiscuss .cform__b2--wa{background:rgba(176,232,192,.82);border-color:#b8ecc5;color:#16301f;text-shadow:none}
+.cdiscuss .cform__b2--wa:hover,.cdiscuss .cform__b2--wa:focus-visible{background:rgba(196,242,208,.95);border-color:#d3f6dc;color:#0f2417}
