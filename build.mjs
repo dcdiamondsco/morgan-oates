@@ -57,13 +57,6 @@ const para = (arr) => arr.map((t) => `<p>${esc(t)}</p>`).join('');
 const NAV = () => `
 <nav class="nav" id="site-nav" aria-label="Main">
   <ul class="nav__list">
-    <li><a href="${href('projects')}"${CUR.startsWith('projects') ? ' aria-current="page"' : ''}>Gardens</a></li>
-    <li class="nav__has-sub"><a href="${href(svc.overview.path)}"${CUR.startsWith('london-') ? ' aria-current="true"' : ''}>Services</a>
-      <ul class="nav__sub" aria-label="Services">
-        ${Object.values(svc.pages).map((p) => `<li><a href="${href(p.path)}"${CUR === p.path ? ' aria-current="page"' : ''}>${esc(p.title)}</a></li>`).join('')}
-      </ul></li>
-    <li><a href="${href('west-london-landscape-gardeners')}"${CUR === 'west-london-landscape-gardeners' ? ' aria-current="page"' : ''}>About</a></li>
-    <li><a href="${href('blog')}"${CUR.startsWith('blog') ? ' aria-current="page"' : ''}>Journal</a></li>
     <li><a class="nav__contact" href="${href('contact')}"${CUR === 'contact' ? ' aria-current="page"' : ''}>Contact</a></li>
   </ul>
 </nav>`;
@@ -102,7 +95,7 @@ ${ld ? `<script type="application/ld+json">${JSON.stringify(ld)}</script>` : ''}
 <header class="header${dark ? ' header--over' : ''}">
   <div class="header__in">
     <a class="logo logo--text" href="${href('')}" aria-label="Morgan Oates, home"><span class="wordmark">Morgan Oates<small>Garden design &amp; landscape</small></span></a>
-    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span class="menu-btn__t">Menu</span><span class="menu-btn__i" aria-hidden="true"></span></button>
+    
     ${NAV()}
   </div>
 </header>

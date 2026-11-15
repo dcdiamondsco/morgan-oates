@@ -628,3 +628,14 @@ html:not(:has(.header--over)) body{background:radial-gradient(110% 38rem at 90% 
 .cfield input:focus,.cfield textarea:focus{background:rgba(232,216,180,.92)}
 .cform__btn{background:#e3d0a4}
 .cform__btn:hover,.cform__btn:focus-visible{background:#ecdcb4}
+/* single-item menu: Contact button always visible, no Menu toggle */
+.menu-btn,.js .menu-btn{display:none}
+@media (max-width:899px){
+ .nav,.js .nav{display:block;flex-basis:auto;padding:0;border:0;margin:0}
+ .nav__list{flex-direction:row;align-items:center}
+ .nav__list>li{width:auto}
+ .nav a.nav__contact{display:inline-block;margin:0;padding:.65rem 1.1rem;font:600 .9rem var(--sans);letter-spacing:.06em}
+ .header--over .nav a.nav__contact,.header--over .nav a.nav__contact:hover{border:1px solid rgba(240,226,196,.75);color:#f0e2c4;background:none}
+ .header--over .nav a.nav__contact:hover{background:rgba(42,28,16,.25)}
+}
+@media (max-width:899px){.header--over .nav a.nav__contact{background:rgba(42,28,16,.32);border-color:rgba(240,226,196,.85)}}
