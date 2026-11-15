@@ -37,7 +37,7 @@
   if (form) {
     var status = d.getElementById('form-status');
     var rules = {
-      phone: function (v) { return v.replace(/[^0-9+]/g, '').length >= 7 ? '' : 'Please enter a phone number we can reach you on.'; },
+      phone: function () { return ''; },
       email: function (v) { return !v.trim() ? 'Please enter your email address.' : /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? '' : 'That email address doesn’t look right. Please check it.'; },
       message: function (v) { return v.trim() ? '' : 'Please tell us a little about the work you would like.'; }
     };
