@@ -31,6 +31,7 @@ const rel = (to) => '../'.repeat(CUR.split('/').filter(Boolean).length) + to;
 const href = (to) => (LINKS === 'files' ? rel(to ? to + '/index.html' : 'index.html') : '/' + to);
 const asset = (to) => (LINKS === 'files' ? rel(to) : '/' + to);
 
+const BUILD_V = Date.now().toString(36);
 const dims = (key) => { const m = key.match(/-(\d+)x(\d+)(?:-q\d+)?$/); return m ? { w: +m[1], h: +m[2] } : { w: 0, h: 0 }; };
 const imgSrc = (key) => (IMAGE_MODE === 'remote' ? `${SRC}${key}.jpg` : asset(`images/${key}.jpg`));
 const pimg = (slug, name) => `projects/${slug}/${name}`;
@@ -90,7 +91,7 @@ ${og ? `<meta property="og:image" content="${og}">\n<meta name="twitter:card" co
 <meta name="theme-color" content="#f1ede4">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231f3d2f'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' text-anchor='middle' fill='%23f1ede4'%3EMO%3C/text%3E%3C/svg%3E">
 <script>document.documentElement.classList.add('js')</script>
-<link rel="stylesheet" href="${asset('assets/css/site.css')}">
+<link rel="stylesheet" href="${asset('assets/css/site.css')}?v=${BUILD_V}">
 ${ld ? `<script type="application/ld+json">${JSON.stringify(ld)}</script>` : ''}
 </head>
 <body>
@@ -140,7 +141,7 @@ ${compact ? `<footer class="footer footer--compact"><div class="wrap footer__bas
     <ul class="footer__legal"><li><a href="${href('privacy')}">Privacy</a></li><li><a href="${href('terms')}">Terms</a></li></ul>
   </div>
 </footer>`}
-<script src="${asset('assets/js/site.js')}" defer></script>
+<script src="${asset('assets/js/site.js')}?v=${BUILD_V}" defer></script>
 </body>
 </html>`;
 }
