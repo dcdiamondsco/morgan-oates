@@ -472,3 +472,10 @@ h1,h2,h3,.stage__h,.wordmark,.pi__gh{font-family:"Playfair Display","Cormorant G
 @media (max-width:899px){.stage__h{font-size:clamp(2rem,9vw,2.7rem)}}
 /* font trial 3: calligraphic accent */
 .stage__h em{font-family:"Pinyon Script","Playfair Display",cursive;font-style:normal;font-weight:400;font-size:1.28em;line-height:1.05;letter-spacing:0}
+.footer--compact a{text-decoration:none;border-bottom:0}
+@media (max-width:899px){
+ html,body{height:100%}
+ .header--over~main .stage,.stage{min-height:100vh;min-height:100svh;height:100svh;max-height:100svh}
+ .stage .stage__cta{margin-bottom:0}
+ .stage__in{padding-top:5.6rem}
+}
