@@ -349,13 +349,13 @@ function bgStage() {
 CUR = 'west-london-landscape-gardeners';
 add('west-london-landscape-gardeners', layout({
   title: 'About Morgan Oates | Family garden designers and landscapers, Cheltenham and the Cotswolds', path: 'west-london-landscape-gardeners', dark: true, ogImage: team[0].image,
-  desc: 'Meet Daniel Morgan Oates, Director, and Ania Pawlowska, Garden Designer: a family team designing, building and maintaining gardens from Cheltenham across the Cotswolds.',
+  desc: 'Garden designers and landscapers in Cheltenham and the Cotswolds: garden design, dry stone walls, patios, driveways, planting, lighting, irrigation and garden maintenance. Meet Dan, Ania and the team.',
   body: bgStage() + `
 <div class="about">
  <section class="wrap about__in about__intro apanel" aria-labelledby="about-h">
   <p class="about__k">About us</p>
   <h1 id="about-h" class="about__h">We design, build and look after your garden with care</h1>
-  <p class="about__lede">Morgan Oates is a garden design and landscaping company based in Cheltenham, working across the Cotswolds. Dan builds, Ania designs, and the two work side by side on every garden.</p>
+  <p class="about__lede">Morgan Oates is a garden design and landscaping company based in Cheltenham, working across the Cotswolds. We design and build gardens, from dry stone walls, patios and driveways to planting, lighting, irrigation and water features, and we look after them with garden maintenance and lawn care. Dan builds, Ania designs, and the two work side by side on every garden.</p>
  </section>
  <div class="wrap about__in about__team">
   ${team.map((m) => `<article class="apanel apanel--m" aria-labelledby="m-${esc(m.name.split(' ')[0].toLowerCase())}">
