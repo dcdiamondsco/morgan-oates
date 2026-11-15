@@ -732,3 +732,4 @@ html:has(.header--over),html:has(.header--over) body{background:#2a1c10}
 }
 .menu-btn{text-decoration:none;display:inline-flex;align-items:center}
 @media (max-width:899px){.cform,.cdiscuss{background:none;border:0;box-shadow:none;border-radius:0;text-shadow:0 1px 3px rgba(20,12,5,.7),0 1px 16px rgba(20,12,5,.55)}}
+@media (max-width:899px){.stage__h .stage__kicker .kbr2{display:none}.stage__h .stage__kicker{font-size:.66rem;letter-spacing:.1em}}
