@@ -20,7 +20,6 @@
   });
 
 
-
   /* gentle image reveals */
   var els = [].slice.call(d.querySelectorAll('.reveal'));
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
