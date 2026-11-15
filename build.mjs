@@ -97,6 +97,7 @@ ${og ? `<meta property="og:image" content="${og}">\n<meta name="twitter:card" co
 ${ld ? `<script type="application/ld+json">${JSON.stringify(ld)}</script>` : ''}
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="ink-brown" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 .43  0 0 0 0 .26  0 0 0 0 .15  -1.3 -1.3 -1.3 0 2.6"/></filter><filter id="ink-white" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -1.3 -1.3 -1.3 0 2.6"/></filter></defs></svg>
 <a class="skip" href="#main">Skip to content</a>
 <header class="header${dark ? ' header--over' : ''}">
   <div class="header__in">
@@ -274,7 +275,7 @@ function wall() {
   add('', layout({
     title: 'Garden designers and landscapers in the Cotswolds | Morgan Oates',
     desc: 'Morgan Oates is a family team of garden designers and landscapers in Cheltenham, designing and building gardens across the Cotswolds.',
-    path: '', body, ogImage: null, compact: true,
+    path: '', body, ogImage: null, compact: true, dark: true,
     ld: { '@context': 'https://schema.org', '@type': 'Organization', name: site.legalName, url: site.canonicalOrigin, logo: `${site.canonicalOrigin}/images/logo-web.png`, email: site.email, telephone: site.phoneTel, description: 'Garden design and landscaping based in Cheltenham, serving the Cotswolds.' }
   }));
 }
