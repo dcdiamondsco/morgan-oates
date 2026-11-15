@@ -758,3 +758,4 @@ html:has(.header--over),html:has(.header--over) body{background:#2a1c10}
 }
 @media (max-width:899px){.stage__sub{margin-top:1.1rem}}
 @media (max-width:899px){html:has(.stage__hl) .stage__sub{margin-top:2.2rem!important}}
+@media (max-width:899px){html:has(.stage__hl) .stage__cta{margin-top:2.6rem!important}}
