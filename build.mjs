@@ -28,7 +28,7 @@ const proj = Object.fromEntries(projects.map((p) => [p.slug, p]));
 let CUR = ''; // path of the page being rendered ('' = home)
 
 const rel = (to) => '../'.repeat(CUR.split('/').filter(Boolean).length) + to;
-const LOCAL_ONLY = new Set(['privacy', 'terms']);
+const LOCAL_ONLY = new Set(['privacy', 'terms', 'contact']);
 const href = (to) => (to && !LOCAL_ONLY.has(to) ? 'https://morganoates.co/' + to : LINKS === 'files' ? rel(to ? to + '/index.html' : 'index.html') : '/' + to);
 const asset = (to) => (LINKS === 'files' ? rel(to) : '/' + to);
 
@@ -363,13 +363,13 @@ journal.forEach((a) => {
 // CONTACT
 add('contact', layout({
   title: 'Contact | Morgan Oates', path: 'contact', desc: 'Contact Morgan Oates about garden design, landscaping or garden maintenance: email info@morganoates.co or call 07827 321373.',
-  body: `<section class="phead"><div class="wrap">${crumbs([['Home', ''], ['Contact', null]])}<p class="kicker">Contact</p><h1>Discuss your garden</h1><p class="lede">Tell us where the garden is and what you would like from it. We will reply to talk it through.</p></div></section>
+  body: `<section class="phead"><div class="wrap">${crumbs([['Home', ''], ['Contact', null]])}<p class="kicker">Contact · Cheltenham &amp; the Cotswolds</p><h1>Discuss your garden</h1><p class="lede">Tell us where the garden is and what you would like from it. We design, build and maintain gardens across the Cotswolds, and will reply to talk it through.</p></div></section>
 <div class="wrap contact">
   <div class="contact__side">
     <h2>Direct</h2>
     <p><a class="contact__big" href="${mail}">${site.email}</a><br><a class="contact__big" href="${tel}">${site.phoneDisplay}</a></p>
     <p><a href="${esc(site.mapUrl)}" rel="noopener">${esc(site.address)}</a></p>
-    <p>Based in Cheltenham, Gloucestershire.</p>
+    <p>Based in Cheltenham, Gloucestershire, working across the Cotswolds.</p>
     <p class="note">Messages from the form go to the same inbox as email. We use what you send only to reply to your enquiry. <a href="${href('privacy')}">Privacy</a></p>
   </div>
   <form class="form" id="enquiry" method="post" novalidate ${site.formEndpoint ? `action="${esc(site.formEndpoint)}"` : ''} data-endpoint="${esc(site.formEndpoint)}" data-email="${site.email}" data-phone="${site.phoneDisplay}" aria-labelledby="form-h">
