@@ -341,3 +341,8 @@ figcaption span a{color:inherit;text-decoration:none;border-bottom:1px solid cur
 .stage .stage__cta{margin-bottom:clamp(2rem,8vh,4rem)}
 .footer--compact{background:var(--chalk);border-top:0}
 @media (max-width:899px){.stage{min-height:100dvh}.stage__in{padding-top:7rem}.js .header--over .nav.is-open{background:rgba(30,20,12,.9);padding:1rem 1.2rem .8rem;border-top:0;margin-top:.6rem}.header--over .nav__sub a{color:#fff}}
+
+/* colour grade: one warm tone across the hero photographs; very light touch elsewhere */
+.stage__slide{filter:sepia(.3) saturate(1.1) contrast(1.05) brightness(.96)}
+.stage--photo .stage__veil{background:linear-gradient(rgba(196,130,70,.16),rgba(196,130,70,.16)),linear-gradient(90deg,rgba(40,24,12,.66) 0%,rgba(40,24,12,.34) 55%,rgba(40,24,12,.1) 100%)}
+.team__m img,.seq__fig img,.phead__fig img,.proj__cover img{filter:sepia(.07) saturate(.97)}
