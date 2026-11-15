@@ -409,3 +409,6 @@ body{background:var(--chalk)}
 .wordmark small{color:#4f7a2c;text-shadow:0 0 2px rgba(255,248,230,.55),0 1px 10px rgba(255,248,230,.35)}
 .header--over{background:none}
 .wordmark small{color:#6a9440;font-weight:700;text-shadow:0 1px 2px rgba(12,8,3,.85),0 0 10px rgba(12,8,3,.5)}
+@keyframes slide7b{0%{opacity:0;transform:scale(1)}3%{opacity:1}14.3%{opacity:1}17.3%{opacity:0;transform:scale(1.06)}100%{opacity:0;transform:scale(1.06)}}
+.stage__slide{animation:slide7b 49s linear infinite;animation-delay:calc(var(--i) * 7s - 1.7s)}
+@media (prefers-reduced-motion:reduce){.stage__slide{animation:none;opacity:0}.stage__slide:first-of-type{opacity:1}}
