@@ -101,7 +101,7 @@ ${ld ? `<script type="application/ld+json">${JSON.stringify(ld)}</script>` : ''}
 <a class="skip" href="#main">Skip to content</a>
 <header class="header${dark ? ' header--over' : ''}">
   <div class="header__in">
-    <a class="logo" href="${href('')}" aria-label="Morgan Oates, home"><img src="${logoSrc}"${logoDims} height="48" alt="Morgan Oates"></a>
+    <a class="logo${dark ? ' logo--text' : ''}" href="${href('')}" aria-label="Morgan Oates, home">${dark ? '<span class="wordmark">Morgan Oates<small>Garden design &amp; landscape</small></span>' : `<img src="${logoSrc}"${logoDims} height="48" alt="Morgan Oates">`}</a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span class="menu-btn__t">Menu</span><span class="menu-btn__i" aria-hidden="true"></span></button>
     ${NAV()}
   </div>

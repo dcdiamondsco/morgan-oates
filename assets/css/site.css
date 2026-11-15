@@ -343,6 +343,15 @@ figcaption span a{color:inherit;text-decoration:none;border-bottom:1px solid cur
 @media (max-width:899px){.stage{min-height:100dvh}.stage__in{padding-top:7rem}.js .header--over .nav.is-open{background:rgba(30,20,12,.9);padding:1rem 1.2rem .8rem;border-top:0;margin-top:.6rem}.header--over .nav__sub a{color:#fff}}
 
 /* colour grade: one warm tone across the hero photographs; very light touch elsewhere */
-.stage__slide{filter:sepia(.3) saturate(1.1) contrast(1.05) brightness(.96)}
-.stage--photo .stage__veil{background:linear-gradient(rgba(196,130,70,.16),rgba(196,130,70,.16)),linear-gradient(90deg,rgba(40,24,12,.66) 0%,rgba(40,24,12,.34) 55%,rgba(40,24,12,.1) 100%)}
+.stage--photo .stage__veil{background:linear-gradient(rgba(190,120,60,.24),rgba(190,120,60,.24)),linear-gradient(90deg,rgba(40,24,12,.66) 0%,rgba(40,24,12,.34) 55%,rgba(40,24,12,.1) 100%)}
 .team__m img,.seq__fig img,.phead__fig img,.proj__cover img{filter:sepia(.07) saturate(.97)}
+
+/* logo without a solid box: blend on inner pages, live wordmark over the home photograph */
+.header{position:static;z-index:auto}
+.header--over{position:absolute;z-index:30}
+.nav__sub{z-index:40}
+.logo img{filter:none;mix-blend-mode:multiply}
+.footer__logo{filter:none;mix-blend-mode:multiply}
+.wordmark{display:block;font:400 1.75rem/1 var(--serif);color:#fff;letter-spacing:.01em;text-shadow:0 1px 14px rgba(0,0,0,.35)}
+.wordmark small{display:block;margin-top:.45rem;font:600 .62rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#ecd9b8}
+.logo--text{text-decoration:none}
