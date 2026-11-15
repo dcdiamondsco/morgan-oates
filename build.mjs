@@ -249,7 +249,6 @@ function wall() {
     { f: 'wheat-sunrise-1600x900.jpg', w: 1600, h: 900, alt: 'Sunrise over a wheat field in warm golden light', pos: '50% 60%' },
     { f: 'cotswolds-1-900x600.jpg', w: 900, h: 600, alt: 'A Cotswold stone cottage garden with a brick path running between planted borders' },
     { f: 'wheat-field-1600x2133.jpg', w: 1600, h: 2133, alt: 'Ripe wheat in a field at golden hour', pos: '50% 37%' },
-    { f: 'g-main-green-2-900x551.jpg', w: 900, h: 551, alt: 'A planted green garden designed and built by Morgan Oates in the Cotswolds', pos: '50% 50%' },
     { f: 'wheat-sunny-1600x2240.jpg', w: 1600, h: 2240, alt: 'Wheat ears in warm afternoon sunshine', pos: '50% 62%' },
     { f: 'cotswolds-2-900x600.jpg', w: 900, h: 600, alt: 'Stone steps beside a Cotswold stone wall, with a white lily in the planting' },
     { f: 'wheat-cloudy-1600x2400.jpg', w: 1600, h: 2400, alt: 'A wheat field under a soft cloudy sky', pos: '50% 47%' },
