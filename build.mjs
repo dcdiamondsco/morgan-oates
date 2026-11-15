@@ -246,15 +246,25 @@ function wall() {
     <p class="stage__sub">Design · Build · Maintain</p>
     <p class="stage__cta"><a class="btn" href="${href('projects')}">Explore our gardens</a><a class="stage__link" href="${href('contact')}">Discuss your garden</a></p>
   </div>`;
-  const hasPhotos = fs.existsSync(path.join(ROOT, 'assets/photos/wheat-close-2400x1800.jpg'));
+  const slides = [
+    { f: 'cotswolds-1-900x600.jpg', w: 900, h: 600, alt: 'A Cotswold stone cottage with a brick path running between planted borders' },
+    { f: 'wheat-sunrise-1600x900.jpg', w: 1600, h: 900, pos: '50% 60%' },
+    { f: 'cotswolds-2-900x600.jpg', w: 900, h: 600, alt: 'Stone steps beside a Cotswold stone wall, with a white lily in the planting' },
+    { f: 'wheat-sunset-1600x1200.jpg', w: 1600, h: 1200, pos: '50% 55%' },
+    { f: 'cotswolds-3-900x600.jpg', w: 900, h: 600, alt: 'Wide stone steps and a dry-stone retaining wall above a paved terrace with planting' },
+    { f: 'wheat-sunny-1600x2240.jpg', w: 1600, h: 2240, pos: '50% 62%' },
+    { f: 'wheat-bright-1600x2400.jpg', w: 1600, h: 2400, pos: '50% 72%' },
+    { f: 'wheat-cloudy-1600x2400.jpg', w: 1600, h: 2400, pos: '50% 80%' },
+    { f: 'wheat-field-1600x2133.jpg', w: 1600, h: 2133, pos: '50% 75%' }
+  ];
+  const hasPhotos = fs.existsSync(path.join(ROOT, 'assets/photos/cotswolds-1-900x600.jpg'));
   const body = hasVideo ? `
 <section class="stage stage--video" aria-labelledby="hero-h">
   <video class="stage__video" autoplay muted loop playsinline preload="metadata"${poster} aria-hidden="true" tabindex="-1"><source src="${asset('assets/video/hero.mp4')}" type="video/mp4"></video>
   <div class="stage__veil"></div>${words}
 </section>` : hasPhotos ? `
 <section class="stage stage--video stage--photo" aria-labelledby="hero-h">
-  <img class="stage__slide stage__slide--a" src="${asset('assets/photos/wheat-close-2400x1800.jpg')}" width="2400" height="1800" fetchpriority="high" alt="">
-  <img class="stage__slide stage__slide--b" src="${asset('assets/photos/wheat-field-2400x1350.jpg')}" width="2400" height="1350" loading="lazy" decoding="async" alt="">
+  ${slides.map((s, i) => `<img class="stage__slide" style="--i:${i}${s.pos ? ';object-position:' + s.pos : ''}" src="${asset('assets/photos/' + s.f)}" width="${s.w}" height="${s.h}" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'} alt="${esc(s.alt || '')}">`).join('\n  ')}
   <div class="stage__veil"></div>${words}
 </section>` : `
 <section class="stage" aria-labelledby="hero-h">${words}
