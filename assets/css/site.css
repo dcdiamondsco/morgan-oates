@@ -695,3 +695,6 @@ html:has(.header--over),html:has(.header--over) body{background:#2a1c10}
 .header[hidden]{display:none}
 .stage__in.stage__in--form{padding-top:clamp(1.5rem,5vh,3rem)}
 @media (max-width:899px){.stage__in.stage__in--form{padding-top:calc(1.2rem + env(safe-area-inset-top))}}
+/* WhatsApp button: soft green */
+.cdiscuss .cform__b2--wa{background:rgba(120,196,140,.28);border-color:rgba(168,224,184,.8);color:#d9f2de}
+.cdiscuss .cform__b2--wa:hover,.cdiscuss .cform__b2--wa:focus-visible{background:rgba(120,196,140,.42);border-color:#c3ebcc;color:#effaf1}
