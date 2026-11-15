@@ -593,3 +593,8 @@ html:not(:has(.header--over)) body{background:radial-gradient(110% 38rem at 90% 
 .header--over .nav__sub a,.js .header--over .nav.is-open a{color:#f0e2c4}
 @media (min-width:900px){.header--over .nav__sub{background:rgba(42,28,16,.92)}.header--over .nav__sub a{color:#f0e2c4}.header--over .nav__sub a:hover{color:#f6ebd0}}
 .stage__link:hover,.stage .stage__link:hover{color:#f6ebd0;border-bottom-color:#ecc79a}
+.stage__h .stage__kicker .kbr2{display:inline}
+.stage__h .stage__kicker .kdot,@media (min-width:900px){}
+@media (min-width:900px){.stage__h .stage__kicker .kdot{display:none}.stage__h .stage__kicker .kbr{display:none}.stage__h .stage__kicker .kbr2{display:inline}}
+.header--over .nav a,.header--over .nav .nav__contact,.header--over .menu-btn,.header--over .wordmark{text-shadow:0 1px 3px rgba(30,18,8,.6),0 1px 14px rgba(30,18,8,.5)}
+.header--over .wordmark small{text-shadow:0 1px 3px rgba(30,18,8,.55)}
