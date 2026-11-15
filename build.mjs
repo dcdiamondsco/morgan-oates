@@ -252,7 +252,6 @@ function wall() {
     { f: 'cotswolds-2-900x600.jpg', w: 900, h: 600, alt: 'Stone steps beside a Cotswold stone wall, with a white lily in the planting' },
     { f: 'cotswolds-3-900x600.jpg', w: 900, h: 600, alt: 'Wide stone steps and a dry-stone retaining wall above a paved terrace with planting' },
     { f: 'wheat-sunny-1600x2240.jpg', w: 1600, h: 2240, pos: '50% 62%' },
-    { f: 'wheat-cloudy-1600x2400.jpg', w: 1600, h: 2400, pos: '50% 80%' },
   ];
   const hasPhotos = fs.existsSync(path.join(ROOT, 'assets/photos/cotswolds-1-900x600.jpg'));
   const body = hasVideo ? `

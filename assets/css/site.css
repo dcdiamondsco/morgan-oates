@@ -395,3 +395,6 @@ body{background:var(--chalk)}
 @media (prefers-reduced-motion:reduce){.stage__slide{animation:none;opacity:0}.stage__slide:first-of-type{opacity:1}}
 
 .stage--photo .stage__veil{background:linear-gradient(rgba(220,150,70,.07),rgba(220,150,70,.07)),linear-gradient(90deg,rgba(40,24,12,.5) 0%,rgba(40,24,12,.24) 55%,rgba(40,24,12,.04) 100%)}
+@keyframes slide5{0%{opacity:0;transform:scale(1)}4%{opacity:1}20%{opacity:1}24%{opacity:0;transform:scale(1.06)}100%{opacity:0;transform:scale(1.06)}}
+.stage__slide{animation:slide5 35s linear infinite;animation-delay:calc(var(--i) * 7s - 1.7s)}
+@media (prefers-reduced-motion:reduce){.stage__slide{animation:none;opacity:0}.stage__slide:first-of-type{opacity:1}}
