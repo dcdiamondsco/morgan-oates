@@ -429,3 +429,5 @@ body{background:var(--chalk)}
 @keyframes tagcol{0%,37%{color:#24500f}39%,49.5%{color:#b4dc88}51%,87%{color:#24500f}89%,99%{color:#b4dc88}100%{color:#24500f}}
 .wordmark small{color:#24500f;animation:tagcol 56s linear infinite;animation-delay:-1.7s;text-shadow:none}
 @media (prefers-reduced-motion:reduce){.wordmark small{animation:none;color:#24500f}}
+@keyframes tagcol2{0%,10%{color:#24500f}14%,98%{color:#b8e08c}100%{color:#24500f}}
+.wordmark small{animation:tagcol2 56s linear infinite;animation-delay:-1.7s}
