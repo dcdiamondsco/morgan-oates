@@ -399,7 +399,7 @@ add('before-and-after', layout({
     ${baImg(p.after, p.w, p.h, p.aAlt, 'ba__img ba__img--a')}
     <span class="ba__tag ba__tag--b" aria-hidden="true">Before</span><span class="ba__tag ba__tag--a" aria-hidden="true">After</span>
     <span class="ba__bar" aria-hidden="true"><span class="ba__knob"></span></span>
-    <input class="ba__range" type="range" min="0" max="100" value="94" aria-label="Compare before and after: ${esc(p.title)}">
+    <input class="ba__range" type="range" min="0" max="100" value="90" aria-label="Compare before and after: ${esc(p.title)}">
   </div>
 </section>`).join('')}</div>${cta()}`
 }));
