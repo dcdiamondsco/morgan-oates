@@ -28,7 +28,8 @@ const proj = Object.fromEntries(projects.map((p) => [p.slug, p]));
 let CUR = ''; // path of the page being rendered ('' = home)
 
 const rel = (to) => '../'.repeat(CUR.split('/').filter(Boolean).length) + to;
-const href = (to) => (LINKS === 'files' ? rel(to ? to + '/index.html' : 'index.html') : '/' + to);
+const LOCAL_ONLY = new Set(['privacy', 'terms']);
+const href = (to) => (to && !LOCAL_ONLY.has(to) ? 'https://morganoates.co/' + to : LINKS === 'files' ? rel(to ? to + '/index.html' : 'index.html') : '/' + to);
 const asset = (to) => (LINKS === 'files' ? rel(to) : '/' + to);
 
 const BUILD_V = Date.now().toString(36);
