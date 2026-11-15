@@ -262,7 +262,7 @@ function wall() {
   <div class="stage__veil"></div>${words}
 </section>` : hasPhotos ? `
 <section class="stage stage--video stage--photo" aria-labelledby="hero-h">
-  ${slides.map((s, i) => `<img class="stage__slide stage__fill" style="--i:${i}" src="${asset('assets/photos/' + s.f)}" alt="" aria-hidden="true" loading="lazy" decoding="async"><img class="stage__slide${s.f.includes('sunrise') ? ' stage__slide--sun' : ''}" style="--i:${i}${s.pos ? ';object-position:' + s.pos : ''}" src="${asset('assets/photos/' + s.f)}" width="${s.w}" height="${s.h}" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'} alt="${esc(s.alt || '')}">`).join('\n  ')}
+  ${slides.map((s, i) => `<img class="stage__slide${s.f.includes('sunrise') ? ' stage__slide--sun' : ''}" style="--i:${i}${s.pos ? ';object-position:' + s.pos : ''}" src="${asset('assets/photos/' + s.f)}" width="${s.w}" height="${s.h}" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'} alt="${esc(s.alt || '')}">`).join('\n  ')}
   <div class="stage__veil"></div>${words}
 </section>` : `
 <section class="stage" aria-labelledby="hero-h">${words}
@@ -281,7 +281,7 @@ function wall() {
 function photoStage(words, labelId) {
   return `
 <section class="stage stage--video stage--photo" aria-labelledby="${labelId}">
-  ${SLIDES_SHARED.map((s, i) => `<img class="stage__slide stage__fill" style="--i:${i}" src="${asset('assets/photos/' + s.f)}" alt="" aria-hidden="true" loading="lazy" decoding="async"><img class="stage__slide${s.f.includes('sunrise') ? ' stage__slide--sun' : ''}" style="--i:${i}${s.pos ? ';object-position:' + s.pos : ''}" src="${asset('assets/photos/' + s.f)}" width="${s.w}" height="${s.h}" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'} alt="${esc(s.alt || '')}">`).join('\n  ')}
+  ${SLIDES_SHARED.map((s, i) => `<img class="stage__slide${s.f.includes('sunrise') ? ' stage__slide--sun' : ''}" style="--i:${i}${s.pos ? ';object-position:' + s.pos : ''}" src="${asset('assets/photos/' + s.f)}" width="${s.w}" height="${s.h}" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'} alt="${esc(s.alt || '')}">`).join('\n  ')}
   <div class="stage__veil"></div>${words}
 </section>`;
 }
