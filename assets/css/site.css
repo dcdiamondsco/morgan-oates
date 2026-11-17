@@ -1499,3 +1499,9 @@ html body main img:not(.stage__slide):not(.gfade__img){
   filter:brightness(calc(var(--b,1) - .12)) saturate(1.07) contrast(1.04)!important;
  }
 }
+
+
+/* Stronger editorial finish for the final Gallery photograph */
+html:has(.gfade) .gfade__slide:nth-child(8) .gfade__img{
+ filter:saturate(1.18) contrast(1.07) brightness(1.015)!important;
+}
