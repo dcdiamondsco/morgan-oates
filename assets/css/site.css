@@ -1273,3 +1273,23 @@ html:has(.gfade) .gfade__img{
  object-fit:cover!important;
  background:transparent!important;
 }
+
+
+/* Team page opens with its introduction; profiles begin below the fold */
+html body .about__intro{
+ min-height:calc(100svh - 7.5rem);
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ margin-bottom:0!important;
+}
+html body .about .apanel__head{
+ grid-column:1 / -1;
+ margin:0 0 -.45rem;
+}
+html body .about .apanel__head .apanel__h{margin-bottom:.3rem}
+html body .about .apanel__head .about__k{margin:0}
+@media (max-width:899px){
+ html body .about__intro{min-height:calc(100svh - 6.2rem)}
+ html body .about .apanel__head{margin-bottom:-.65rem}
+}

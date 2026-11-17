@@ -379,8 +379,9 @@ add('west-london-landscape-gardeners', layout({
  </section>
  <div class="wrap about__in about__team">
   ${team.map((m) => `<article class="apanel apanel--m" aria-labelledby="m-${esc(m.name.split(' ')[0].toLowerCase())}">
+   <header class="apanel__head"><h2 id="m-${esc(m.name.split(' ')[0].toLowerCase())}" class="apanel__h">${esc(m.name)}</h2><p class="about__k">${esc(m.role)}</p></header>
    <figure class="apanel__ph"><img src="${asset(m.local)}" width="${m.w}" height="${m.h}" alt="${esc(m.alt)}" loading="lazy" decoding="async"></figure>
-   <div class="apanel__t"><h2 id="m-${esc(m.name.split(' ')[0].toLowerCase())}" class="apanel__h">${esc(m.name)}</h2><p class="about__k">${esc(m.role)}</p>${para(m.bio)}${m.quote ? `<blockquote class="apanel__q"><p>${esc(m.quote.text)}</p><footer>${esc(m.quote.by)}</footer></blockquote>` : ''}</div>
+   <div class="apanel__t">${para(m.bio)}${m.quote ? `<blockquote class="apanel__q"><p>${esc(m.quote.text)}</p><footer>${esc(m.quote.by)}</footer></blockquote>` : ''}</div>
   </article>`).join('')}
  </div>
  <div class="wrap about__in about__more">
