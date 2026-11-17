@@ -1327,3 +1327,22 @@ html:has(.stage__hl) body .whatsapp{
   bottom:calc(4.7rem + env(safe-area-inset-bottom))!important;
  }
 }
+
+
+/* Keep the Team background rock-steady while the content scrolls */
+html:has(.about) main .stage--bgfix{
+ height:100svh!important;
+ min-height:100svh!important;
+ transform:translate3d(0,0,0);
+ -webkit-transform:translate3d(0,0,0);
+ -webkit-backface-visibility:hidden;
+ backface-visibility:hidden;
+ contain:paint;
+}
+html:has(.about) main .stage--bgfix .stage__slides,
+html:has(.about) main .stage--bgfix .stage__slide{
+ transform:translate3d(0,0,0);
+ -webkit-transform:translate3d(0,0,0);
+ -webkit-backface-visibility:hidden;
+ backface-visibility:hidden;
+}

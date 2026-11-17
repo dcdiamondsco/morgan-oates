@@ -3,6 +3,18 @@
   'use strict';
   var d = document;
 
+  /* The Team always opens at the true top, including bfcache restores. */
+  if (d.querySelector('.about')) {
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    var teamTop = function () { window.scrollTo(0, 0); };
+    teamTop();
+    window.addEventListener('pageshow', function () {
+      teamTop();
+      requestAnimationFrame(teamTop);
+    });
+    window.addEventListener('load', function () { requestAnimationFrame(teamTop); }, { once: true });
+  }
+
   /* mobile menu */
   var btn = d.querySelector('button.menu-btn'), nav = d.getElementById('site-nav');
   if (btn && nav) {
