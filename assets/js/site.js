@@ -145,7 +145,7 @@ if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.
   var dots = Array.prototype.slice.call(gallery.querySelectorAll('[data-gallery-go]'));
   var current = gallery.querySelector('[data-gallery-current]');
   var pause = gallery.querySelector('[data-gallery-pause]');
-  var index = 0, timer = null, paused = false, delay = 5000;
+  var index = 0, timer = null, paused = false, delay = 7500;
   function show(next) {
     index = (next + slides.length) % slides.length;
     slides.forEach(function (slide, i) {

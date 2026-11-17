@@ -106,7 +106,10 @@ ${ld ? `<script type="application/ld+json">${JSON.stringify(ld)}</script>` : ''}
 <main id="main" tabindex="-1">
 ${body}
 </main>
-${true ? `<footer class="footer footer--compact"><div class="wrap footer__row"><p class="fc-a">${esc(site.legalName)} · <span class="fc-long">Registered in England and Wales</span><span class="fc-short">Reg. England &amp; Wales</span> No. ${site.companyNumber} ·</p><p class="fc-b">${esc(site.address)} · <a href="${tel}">${site.phoneDisplay}</a></p><ul class="accred" aria-label="Accreditations and memberships"><li><img src="${asset('assets/photos/bali-accredited.png') + '?v=' + BUILD_V}" width="308" height="160" alt="British Association of Landscape Industries (BALI), accredited" loading="lazy" decoding="async"></li><li><img src="${asset('assets/photos/apl.png') + '?v=' + BUILD_V}" width="133" height="200" alt="Association of Professional Landscapers (APL)" loading="lazy" decoding="async"></li></ul><ul class="footer__legal"><li><a href="${href('privacy')}">Privacy</a></li><li><a href="${href('terms')}">Terms</a></li></ul></div></footer>` : `<footer class="footer">
+<a class="whatsapp" href="https://wa.me/${site.phoneTel.replace(/\D/g, '')}" target="_blank" rel="noopener" aria-label="WhatsApp Dan on ${esc(site.phoneDisplay)}">
+ <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path class="whatsapp__bubble" d="M16 3A12 12 0 0 0 5.6 21L4 29l8.1-1.7A12 12 0 1 0 16 3Z"/><path class="whatsapp__phone" d="M11.1 9.2c.3-.7.7-.7 1-.7h.8c.2 0 .5.1.6.5l1.2 2.8c.1.3.1.6-.1.9l-1 1.2c-.2.2-.2.5-.1.8 1 2 2.7 3.6 4.8 4.5.3.1.5.1.7-.1l1.4-1.6c.2-.3.5-.3.8-.2l2.7 1.3c.4.2.5.4.5.7 0 .7-.3 2.1-1.3 2.8-.9.7-2.1 1.1-3.5.8-1.5-.3-3.6-1.1-6-3.2-2.8-2.5-4.5-5.5-4.8-7.2-.3-1.7.4-2.8 1-3.4.4-.4.9-.7 1.3-.7Z"/></svg>
+</a>
+${true ? `<footer class="footer footer--compact"><div class="wrap footer__row"><p class="fc-a">${esc(site.legalName)} · <span class="fc-long">Registered in England and Wales</span><span class="fc-short">Reg. England &amp; Wales</span> No. ${site.companyNumber} ·</p><p class="fc-b">${esc(site.address)} · <a href="${tel}">${site.phoneDisplay}</a></p><ul class="accred" aria-label="Accreditations and memberships"><li><img src="${asset('assets/photos/bali-accredited.png') + '?v=' + BUILD_V}" width="308" height="160" alt="British Association of Landscape Industries (BALI), accredited" loading="lazy" decoding="async"></li><li><img src="${asset('assets/photos/apl.png') + '?v=' + BUILD_V}" width="133" height="200" alt="Association of Professional Landscapers (APL)" loading="lazy" decoding="async"></li></ul><ul class="footer__legal"><li><a href="${href('terms')}">Terms</a></li><li><a href="${href('privacy')}">Privacy</a></li></ul></div></footer>` : `<footer class="footer">
   <div class="wrap footer__grid">
     <div class="footer__brand">
       <img class="footer__logo" src="${asset('assets/photos/logo-659x239.png')}"${logoDims} height="40" alt="Morgan Oates" loading="lazy">
@@ -138,7 +141,7 @@ ${true ? `<footer class="footer footer--compact"><div class="wrap footer__row"><
   </div>
   <div class="wrap footer__base">
     <p>© ${YEAR} ${esc(site.legalName)} · Registered in England and Wales No. ${site.companyNumber} · Registered office: ${esc(site.registeredOffice)}</p>
-    <ul class="footer__legal"><li><a href="${href('privacy')}">Privacy</a></li><li><a href="${href('terms')}">Terms</a></li></ul>
+    <ul class="footer__legal"><li><a href="${href('terms')}">Terms</a></li><li><a href="${href('privacy')}">Privacy</a></li></ul>
   </div>
 </footer>`}
 <script src="${asset('assets/js/site.js')}?v=${BUILD_V}" defer></script>
@@ -330,7 +333,7 @@ for (const s of Object.values(svc.pages)) {
     ['photos/gallery-04-treehouse-courtyard-1032x1280', 'A timber treehouse above a cobbled courtyard with an outdoor kitchen and planting'],
     ['photos/gallery-03-lavender-border-1206x1280', 'A lawn edged with lavender, roses and flowering borders beside a mature garden wall'],
     ['photos/g-green-brown-2-900x600', 'A sheltered garden dining terrace framed by layered green planting and warm timber'],
-    ['photos/gallery-06-sauna-water-feature-1032x1280', 'An illuminated timber garden sauna beside a contemporary water feature and planted terrace'],
+    ['photos/gallery-06-sauna-water-feature-1127x1396', 'An illuminated timber garden sauna beside a contemporary water feature and planted terrace'],
     ['photos/g-main-green-3-829x551', 'A formal front garden with clipped hedging, lawn and generous planting'],
     ['photos/g-green-2-900x599', 'A green garden with a striped lawn, mature trees and layered borders']
   ];
@@ -407,7 +410,7 @@ const baImg = (src, w, h, alt, cls) => `<img class="${cls}" src="${asset(src + '
 add('before-and-after', layout({
   title: 'Before and after | Garden transformations | Morgan Oates', path: 'before-and-after', dark: true,
   desc: 'Drag to compare before and after photographs of garden and landscaping projects by Morgan Oates, from Woodmancote in the Cotswolds to a London garden.',
-  body: bgStage() + `<section class="phead phead--ba"><div class="wrap"><h1 class="vh">Before and after</h1></div></section>
+  body: `<section class="phead phead--ba"><div class="wrap"><h1 class="vh">Before and after</h1></div></section>
 <div class="wrap ba">${BA.map((p) => `<section class="ba__item" aria-labelledby="ba-${p.id}">
   <div class="ba__cmp" style="--r:${p.w}/${p.h};--p:${p.start || 90}%">
     ${baImg(p.before, p.w, p.h, p.bAlt, 'ba__img ba__img--b')}
