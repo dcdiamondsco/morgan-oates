@@ -1602,3 +1602,19 @@ html:has(.ba) .close__side>p{
   animation-delay:calc(var(--i) * 7s - 3.1s)!important;
  }
 }
+
+
+/* The Team page header scrolls away with the page on mobile */
+@media (max-width:899px){
+ html:has(.about) .header--over{
+  position:relative!important;
+  top:auto!important;
+  left:auto!important;
+  right:auto!important;
+  z-index:20!important;
+  padding-top:0!important;
+ }
+ html:has(.about) .about__intro{
+  padding-top:clamp(2rem,6svh,4rem)!important;
+ }
+}
