@@ -1536,3 +1536,26 @@ html:has(.gfade) .gfade__slide:nth-child(8) .gfade__img{
   padding-top:clamp(4.5rem,12svh,6.5rem)!important;
  }
 }
+
+
+/* Transformations closes on the photograph, with the footer inside it */
+html:has(.ba) footer.footer--compact{
+ position:relative!important;
+ z-index:3!important;
+ margin-top:calc(-1 * var(--fh,10rem))!important;
+ margin-bottom:0!important;
+ background:transparent!important;
+ border:0!important;
+ color:#fbf5e8!important;
+ text-shadow:0 1px 10px rgba(30,18,8,.72)!important;
+}
+html:has(.ba) footer.footer--compact a,
+html:has(.ba) footer.footer--compact p{
+ color:#fbf5e8!important;
+}
+html:has(.ba) .close{
+ margin-bottom:0!important;
+ padding-bottom:calc(clamp(3.5rem,8vw,7rem) + var(--fh,10rem))!important;
+ background-position:center 60%!important;
+}
+html:has(.ba) body{padding-bottom:0!important}
