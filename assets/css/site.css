@@ -1483,3 +1483,19 @@ html body .whatsapp__phone,
 html:has(.gfade) .whatsapp__phone{
  fill:#2f7a45!important;
 }
+
+
+/* Cohesive editorial photography grade throughout the site */
+html body main img:not(.stage__slide):not(.gfade__img){
+ filter:saturate(1.075) contrast(1.045) brightness(1.005);
+}
+@media (max-width:899px){
+ html body main .stage__slide{
+  filter:brightness(var(--b,1)) saturate(1.07) contrast(1.04)!important;
+ }
+}
+@media (min-width:900px){
+ html body main .stage__slide{
+  filter:brightness(calc(var(--b,1) - .12)) saturate(1.07) contrast(1.04)!important;
+ }
+}
