@@ -1019,3 +1019,29 @@ html:has(.gfade) .gfade__controls{display:none!important}
 .gfade__slide:nth-child(6) .gfade__img,
 .gfade__slide:nth-child(7) .gfade__img{object-fit:contain;background:#182017}
 .gfade__slide:nth-child(8) .gfade__img{filter:saturate(1.35) contrast(1.08) brightness(1.03)}
+
+
+/* Give the mobile Menu word balanced breathing room */
+@media (max-width:899px){
+ html body .menu-btn{
+  min-width:5.65rem;
+  min-height:2.75rem;
+  padding:.68rem 1.15rem!important;
+  justify-content:center;
+  line-height:1!important;
+ }
+}
+
+
+/* Lighter, less-brown mobile navigation veil */
+@media (max-width:899px){
+ html body .nav.is-open{
+  background:rgba(18,30,24,.16)!important;
+  -webkit-backdrop-filter:blur(7px);
+  backdrop-filter:blur(7px);
+  border-top-color:rgba(255,255,255,.32)!important;
+  padding:.72rem .8rem .55rem!important;
+ }
+ html body .header--over .nav.is-open a,
+ html body .header--over .nav.is-open span{color:#fff!important}
+}
