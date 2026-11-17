@@ -1505,3 +1505,26 @@ html body main img:not(.stage__slide):not(.gfade__img){
 html:has(.gfade) .gfade__slide:nth-child(8) .gfade__img{
  filter:saturate(1.18) contrast(1.07) brightness(1.015)!important;
 }
+
+
+/* Identical mobile logo and Menu coordinates on every page */
+@media (max-width:899px){
+ html body .header,
+ html body .header--over{
+  padding-top:0!important;
+ }
+ html body .header__in{
+  padding-top:calc(1rem + env(safe-area-inset-top))!important;
+  padding-bottom:1rem!important;
+  align-items:flex-start!important;
+ }
+ html body .logo{
+  margin:0!important;
+ }
+ html body .logo img{
+  height:40px!important;
+ }
+ html body .menu-btn{
+  margin-top:0!important;
+ }
+}

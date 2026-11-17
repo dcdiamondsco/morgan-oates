@@ -3,28 +3,27 @@
   'use strict';
   var d = document;
 
-  /* The Team always opens at the true top, including bfcache restores. */
+  /* Every page opens at the true top, including bfcache restores. */
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  var pageTop = function () {
+    d.documentElement.scrollTop = 0;
+    if (d.body) d.body.scrollTop = 0;
+    window.scrollTo(0, 0);
+  };
+  pageTop();
+  window.addEventListener('pageshow', function () {
+    pageTop();
+    requestAnimationFrame(pageTop);
+  });
+  window.addEventListener('load', function () { requestAnimationFrame(pageTop); }, { once: true });
+
+  /* Lock only the Team backdrop against Safari toolbar resizing. */
   if (d.querySelector('.about')) {
-    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-    var teamTop = function () {
-      d.documentElement.scrollTop = 0;
-      if (d.body) d.body.scrollTop = 0;
-      window.scrollTo(0, 0);
-    };
-    var settleTeamTop = function () {
-      teamTop();
-      requestAnimationFrame(teamTop);
-    };
     var lockTeamViewport = function () {
       d.documentElement.style.setProperty('--team-vh', window.innerHeight + 'px');
     };
     lockTeamViewport();
-    settleTeamTop();
-    window.addEventListener('pageshow', function () {
-      lockTeamViewport();
-      settleTeamTop();
-    });
-    window.addEventListener('load', settleTeamTop, { once: true });
+    window.addEventListener('pageshow', lockTeamViewport);
     window.addEventListener('orientationchange', function () {
       window.setTimeout(lockTeamViewport, 350);
     });
