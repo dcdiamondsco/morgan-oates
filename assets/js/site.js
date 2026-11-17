@@ -6,18 +6,26 @@
   /* The Team always opens at the true top, including bfcache restores. */
   if (d.querySelector('.about')) {
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-    var teamTop = function () { window.scrollTo(0, 0); };
+    var teamTop = function () {
+      d.documentElement.scrollTop = 0;
+      if (d.body) d.body.scrollTop = 0;
+      window.scrollTo(0, 0);
+    };
+    var settleTeamTop = function () {
+      teamTop();
+      requestAnimationFrame(teamTop);
+      [80, 250, 600].forEach(function (delay) { window.setTimeout(teamTop, delay); });
+    };
     var lockTeamViewport = function () {
       d.documentElement.style.setProperty('--team-vh', window.innerHeight + 'px');
     };
     lockTeamViewport();
-    teamTop();
+    settleTeamTop();
     window.addEventListener('pageshow', function () {
       lockTeamViewport();
-      teamTop();
-      requestAnimationFrame(teamTop);
+      settleTeamTop();
     });
-    window.addEventListener('load', function () { requestAnimationFrame(teamTop); }, { once: true });
+    window.addEventListener('load', settleTeamTop, { once: true });
     window.addEventListener('orientationchange', function () {
       window.setTimeout(lockTeamViewport, 350);
     });

@@ -1354,3 +1354,16 @@ html:has(.about) main .stage--bgfix{
  min-height:var(--team-vh,100svh)!important;
  max-height:var(--team-vh,100svh)!important;
 }
+
+
+/* Keep the Team header visible while Safari restores the true page top */
+@media (max-width:899px){
+ html:has(.about) .header--over{
+  position:fixed!important;
+  top:0!important;
+  left:0!important;
+  right:0!important;
+  z-index:60!important;
+  padding-top:env(safe-area-inset-top)!important;
+ }
+}
