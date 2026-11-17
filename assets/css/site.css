@@ -1138,3 +1138,28 @@ html body .whatsapp__phone{fill:#496b45}
   background:center/100% 100% no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 10'%3E%3Cpath d='M2 5C2 1 7 1 7 4C7 7 3 7 3 4C14 8 22 7 30 4C38 7 46 8 57 4C57 7 53 7 53 4C53 1 58 1 58 5' fill='none' stroke='%23fff' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
  }
 }
+
+
+/* Slim, right-aligned mobile dropdown */
+@media (max-width:899px){
+ html body .header__in{position:relative}
+ html body .nav{
+  position:absolute;
+  top:100%;
+  right:var(--pad);
+  width:min(11.5rem,calc(100vw - 2 * var(--pad)));
+  flex-basis:auto;
+  z-index:25;
+ }
+ html body .nav.is-open{
+  padding:.42rem .3rem .38rem .75rem!important;
+  background:rgba(20,30,25,.14)!important;
+  -webkit-backdrop-filter:blur(2px)!important;
+  backdrop-filter:blur(2px)!important;
+  border-top:0!important;
+ }
+ html body .nav__list{align-items:flex-end;gap:0}
+ html body .nav__list>li{width:100%;text-align:right}
+ html body .nav a{padding:.48rem 0;font-size:1rem}
+ html body .nav .nav__contact{margin-top:.15rem}
+}
