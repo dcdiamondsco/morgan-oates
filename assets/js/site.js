@@ -172,7 +172,7 @@ if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.
   var dots = Array.prototype.slice.call(gallery.querySelectorAll('[data-gallery-go]'));
   var current = gallery.querySelector('[data-gallery-current]');
   var pause = gallery.querySelector('[data-gallery-pause]');
-  var index = 0, timer = null, paused = false, delay = 7500;
+  var index = 0, timer = null, paused = false, delay = 7500, firstDelay = 3500, firstAdvancePending = true;
   function show(next) {
     index = (next + slides.length) % slides.length;
     slides.forEach(function (slide, i) {
@@ -187,8 +187,18 @@ if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.
     });
     if (current) current.textContent = String(index + 1);
   }
-  function stop() { if (timer) window.clearInterval(timer); timer = null; }
-  function start() { stop(); if (!paused && slides.length > 1) timer = window.setInterval(function () { show(index + 1); }, delay); }
+  function stop() { if (timer) window.clearTimeout(timer); timer = null; }
+  function start() {
+    stop();
+    if (!paused && slides.length > 1) {
+      var wait = firstAdvancePending && index === 0 ? firstDelay : delay;
+      timer = window.setTimeout(function () {
+        firstAdvancePending = false;
+        show(index + 1);
+        start();
+      }, wait);
+    }
+  }
   gallery.querySelector('[data-gallery-prev]').addEventListener('click', function () { show(index - 1); start(); });
   gallery.querySelector('[data-gallery-next]').addEventListener('click', function () { show(index + 1); start(); });
   dots.forEach(function (dot) { dot.addEventListener('click', function () { show(Number(dot.getAttribute('data-gallery-go'))); start(); }); });
