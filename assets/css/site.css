@@ -1649,3 +1649,11 @@ html body *:not(svg):not(path){
 html:has(.gfade) .gfade__slide:nth-child(7) .gfade__img{
  filter:saturate(1.22) contrast(1.075) brightness(1.02)!important;
 }
+
+
+/* Give the desktop WhatsApp button a little more right-edge breathing room */
+@media (min-width:900px){
+ html body .whatsapp{
+  right:2rem!important;
+ }
+}
