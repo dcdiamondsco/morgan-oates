@@ -1423,3 +1423,23 @@ html:has(.gfade) .whatsapp__phone{
   color:#f6ebd0!important;
  }
 }
+
+
+/* Dropdown hugs its longest label */
+@media (max-width:899px){
+ html body .nav{
+  width:max-content!important;
+  min-width:0!important;
+  max-width:calc(100vw - 2 * var(--pad))!important;
+ }
+ html body .nav.is-open{
+  padding:.38rem .55rem .34rem .65rem!important;
+ }
+ html body .nav__list>li{
+  width:auto!important;
+  min-width:100%;
+ }
+ html body .nav a{
+  white-space:nowrap;
+ }
+}
