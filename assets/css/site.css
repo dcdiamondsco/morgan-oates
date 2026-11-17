@@ -1181,3 +1181,58 @@ html body .whatsapp__phone{fill:#496b45}
   opacity:.9;
  }
 }
+
+
+/* Final Transformations page framing */
+html:has(.ba){overscroll-behavior-y:none}
+html:has(.ba) body{
+ background:linear-gradient(155deg,#26382f 0%,#52604e 28%,#9a8c73 56%,#685744 78%,#30362e 100%)!important;
+ background-attachment:fixed!important;
+}
+html:has(.ba) footer.footer--compact{
+ position:relative!important;
+ z-index:3;
+ margin-top:0!important;
+ background:linear-gradient(180deg,#eee4d2 0%,#dfd0b7 100%)!important;
+ color:var(--text)!important;
+ text-shadow:none!important;
+}
+html:has(.ba) footer.footer--compact a,
+html:has(.ba) footer.footer--compact p{color:var(--ink)!important}
+html:has(.ba) .close{padding-bottom:clamp(3.5rem,8vw,7rem)!important}
+@media (max-width:899px){
+ html:has(.ba) .header--over{
+  top:0!important;
+  padding-top:env(safe-area-inset-top)!important;
+ }
+}
+
+/* Identical mobile Menu control on every page */
+@media (max-width:899px){
+ html body .menu-btn{
+  position:relative!important;
+  transform:translateX(-.45rem)!important;
+  min-width:0!important;
+  min-height:1.9rem!important;
+  padding:.2rem .45rem .38rem!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  color:#fff!important;
+  justify-content:center!important;
+  line-height:1!important;
+ }
+ html body .menu-btn::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:.16rem;
+  width:2.65rem;
+  height:1px;
+  border:0;
+  transform:translateX(-50%);
+  background:currentColor;
+  opacity:.9;
+ }
+}
