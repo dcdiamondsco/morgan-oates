@@ -15,7 +15,7 @@
   d.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
     var h = a.getAttribute('href');
-    if (/^(tel:|mailto:|https?:\/\/wa\.me)/.test(h) || /contact|west-london-landscape-gardeners|before-and-after/.test(h) || h.charAt(0) === '#' || a.classList.contains('logo')) return;
+    if (/^(tel:|mailto:|https?:\/\/wa\.me)/.test(h) || /contact|west-london-landscape-gardeners|before-and-after|projects/.test(h) || h.charAt(0) === '#' || a.classList.contains('logo')) return;
     e.preventDefault();
   });
 
