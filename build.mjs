@@ -405,9 +405,9 @@ const BA = [
 ];
 const baImg = (src, w, h, alt, cls) => `<img class="${cls}" src="${asset(src + '.jpg')}" width="${w}" height="${h}" alt="${esc(alt)}" loading="lazy" decoding="async" draggable="false">`;
 add('before-and-after', layout({
-  title: 'Before and after | Garden transformations | Morgan Oates', path: 'before-and-after',
+  title: 'Before and after | Garden transformations | Morgan Oates', path: 'before-and-after', dark: true,
   desc: 'Drag to compare before and after photographs of garden and landscaping projects by Morgan Oates, from Woodmancote in the Cotswolds to a London garden.',
-  body: `<section class="phead phead--ba"><div class="wrap"><h1 class="vh">Before and after</h1></div></section>
+  body: bgStage() + `<section class="phead phead--ba"><div class="wrap"><h1 class="vh">Before and after</h1></div></section>
 <div class="wrap ba">${BA.map((p) => `<section class="ba__item" aria-labelledby="ba-${p.id}">
   <div class="ba__cmp" style="--r:${p.w}/${p.h};--p:${p.start || 90}%">
     ${baImg(p.before, p.w, p.h, p.bAlt, 'ba__img ba__img--b')}
