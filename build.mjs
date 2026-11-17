@@ -332,10 +332,10 @@ for (const s of Object.values(svc.pages)) {
     ['photos/gallery-02-terrace-1032x1280', 'A contemporary garden terrace with outdoor seating, planting and a curved floor lamp'],
     ['photos/gallery-04-treehouse-courtyard-1032x1280', 'A timber treehouse above a cobbled courtyard with an outdoor kitchen and planting'],
     ['photos/gallery-06-sauna-water-feature-1127x1396', 'An illuminated timber garden sauna beside a contemporary water feature and planted terrace'],
-    ['photos/gallery-03-lavender-border-1206x1280', 'A lawn edged with lavender, roses and flowering borders beside a mature garden wall'],
     ['photos/g-green-brown-2-900x600', 'A sheltered garden dining terrace framed by layered green planting and warm timber'],
     ['photos/g-main-green-3-829x551', 'A formal front garden with clipped hedging, lawn and generous planting'],
-    ['photos/g-green-2-900x599', 'A green garden with a striped lawn, mature trees and layered borders']
+    ['photos/g-green-2-900x599', 'A green garden with a striped lawn, mature trees and layered borders'],
+    ['photos/gallery-03-lavender-border-1206x1280', 'A lawn edged with lavender, roses and flowering borders beside a mature garden wall'],
   ];
   const slides = gallery.map(([key, alt], i) => `<figure class="gfade__slide${i === 0 ? ' is-active' : ''}" data-gallery-slide aria-hidden="${i === 0 ? 'false' : 'true'}">${pic(key, { alt, sizes: '100vw', cls: 'gfade__img', eager: i === 0 })}</figure>`).join('');
   const dots = gallery.map(([, alt], i) => `<button class="gfade__dot${i === 0 ? ' is-active' : ''}" type="button" data-gallery-go="${i}" aria-label="Show image ${i + 1}: ${esc(alt)}" aria-current="${i === 0 ? 'true' : 'false'}"></button>`).join('');
