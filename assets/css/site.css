@@ -1472,3 +1472,14 @@ html:has(.gfade) .gfade__img{
   transform:translateY(-2.35rem);
  }
 }
+
+
+/* Rich, vibrant garden green for WhatsApp across every page */
+html body .whatsapp,
+html:has(.gfade) .whatsapp{
+ background:#2f7a45!important;
+}
+html body .whatsapp__phone,
+html:has(.gfade) .whatsapp__phone{
+ fill:#2f7a45!important;
+}
