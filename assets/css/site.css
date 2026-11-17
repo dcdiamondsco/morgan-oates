@@ -1367,3 +1367,11 @@ html:has(.about) main .stage--bgfix{
   padding-top:env(safe-area-inset-top)!important;
  }
 }
+
+
+/* Keep Transformations out of the desktop homepage navigation */
+@media (min-width:900px){
+ html:has(.stage__hl) .nav__list>li:has(>a[href*="before-and-after"]){
+  display:none!important;
+ }
+}
