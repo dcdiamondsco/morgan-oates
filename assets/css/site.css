@@ -1293,3 +1293,14 @@ html body .about .apanel__head .about__k{margin:0}
  html body .about__intro{min-height:calc(100svh - 6.2rem)}
  html body .about .apanel__head{margin-bottom:-.65rem}
 }
+
+
+/* Deeper Gallery-adaptive WhatsApp greens */
+html:has(.gfade__slide:nth-child(1).is-active){--gallery-wa:#1d612b}
+html:has(.gfade__slide:nth-child(2).is-active){--gallery-wa:#2d6a28}
+html:has(.gfade__slide:nth-child(3).is-active){--gallery-wa:#245d27}
+html:has(.gfade__slide:nth-child(4).is-active){--gallery-wa:#226a35}
+html:has(.gfade__slide:nth-child(5).is-active){--gallery-wa:#326f27}
+html:has(.gfade__slide:nth-child(6).is-active){--gallery-wa:#195f38}
+html:has(.gfade__slide:nth-child(7).is-active){--gallery-wa:#286c28}
+html:has(.gfade__slide:nth-child(8).is-active){--gallery-wa:#176435}
