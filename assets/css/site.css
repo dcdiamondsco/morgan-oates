@@ -1397,3 +1397,14 @@ html body .about__intro{
   transform-origin:center center!important;
  }
 }
+
+
+/* WhatsApp matches the deep climber foliage across the whole site */
+html body .whatsapp,
+html:has(.gfade) .whatsapp{
+ background:#374626!important;
+}
+html body .whatsapp__phone,
+html:has(.gfade) .whatsapp__phone{
+ fill:#374626!important;
+}
