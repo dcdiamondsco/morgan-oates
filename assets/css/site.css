@@ -1304,3 +1304,9 @@ html:has(.gfade__slide:nth-child(5).is-active){--gallery-wa:#326f27}
 html:has(.gfade__slide:nth-child(6).is-active){--gallery-wa:#195f38}
 html:has(.gfade__slide:nth-child(7).is-active){--gallery-wa:#286c28}
 html:has(.gfade__slide:nth-child(8).is-active){--gallery-wa:#176435}
+
+
+/* Hold WhatsApp level with the accreditation row on every page */
+html body .whatsapp{
+ bottom:calc(5.5rem + env(safe-area-inset-bottom))!important;
+}
