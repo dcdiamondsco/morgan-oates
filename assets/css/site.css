@@ -1443,3 +1443,9 @@ html:has(.gfade) .whatsapp__phone{
   white-space:nowrap;
  }
 }
+
+
+/* Freshen original Photo 3: lavender border and lawn */
+.gfade__slide:nth-child(4) .gfade__img{
+ filter:saturate(1.22) contrast(1.06) brightness(1.025)!important;
+}
