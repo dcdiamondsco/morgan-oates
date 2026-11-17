@@ -968,3 +968,22 @@ html:has(.gfade) .footer{display:none}
  html:has(.stage__hl) .header__in{align-items:flex-start}
  html:has(.stage__hl) .menu-btn{margin-top:.05rem}
 }
+
+
+/* Compact transformation labels: one line and close to each comparison */
+html body .ba__h{
+  margin:.35rem 0 0!important;
+  padding:0 clamp(.75rem,2vw,1.5rem)!important;
+  font-size:clamp(.78rem,1.35vw,1rem)!important;
+  line-height:1.1!important;
+  letter-spacing:.01em;
+  white-space:nowrap!important;
+  align-items:center!important;
+}
+html body .ba__h .ba__l,html body .ba__h .ba__r{white-space:nowrap!important}
+html body .ba__br{display:none!important}
+@media (max-width:700px){
+ html body .ba__h{gap:.5rem!important;padding:0 .75rem!important;align-items:center!important}
+ html body .ba__h .ba__l{text-align:left!important}
+ html body .ba__h .ba__r{text-align:right!important}
+}
