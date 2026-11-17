@@ -1115,3 +1115,12 @@ html body footer.footer--compact .footer__legal{margin-bottom:0}
 /* Garden-toned WhatsApp button */
 html body .whatsapp{background:#496b45}
 html body .whatsapp__phone{fill:#496b45}
+
+
+/* More discreet accreditation marks */
+.footer__row .accred img{height:29px!important}
+.footer__row .accred li:nth-child(2) img{height:36px!important}
+@media (max-width:899px){
+ .footer__row .accred img{height:34px!important}
+ .footer__row .accred li:nth-child(2) img{height:42px!important}
+}
