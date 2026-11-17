@@ -118,21 +118,10 @@
 /* hero video: respect reduced motion (shows first frame only) */
 (function(){var v=document.querySelector('.stage__video');if(!v)return;
 if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();}})();
-/* mobile home: open already scrolled so the browser bars tuck away over the photo */
-(function(){try{
- if(document.querySelector('.stage__hl')||document.querySelector('.stage__in--form')||!document.querySelector('.header--over:not([hidden])')||!matchMedia('(max-width:899px)').matches)return;
- if('scrollRestoration' in history)history.scrollRestoration='manual';
- var moved=false;addEventListener('touchstart',function(){moved=true},{passive:true});
- var go=function(){if(!moved&&window.scrollY<80)window.scrollTo(0,96)};
- go();addEventListener('DOMContentLoaded',go);addEventListener('load',go);
- [150,400,900].forEach(function(t){setTimeout(go,t)});
- addEventListener('pageshow',function(){setTimeout(go,50)});
-}catch(e){}})();
-
-/* About page: gentle reveal on scroll (skipped for reduced motion) */
+/* Team and Contact: gentle reveal on scroll (skipped for reduced motion) */
 (function(){
   try{
-    var els=document.querySelectorAll('.about__intro,.apanel--m,.about__more>*,.about__cta');
+    var els=document.querySelectorAll('.about__intro,.apanel--m,.about__more>*,.about__cta,.stage__in--form .cform,.stage__in--form .cdiscuss');
     if(!els.length||!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
     els.forEach(function(el){el.classList.add('rv');io.observe(el);});
