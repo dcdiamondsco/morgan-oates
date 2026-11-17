@@ -1085,3 +1085,33 @@ html body footer.footer--compact .footer__legal{margin-bottom:0}
   line-height:1!important;
  }
 }
+
+
+/* Elegant mobile Menu chevron */
+@media (max-width:899px){
+ html body .menu-btn{
+  position:relative;
+  min-height:2.15rem!important;
+  padding:.25rem .65rem .72rem!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+ }
+ html body .menu-btn::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:.05rem;
+  width:.58rem;
+  height:.58rem;
+  border-right:1.5px solid currentColor;
+  border-bottom:1.5px solid currentColor;
+  transform:translateX(-50%) rotate(45deg);
+  opacity:.92;
+ }
+}
+
+/* Garden-toned WhatsApp button */
+html body .whatsapp{background:#496b45}
+html body .whatsapp__phone{fill:#496b45}
