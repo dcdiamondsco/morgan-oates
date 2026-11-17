@@ -1618,3 +1618,16 @@ html:has(.ba) .close__side>p{
   padding-top:clamp(2rem,6svh,4rem)!important;
  }
 }
+
+
+/* Geometric reference typography for the Morgan Oates wordmark */
+html body .wordmark{
+ font-family:"Century Gothic",Futura,"Avenir Next","Segoe UI",Arial,sans-serif!important;
+ font-weight:400!important;
+ letter-spacing:-.025em!important;
+}
+html body .wordmark small{
+ font-family:"Century Gothic",Futura,"Avenir Next","Segoe UI",Arial,sans-serif!important;
+ font-weight:400!important;
+ letter-spacing:.22em!important;
+}
