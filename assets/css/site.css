@@ -1643,3 +1643,9 @@ html body,
 html body *:not(svg):not(path){
  font-family:var(--brand-font)!important;
 }
+
+
+/* Richer finish for the second-to-last Gallery photograph */
+html:has(.gfade) .gfade__slide:nth-child(7) .gfade__img{
+ filter:saturate(1.22) contrast(1.075) brightness(1.02)!important;
+}
