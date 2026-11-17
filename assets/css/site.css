@@ -1408,3 +1408,18 @@ html body .whatsapp__phone,
 html:has(.gfade) .whatsapp__phone{
  fill:#374626!important;
 }
+
+
+/* Mobile navigation matches the Morgan Oates wordmark cream */
+@media (max-width:899px){
+ html body .menu-btn,
+ html body .header--over .menu-btn{
+  color:#f6ebd0!important;
+ }
+ html body .nav.is-open a,
+ html body .nav.is-open span,
+ html body .header--over .nav.is-open a,
+ html body .header--over .nav.is-open span{
+  color:#f6ebd0!important;
+ }
+}
