@@ -1559,3 +1559,9 @@ html:has(.ba) .close{
  background-position:center 60%!important;
 }
 html:has(.ba) body{padding-bottom:0!important}
+
+
+/* Transformations closing image keeps only the enquiry button */
+html:has(.ba) .close__side>p{
+ display:none!important;
+}
