@@ -57,11 +57,9 @@ const para = (arr) => arr.map((t) => `<p>${esc(t)}</p>`).join('');
 const NAV = () => `
 <nav class="nav" id="site-nav" aria-label="Main">
   <ul class="nav__list">
-    <li><span class="nav__off">Gardens</span></li>
-    <li><span class="nav__off">Services</span></li>
     <li><a class="nav__transformations" href="${href('before-and-after')}"${CUR === 'before-and-after' ? ' aria-current="page"' : ''}>Transformations</a></li>
-    <li><a class="nav__about" href="${href('west-london-landscape-gardeners')}"${CUR === 'west-london-landscape-gardeners' ? ' aria-current="page"' : ''}>About</a></li>
-    ${CUR === '' ? '' : '<li><span class="nav__off">Journal</span></li>'}
+    <li><a class="nav__gallery" href="${href('projects')}"${CUR === 'projects' ? ' aria-current="page"' : ''}>Gallery</a></li>
+    <li><a class="nav__team" href="${href('west-london-landscape-gardeners')}"${CUR === 'west-london-landscape-gardeners' ? ' aria-current="page"' : ''}>The Team</a></li>
     <li><a class="nav__contact" href="${href('contact')}"${CUR === 'contact' ? ' aria-current="page"' : ''}>Contact</a></li>
   </ul>
 </nav>`;
@@ -123,7 +121,7 @@ ${true ? `<footer class="footer footer--compact"><div class="wrap footer__row"><
       <h2 class="footer__h">The studio</h2>
       <ul>
         <li><a href="${href('projects')}">Gardens</a></li>
-        <li><a href="${href('west-london-landscape-gardeners')}">About and team</a></li>
+        <li><a href="${href('west-london-landscape-gardeners')}">The Team</a></li>
         <li><a href="${href('before-and-after')}">Before and after</a></li>
         <li><a href="${href('blog')}">Journal</a></li>
         <li><a href="${href('contact')}">Contact</a></li>
@@ -351,7 +349,7 @@ function bgStage() {
 }
 CUR = 'west-london-landscape-gardeners';
 add('west-london-landscape-gardeners', layout({
-  title: 'About Morgan Oates | Family garden designers and landscapers, Cheltenham and the Cotswolds', path: 'west-london-landscape-gardeners', dark: true, ogImage: team[0].image,
+  title: 'The Team | Morgan Oates, garden designers and landscapers in Cheltenham and the Cotswolds', path: 'west-london-landscape-gardeners', dark: true, ogImage: team[0].image,
   desc: 'Garden designers and landscapers in Cheltenham and the Cotswolds: garden design, dry stone walls, patios, driveways, ponds, water features, garden rooms, pergolas, outdoor kitchens, planting, lighting, irrigation and garden maintenance. Meet Dan, Ania and the team.',
   body: bgStage() + `
 <div class="about">
