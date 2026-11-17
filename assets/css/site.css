@@ -1657,3 +1657,9 @@ html:has(.gfade) .gfade__slide:nth-child(7) .gfade__img{
   right:2rem!important;
  }
 }
+
+
+/* Keep BALI beside the legal links at the footer's far right */
+.footer--compact .footer__legal{align-items:center}
+.footer__bali img{display:block;width:auto;height:25px}
+@media (max-width:899px){.footer__bali img{height:22px}}
