@@ -28,7 +28,7 @@ const proj = Object.fromEntries(projects.map((p) => [p.slug, p]));
 let CUR = ''; // path of the page being rendered ('' = home)
 
 const rel = (to) => '../'.repeat(CUR.split('/').filter(Boolean).length) + to;
-const LOCAL_ONLY = new Set(['privacy', 'terms', 'contact', 'west-london-landscape-gardeners', 'before-and-after']);
+const LOCAL_ONLY = new Set(['privacy', 'terms', 'contact', 'projects', 'west-london-landscape-gardeners', 'before-and-after']);
 const href = (to) => (to && !LOCAL_ONLY.has(to) ? 'https://morganoates.co/' + to : LINKS === 'files' ? rel(to ? to + '/index.html' : 'index.html') : '/' + to);
 const asset = (to) => (LINKS === 'files' ? rel(to) : '/' + to);
 
@@ -322,19 +322,36 @@ for (const s of Object.values(svc.pages)) {
   }));
 }
 
-// PROJECTS (gallery of the owner's own photographs)
+// GALLERY — full-screen cross-fade slideshow
 {
-  const G = [
-    ['Show gardens', 'Gardens built for show.', [['show-2','900x600'],['show-3','900x614'],['show-4','900x551'],['show-5','900x551']]],
-    ['Planting in green and brown', 'Soft planting set against warm stone and timber.', [['green-brown','900x600'],['green-brown-2','900x600'],['green-brown-3','900x604']]],
-    ['Green gardens', 'Lawns, borders and clipped greens.', [['main-green','900x551'],['main-green-2','900x551'],['main-green-3','829x551'],['green','900x599'],['green-2','900x599']]]
+  const gallery = [
+    ['photos/gallery-01-sculpture-garden-1032x1280', 'A clipped garden with a circular stone sculpture, lawn and flowering alliums'],
+    ['photos/gallery-02-terrace-1032x1280', 'A contemporary garden terrace with outdoor seating, planting and a curved floor lamp'],
+    ['photos/gallery-03-lavender-border-1206x1280', 'A lawn edged with lavender, roses and flowering borders beside a mature garden wall'],
+    ['photos/gallery-04-treehouse-courtyard-1032x1280', 'A timber treehouse above a cobbled courtyard with an outdoor kitchen and planting'],
+    ['photos/g-green-brown-2-900x600', 'A sheltered garden dining terrace framed by layered green planting and warm timber'],
+    ['photos/gallery-06-sauna-water-feature-1032x1280', 'An illuminated timber garden sauna beside a contemporary water feature and planted terrace'],
+    ['photos/g-main-green-3-829x551', 'A formal front garden with clipped hedging, lawn and generous planting'],
+    ['photos/g-green-2-900x599', 'A green garden with a striped lawn, mature trees and layered borders']
   ];
-  const sec = G.map(([t, d, ims], gi) => `<section class="pi__group" aria-labelledby="gg${gi}"><h2 id="gg${gi}" class="pi__gh">${t}</h2><p class="lede">${d}</p><div class="pi__grid">${ims.map(([n, wh], k) => `<figure class="pi__card reveal">${pic('photos/g-' + n + '-' + wh, { alt: t + ', photograph ' + (k + 1) + ' of ' + ims.length + ' by Morgan Oates', sizes: '(min-width: 900px) 30vw, 100vw' })}</figure>`).join('')}</div></section>`).join('');
+  const slides = gallery.map(([key, alt], i) => `<figure class="gfade__slide${i === 0 ? ' is-active' : ''}" data-gallery-slide aria-hidden="${i === 0 ? 'false' : 'true'}">${pic(key, { alt, sizes: '100vw', cls: 'gfade__img', eager: i === 0 })}</figure>`).join('');
+  const dots = gallery.map(([, alt], i) => `<button class="gfade__dot${i === 0 ? ' is-active' : ''}" type="button" data-gallery-go="${i}" aria-label="Show image ${i + 1}: ${esc(alt)}" aria-current="${i === 0 ? 'true' : 'false'}"></button>`).join('');
   add('projects', layout({
-    title: 'Gardens | Morgan Oates, Cheltenham and the Cotswolds', path: 'projects',
-    desc: 'Gardens designed and built by Morgan Oates, a family team of garden designers and landscapers in Cheltenham.',
-    body: `<section class="phead"><div class="wrap">${crumbs([['Home', ''], ['Gardens', null]])}<p class="kicker">Gardens</p><h1>Gardens</h1><p class="lede">A selection of our own photographs, from show gardens to planted family gardens.</p></div></section>
-<div class="wrap">${sec}</div>${cta()}`
+    title: 'Gallery | Morgan Oates, Cheltenham and the Cotswolds', path: 'projects',
+    desc: 'A full-screen gallery of gardens designed, built and cared for by Morgan Oates in Cheltenham and the Cotswolds.',
+    dark: true, compact: true,
+    body: `<section class="gfade" data-gallery aria-roledescription="carousel" aria-labelledby="gallery-h">
+      <h1 id="gallery-h" class="vh">Gallery</h1>
+      <div class="gfade__slides">${slides}</div>
+      <div class="gfade__veil" aria-hidden="true"></div>
+      <div class="gfade__controls">
+        <button class="gfade__arrow gfade__prev" type="button" data-gallery-prev aria-label="Previous image"><span aria-hidden="true">←</span></button>
+        <div class="gfade__dots" aria-label="Choose an image">${dots}</div>
+        <p class="gfade__count" aria-live="polite"><span data-gallery-current>1</span> / ${gallery.length}</p>
+        <button class="gfade__pause" type="button" data-gallery-pause aria-pressed="false">Pause</button>
+        <button class="gfade__arrow gfade__next" type="button" data-gallery-next aria-label="Next image"><span aria-hidden="true">→</span></button>
+      </div>
+    </section>`
   }));
 }
 projects.length = 0;

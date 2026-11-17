@@ -931,3 +931,40 @@ html body .ba__h .ba__l,html body .ba__h .ba__r{flex:1 1 0;min-width:0;text-alig
 .js .ba__hint{flex-direction:column;align-items:flex-end;gap:.15rem;transform:translate(calc(-100% - 1.5rem),calc(-100% + .9rem));text-shadow:0 1px 8px rgba(0,0,0,.7)}
 .ba__hint-t{font:400 1.35rem/1 "Playfair Display",Georgia,serif;font-style:italic;letter-spacing:.02em;text-transform:none;margin-right:1.4rem}
 .ba__hint svg{display:block;filter:drop-shadow(0 1px 4px rgba(0,0,0,.6))}
+
+
+/* Full-screen gallery cross-fade */
+html:has(.gfade),html:has(.gfade) body{height:100%;overflow:hidden}
+html:has(.gfade) body{background:#182017}
+html:has(.gfade) .header{position:fixed;inset:0 0 auto;z-index:20;background:linear-gradient(180deg,rgba(15,22,16,.68),rgba(15,22,16,0));border:0}
+html:has(.gfade) .header--over .wordmark,html:has(.gfade) .header--over .nav a,html:has(.gfade) .header--over .menu-btn{color:#fff;text-shadow:0 1px 5px rgba(0,0,0,.45)}
+html:has(.gfade) .header--over .menu-btn{border-color:rgba(255,255,255,.75)}
+html:has(.gfade) .footer{display:none}
+.gfade{position:fixed;inset:0;overflow:hidden;background:#182017;color:#fff}
+.gfade__slides,.gfade__slide{position:absolute;inset:0;margin:0}
+.gfade__slide{opacity:0;visibility:hidden;transition:opacity 1.6s ease,visibility 0s linear 1.6s}
+.gfade__slide.is-active{opacity:1;visibility:visible;transition:opacity 1.6s ease}
+.gfade__img{width:100%;height:100%;object-fit:cover;object-position:center}
+.gfade__veil{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(12,18,13,.28),transparent 28%,transparent 68%,rgba(12,18,13,.42))}
+.gfade__controls{position:absolute;z-index:5;left:50%;bottom:max(1.25rem,env(safe-area-inset-bottom));transform:translateX(-50%);display:flex;align-items:center;gap:.75rem;padding:.58rem .8rem;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(18,26,19,.46);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.gfade__arrow,.gfade__pause,.gfade__dot{appearance:none;border:0;color:#fff;background:none;cursor:pointer}
+.gfade__arrow{width:2rem;height:2rem;border-radius:50%;font-size:1.1rem;line-height:1}
+.gfade__pause{font:600 .7rem/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;padding:.55rem}
+.gfade__dots{display:flex;align-items:center;gap:.42rem}
+.gfade__dot{width:.42rem;height:.42rem;padding:0;border-radius:50%;background:rgba(255,255,255,.48)}
+.gfade__dot.is-active{background:#fff;transform:scale(1.35)}
+.gfade__count{margin:0;min-width:2.9rem;text-align:center;font:500 .72rem/1 var(--sans);letter-spacing:.08em}
+.gfade button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+@media (max-width:899px){
+ html:has(.gfade) .header{padding-top:env(safe-area-inset-top)}
+ .gfade__controls{bottom:max(.85rem,env(safe-area-inset-bottom));gap:.35rem;padding:.5rem .62rem;max-width:calc(100vw - 1rem)}
+ .gfade__dots{gap:.32rem}.gfade__pause{padding:.5rem .3rem}.gfade__count{min-width:2.5rem}
+ .gfade__img{object-position:center}
+}
+@media (prefers-reduced-motion:reduce){.gfade__slide,.gfade__slide.is-active{transition:none}}
+
+/* Keep the homepage Menu aligned with the wordmark, above the tagline */
+@media (max-width:899px){
+ html:has(.stage__hl) .header__in{align-items:flex-start}
+ html:has(.stage__hl) .menu-btn{margin-top:.05rem}
+}
