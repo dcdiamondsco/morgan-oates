@@ -1012,3 +1012,10 @@ html:has(.ba) .header--over{position:absolute;z-index:20}
 
 /* Gallery runs automatically; keep the photographs free of manual controls */
 html:has(.gfade) .gfade__controls{display:none!important}
+
+
+/* Gallery image-specific framing */
+.gfade__slide:nth-child(5) .gfade__img,
+.gfade__slide:nth-child(6) .gfade__img,
+.gfade__slide:nth-child(7) .gfade__img{object-fit:contain;background:#182017}
+.gfade__slide:nth-child(8) .gfade__img{filter:saturate(1.35) contrast(1.08) brightness(1.03)}
