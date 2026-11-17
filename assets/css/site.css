@@ -1565,3 +1565,40 @@ html:has(.ba) body{padding-bottom:0!important}
 html:has(.ba) .close__side>p{
  display:none!important;
 }
+
+
+/* Safari mobile: Team backdrop keeps one fixed crop while browser bars move */
+@keyframes team-fade-fixed{
+ 0%{opacity:0}
+ 3%{opacity:1}
+ 14.3%{opacity:1}
+ 17.3%{opacity:0}
+ 100%{opacity:0}
+}
+@media (max-width:899px){
+ html:has(.about) main .stage--bgfix{
+  top:0!important;
+  bottom:auto!important;
+  width:100vw!important;
+  height:100vh!important;
+  min-height:100vh!important;
+  max-height:100vh!important;
+  height:100lvh!important;
+  min-height:100lvh!important;
+  max-height:100lvh!important;
+ }
+ html:has(.about) main .stage--bgfix .stage__slides,
+ html:has(.about) main .stage--bgfix .stage__slide{
+  width:100vw!important;
+  height:100%!important;
+  min-height:100%!important;
+  max-height:100%!important;
+ }
+ html:has(.about) main .stage--bgfix .stage__slide{
+  object-fit:cover!important;
+  transform:none!important;
+  -webkit-transform:none!important;
+  animation:team-fade-fixed 49s linear infinite!important;
+  animation-delay:calc(var(--i) * 7s - 3.1s)!important;
+ }
+}
