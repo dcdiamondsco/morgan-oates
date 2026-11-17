@@ -1631,3 +1631,15 @@ html body .wordmark small{
  font-weight:400!important;
  letter-spacing:.22em!important;
 }
+
+
+/* One geometric type family across the complete site */
+:root{
+ --brand-font:"Century Gothic",Futura,"Avenir Next","Segoe UI",Arial,sans-serif;
+ --serif:var(--brand-font);
+ --sans:var(--brand-font);
+}
+html body,
+html body *:not(svg):not(path){
+ font-family:var(--brand-font)!important;
+}
