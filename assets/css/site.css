@@ -1310,3 +1310,20 @@ html:has(.gfade__slide:nth-child(8).is-active){--gallery-wa:#176435}
 html body .whatsapp{
  bottom:calc(5.5rem + env(safe-area-inset-bottom))!important;
 }
+
+
+/* Homepage-only accreditation alignment; restore other pages */
+html body .whatsapp{
+ bottom:calc(1rem + env(safe-area-inset-bottom))!important;
+}
+html:has(.stage__hl) body .whatsapp{
+ bottom:calc(4.7rem + env(safe-area-inset-bottom))!important;
+}
+@media (max-width:899px){
+ html body .whatsapp{
+  bottom:calc(.8rem + env(safe-area-inset-bottom))!important;
+ }
+ html:has(.stage__hl) body .whatsapp{
+  bottom:calc(4.7rem + env(safe-area-inset-bottom))!important;
+ }
+}
