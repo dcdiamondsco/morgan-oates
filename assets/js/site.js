@@ -14,7 +14,6 @@
     var settleTeamTop = function () {
       teamTop();
       requestAnimationFrame(teamTop);
-      [80, 250, 600].forEach(function (delay) { window.setTimeout(teamTop, delay); });
     };
     var lockTeamViewport = function () {
       d.documentElement.style.setProperty('--team-vh', window.innerHeight + 'px');

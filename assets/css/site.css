@@ -1375,3 +1375,15 @@ html:has(.about) main .stage--bgfix{
   display:none!important;
  }
 }
+
+
+/* Anchor the Team introduction immediately; no load-time floating */
+html body .about__intro{
+ justify-content:flex-start!important;
+ padding-top:clamp(2.5rem,8svh,5rem)!important;
+}
+@media (max-width:899px){
+ html body .about__intro{
+  padding-top:clamp(2.25rem,7svh,4rem)!important;
+ }
+}
