@@ -1387,3 +1387,13 @@ html body .about__intro{
   padding-top:clamp(2.25rem,7svh,4rem)!important;
  }
 }
+
+
+/* Mobile Team slideshow fades only; never scales while scrolling */
+@media (max-width:899px){
+ html:has(.about) main .stage--bgfix .stage__slide{
+  transform:translate3d(0,0,0)!important;
+  -webkit-transform:translate3d(0,0,0)!important;
+  transform-origin:center center!important;
+ }
+}
