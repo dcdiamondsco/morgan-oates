@@ -1528,3 +1528,11 @@ html:has(.gfade) .gfade__slide:nth-child(8) .gfade__img{
   margin-top:0!important;
  }
 }
+
+
+/* Team introduction sits clearly beneath the fixed header on mobile */
+@media (max-width:899px){
+ html body .about__intro{
+  padding-top:clamp(4.5rem,12svh,6.5rem)!important;
+ }
+}
