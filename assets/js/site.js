@@ -7,12 +7,20 @@
   if (d.querySelector('.about')) {
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
     var teamTop = function () { window.scrollTo(0, 0); };
+    var lockTeamViewport = function () {
+      d.documentElement.style.setProperty('--team-vh', window.innerHeight + 'px');
+    };
+    lockTeamViewport();
     teamTop();
     window.addEventListener('pageshow', function () {
+      lockTeamViewport();
       teamTop();
       requestAnimationFrame(teamTop);
     });
     window.addEventListener('load', function () { requestAnimationFrame(teamTop); }, { once: true });
+    window.addEventListener('orientationchange', function () {
+      window.setTimeout(lockTeamViewport, 350);
+    });
   }
 
   /* mobile menu */

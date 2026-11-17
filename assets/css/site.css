@@ -1346,3 +1346,11 @@ html:has(.about) main .stage--bgfix .stage__slide{
  -webkit-backface-visibility:hidden;
  backface-visibility:hidden;
 }
+
+
+/* Safari: toolbar changes must not resize or zoom the Team backdrop */
+html:has(.about) main .stage--bgfix{
+ height:var(--team-vh,100svh)!important;
+ min-height:var(--team-vh,100svh)!important;
+ max-height:var(--team-vh,100svh)!important;
+}
