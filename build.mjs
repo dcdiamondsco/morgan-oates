@@ -331,9 +331,9 @@ for (const s of Object.values(svc.pages)) {
     ['photos/gallery-01-sculpture-garden-1032x1280', 'A clipped garden with a circular stone sculpture, lawn and flowering alliums'],
     ['photos/gallery-02-terrace-1032x1280', 'A contemporary garden terrace with outdoor seating, planting and a curved floor lamp'],
     ['photos/gallery-04-treehouse-courtyard-1032x1280', 'A timber treehouse above a cobbled courtyard with an outdoor kitchen and planting'],
+    ['photos/gallery-06-sauna-water-feature-1127x1396', 'An illuminated timber garden sauna beside a contemporary water feature and planted terrace'],
     ['photos/gallery-03-lavender-border-1206x1280', 'A lawn edged with lavender, roses and flowering borders beside a mature garden wall'],
     ['photos/g-green-brown-2-900x600', 'A sheltered garden dining terrace framed by layered green planting and warm timber'],
-    ['photos/gallery-06-sauna-water-feature-1127x1396', 'An illuminated timber garden sauna beside a contemporary water feature and planted terrace'],
     ['photos/g-main-green-3-829x551', 'A formal front garden with clipped hedging, lawn and generous planting'],
     ['photos/g-green-2-900x599', 'A green garden with a striped lawn, mature trees and layered borders']
   ];
