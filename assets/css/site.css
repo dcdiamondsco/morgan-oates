@@ -1236,3 +1236,29 @@ html:has(.ba) .close{padding-bottom:clamp(3.5rem,8vw,7rem)!important}
   opacity:.9;
  }
 }
+
+
+/* Gallery-adaptive vibrant WhatsApp greens */
+html:has(.gfade__slide:nth-child(1).is-active){--gallery-wa:#2f963f}
+html:has(.gfade__slide:nth-child(2).is-active){--gallery-wa:#4e9b36}
+html:has(.gfade__slide:nth-child(3).is-active){--gallery-wa:#3d8d35}
+html:has(.gfade__slide:nth-child(4).is-active){--gallery-wa:#379b4d}
+html:has(.gfade__slide:nth-child(5).is-active){--gallery-wa:#55a638}
+html:has(.gfade__slide:nth-child(6).is-active){--gallery-wa:#288c50}
+html:has(.gfade__slide:nth-child(7).is-active){--gallery-wa:#43a13b}
+html:has(.gfade__slide:nth-child(8).is-active){--gallery-wa:#27994b}
+html:has(.gfade) .whatsapp{
+ background:var(--gallery-wa,#3f963d)!important;
+ transition:background-color 1.8s ease,transform .2s ease,box-shadow .2s ease;
+}
+html:has(.gfade) .whatsapp__phone{
+ fill:var(--gallery-wa,#3f963d)!important;
+ transition:fill 1.8s ease;
+}
+
+/* Sauna slide returns to full-bleed framing */
+.gfade__slide:nth-child(6) .gfade__img{
+ object-fit:cover!important;
+ object-position:center!important;
+ background:transparent!important;
+}
