@@ -265,7 +265,7 @@ function wall() {
   <div class="stage__veil"></div>${words}
 </section>` : hasPhotos ? `
 <section class="stage stage--video stage--photo" aria-labelledby="hero-h">
-  ${slides.map((s, i) => `<img class="stage__slide${s.f.includes('sunrise') ? ' stage__slide--sun' : ''}${i === 0 ? ' is-active' : ''}" data-team-background="${i}" style="--i:${i};--b:${s.b || 1}${s.pos ? ';object-position:' + s.pos : ''}" src="${asset('assets/photos/' + s.f)}" width="${s.w}" height="${s.h}" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'} alt="${esc(s.alt || '')}">`).join('\n  ')}
+  ${slides.map((s, i) => `<img class="stage__slide${s.f.includes('sunrise') ? ' stage__slide--sun' : ''}" style="--i:${i};--b:${s.b || 1}${s.pos ? ';object-position:' + s.pos : ''}" src="${asset('assets/photos/' + s.f)}" width="${s.w}" height="${s.h}" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'} alt="${esc(s.alt || '')}">`).join('\n  ')}
   <div class="stage__veil"></div>${words}
 </section>` : `
 <section class="stage" aria-labelledby="hero-h">${words}
@@ -363,7 +363,7 @@ for (const k of Object.keys(proj)) delete proj[k];
 // ABOUT
 function bgStage() {
   return `<div class="stage stage--video stage--photo stage--bgfix" aria-hidden="true">
-  ${SLIDES_SHARED.map((s, i) => `<img class="stage__slide${s.f.includes('sunrise') ? ' stage__slide--sun' : ''}" style="--i:${i};--b:${s.b || 1}${s.pos ? ';object-position:' + s.pos : ''}" src="${asset('assets/photos/' + s.f)}" width="${s.w}" height="${s.h}" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'} alt="">`).join('\n  ')}
+  ${SLIDES_SHARED.map((s, i) => `<img class="stage__slide${s.f.includes('sunrise') ? ' stage__slide--sun' : ''}${i === 0 ? ' is-active' : ''}" data-team-background="${i}" style="--i:${i};--b:${s.b || 1}${s.pos ? ';object-position:' + s.pos : ''}" src="${asset('assets/photos/' + s.f)}" width="${s.w}" height="${s.h}" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'} alt="">`).join('\n  ')}
   <div class="stage__veil"></div>
 </div>`;
 }
