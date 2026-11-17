@@ -413,7 +413,7 @@ add('before-and-after', layout({
     ${baImg(p.before, p.w, p.h, p.bAlt, 'ba__img ba__img--b')}
     ${baImg(p.after, p.w, p.h, p.aAlt, 'ba__img ba__img--a')}
     <span class="ba__tag ba__tag--b" aria-hidden="true">Before</span><span class="ba__tag ba__tag--a" aria-hidden="true">After</span>
-    <span class="ba__bar" aria-hidden="true"><span class="ba__knob"></span></span><span class="ba__hint" aria-hidden="true"><span class="ba__hint-t">Pull me</span><svg viewBox="0 0 60 44" width="60" height="44"><path d="M8 3C2 20 14 38 46 37" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M39 31l8 6-9 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="ba__bar" aria-hidden="true"><span class="ba__knob"></span></span><span class="ba__hint" aria-hidden="true"><span class="ba__hint-t">Drag me</span><svg viewBox="0 0 60 44" width="60" height="44"><path d="M8 3C2 20 14 38 46 37" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M39 31l8 6-9 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <input class="ba__range" type="range" min="0" max="100" value="${p.start || 90}" aria-label="Compare before and after: ${esc(p.title)}">
   </div>
   <h2 id="ba-${p.id}" class="ba__h"><span class="ba__l">${p.tb.includes("<br") ? p.tb : esc(p.tb)}</span><span class="vh"> to </span><span class="ba__r">${esc(p.ta)}</span></h2>
