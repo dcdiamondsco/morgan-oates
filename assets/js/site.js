@@ -204,23 +204,3 @@ if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.
   show(0); start();
 }());
 
-
-/* Hold a garden backdrop for each team member as their profile reaches the viewport centre. */
-(function(){
-  var stage=document.querySelector('.stage--bgfix');
-  if(!stage||!('IntersectionObserver' in window))return;
-  var slides=Array.prototype.slice.call(stage.querySelectorAll('.stage__slide[data-team-background]'));
-  var members=Array.prototype.slice.call(document.querySelectorAll('.about__team .apanel--m[data-team-background]'));
-  if(!slides.length||!members.length)return;
-  var show=function(member){
-    var selected=member.getAttribute('data-team-background');
-    slides.forEach(function(slide){slide.classList.toggle('is-active',slide.getAttribute('data-team-background')===selected);});
-  };
-  var observer=new IntersectionObserver(function(entries){
-    var visible=entries.filter(function(entry){return entry.isIntersecting;});
-    if(!visible.length)return;
-    visible.sort(function(a,b){return b.intersectionRatio-a.intersectionRatio;});
-    show(visible[0].target);
-  },{rootMargin:'-38% 0px -42% 0px',threshold:0});
-  members.forEach(function(member){observer.observe(member);});
-})();

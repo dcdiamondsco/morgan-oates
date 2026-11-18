@@ -1663,18 +1663,6 @@ html:has(.gfade) .gfade__slide:nth-child(7) .gfade__img{
 .footer--compact .footer__legal{align-items:center}
 .footer__bali img{display:block;width:auto;height:25px}
 @media (max-width:899px){.footer__bali img{height:22px}}
-
-
-/* Team backdrop changes only when the next profile reaches the viewport centre */
-html:has(.about) main .stage--bgfix .stage__slide{
- animation:none!important;
- opacity:0!important;
- transform:none!important;
- -webkit-transform:none!important;
- transition:opacity .9s ease!important;
-}
-html:has(.about) main .stage--bgfix .stage__slide.is-active{opacity:1!important}
-@media (prefers-reduced-motion:reduce){html:has(.about) main .stage--bgfix .stage__slide{transition:none!important}}
 /* home: larger logo, smaller headline */
 html:has(.stage__hl) .header--over .wordmark{font-size:2.15rem!important}
 html:has(.stage__hl) .header--over .wordmark small{font-size:.68rem!important;margin-top:.5rem}

@@ -363,7 +363,7 @@ for (const k of Object.keys(proj)) delete proj[k];
 // ABOUT
 function bgStage() {
   return `<div class="stage stage--video stage--photo stage--bgfix" aria-hidden="true">
-  ${SLIDES_SHARED.map((s, i) => `<img class="stage__slide${s.f.includes('sunrise') ? ' stage__slide--sun' : ''}${i === 0 ? ' is-active' : ''}" data-team-background="${i}" style="--i:${i};--b:${s.b || 1}${s.pos ? ';object-position:' + s.pos : ''}" src="${asset('assets/photos/' + s.f)}" width="${s.w}" height="${s.h}" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'} alt="">`).join('\n  ')}
+  ${SLIDES_SHARED.map((s, i) => `<img class="stage__slide${s.f.includes('sunrise') ? ' stage__slide--sun' : ''}" style="--i:${i};--b:${s.b || 1}${s.pos ? ';object-position:' + s.pos : ''}" src="${asset('assets/photos/' + s.f)}" width="${s.w}" height="${s.h}" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'} alt="">`).join('\n  ')}
   <div class="stage__veil"></div>
 </div>`;
 }
@@ -378,7 +378,7 @@ add('west-london-landscape-gardeners', layout({
   <p class="about__lede">Morgan Oates is a garden design and landscaping company based in Cheltenham, working across the Cotswolds. We design and build gardens, from dry stone walls, patios and driveways to ponds, water features, garden rooms, pergolas, outdoor kitchens, planting, lighting and irrigation, and we look after them with garden maintenance and lawn care.</p>
  </section>
  <div class="wrap about__in about__team">
-  ${team.map((m, i) => `<article class="apanel apanel--m" data-team-background="${[1,4,6][i % 3]}" aria-labelledby="m-${esc(m.name.split(' ')[0].toLowerCase())}">
+  ${team.map((m) => `<article class="apanel apanel--m" aria-labelledby="m-${esc(m.name.split(' ')[0].toLowerCase())}">
    <header class="apanel__head"><h2 id="m-${esc(m.name.split(' ')[0].toLowerCase())}" class="apanel__h">${esc(m.name)}</h2><p class="about__k">${esc(m.role)}</p></header>
    <figure class="apanel__ph"><img src="${asset(m.local)}" width="${m.w}" height="${m.h}" alt="${esc(m.alt)}" loading="lazy" decoding="async"></figure>
    <div class="apanel__t">${para(m.bio)}${m.quote ? `<blockquote class="apanel__q"><p>${esc(m.quote.text)}</p><footer>${esc(m.quote.by)}</footer></blockquote>` : ''}</div>
