@@ -1671,3 +1671,15 @@ html:has(.stage__hl) .stage__h{font-size:clamp(2.4rem,4.2vw,3.6rem)!important}
 html:has(.stage__hl) .header--over .wordmark{font-size:2.05rem!important}
 html:has(.stage__hl) .stage__h{font-size:clamp(1.7rem,7.6vw,2.2rem)!important}
 }
+
+/* Mobile Safari: photo backgrounds never resize or zoom as the browser bars hide */
+@media (max-width:899px){
+ .stage .stage__slide{transform:none!important;-webkit-transform:none!important}
+ html:not(:has(.stage__hl)) .stage--photo:not(.stage--bgfix) .stage__slide,
+ html:not(:has(.stage__hl)) .stage--photo:not(.stage--bgfix) .stage__veil{
+  position:fixed!important;top:0!important;left:0!important;right:auto!important;bottom:auto!important;
+  width:100%!important;height:100vh!important;height:100lvh!important;min-height:0!important;max-height:none!important;
+ }
+ html:not(:has(.stage__hl)) .stage--photo:not(.stage--bgfix) .stage__slide{object-fit:cover!important}
+ html:not(:has(.stage__hl)) .stage--photo:not(.stage--bgfix){overflow:visible!important}
+}
