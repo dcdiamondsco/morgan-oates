@@ -1683,3 +1683,6 @@ html:has(.stage__hl) .stage__h{font-size:clamp(1.7rem,7.6vw,2.2rem)!important}
  html:not(:has(.stage__hl)) .stage--photo:not(.stage--bgfix) .stage__slide{object-fit:cover!important}
  html:not(:has(.stage__hl)) .stage--photo:not(.stage--bgfix){overflow:visible!important}
 }
+.footer__apl{display:flex;align-items:center}
+.footer__apl img{display:block;width:auto;height:36px}
+@media (max-width:899px){.footer__apl img{height:32px}}
