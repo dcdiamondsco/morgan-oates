@@ -59,6 +59,7 @@ const NAV = () => `
 <nav class="nav" id="site-nav" aria-label="Main">
   <ul class="nav__list">
     <li><a class="nav__transformations" href="${href('before-and-after')}"${CUR === 'before-and-after' ? ' aria-current="page"' : ''}>Transformations</a></li>
+    <li class="nav__has-sub"><a class="nav__areas" href="${href('')}"${areas.some((a) => a.slug === CUR) ? ' aria-current="page"' : ''}>Areas</a><ul class="nav__sub"><li><a href="${href('')}">The Cotswolds</a></li>${areas.map((a) => `<li><a href="${href(a.slug)}">${esc(a.name)}</a></li>`).join('')}</ul></li>
     <li><a class="nav__gallery" href="${href('projects')}"${CUR === 'projects' ? ' aria-current="page"' : ''}>Gallery</a></li>
     <li><a class="nav__team" href="${href('west-london-landscape-gardeners')}"${CUR === 'west-london-landscape-gardeners' ? ' aria-current="page"' : ''}>The Team</a></li>
     <li><a class="nav__contact" href="${href('contact')}"${CUR === 'contact' ? ' aria-current="page"' : ''}>Contact</a></li>
