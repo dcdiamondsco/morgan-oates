@@ -347,17 +347,14 @@ for (const ar of areas) {
   <div class="stage__veil"></div>${words}
 </section>`;
   const band = ar.band.map(([k, alt]) => pic(k, { alt, sizes: '(min-width: 900px) 30vw, 100vw' })).join('');
-  const others = areas.filter((o) => o.slug !== ar.slug).map((o) => `<a href="${href(o.slug)}">${esc(o.name)}</a>`).join('') + `<a href="${href('')}">The Cotswolds</a>`;
+  const covers = [['', 'The Cotswolds'], ...areas.map((o) => [o.slug, o.name])].map(([sl, nm]) => sl === ar.slug ? `<strong>${esc(nm)}</strong>` : `<a href="${href(sl)}">${esc(nm)}</a>`).join('');
   add(ar.slug, layout({
     title: ar.metaTitle, desc: ar.metaDescription, path: ar.slug, ogImage: ar.hero[0][0], compact: true, dark: true,
     ld: { '@context': 'https://schema.org', '@type': 'WebPage', name: ar.metaTitle.split(' | ')[0], url: `${site.canonicalOrigin}/${ar.slug}`, about: { '@type': 'Service', serviceType: 'Garden design and landscaping', provider: { '@type': 'LocalBusiness', name: site.name, url: site.canonicalOrigin }, areaServed: { '@type': ar.ldArea.type, name: ar.ldArea.name } } },
     body: `${stage}
 <div class="abody">
 <div class="wrap agal">${band}</div>
-<div class="wrap prose">
- <section class="prose__sec"><h2>Where we work</h2><div><p>${esc(ar.work)}</p><ul class="linklist">${Object.values(svc.pages).map((s2) => `<li><a href="${href(s2.path)}">${esc(s2.title)}</a></li>`).join('')}</ul></div></section>
-</div>
-<nav class="wrap aalso" aria-label="Other areas"><span>Also in</span>${others}</nav>
+<nav class="wrap aalso" aria-label="Areas we cover"><span>We cover</span>${covers}</nav>
 </div>
 ${cta(ar.ctaHead)}`
   }));
