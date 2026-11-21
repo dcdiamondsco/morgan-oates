@@ -1686,3 +1686,7 @@ html:has(.stage__hl) .stage__h{font-size:clamp(1.7rem,7.6vw,2.2rem)!important}
 .footer__apl{display:flex;align-items:center}
 .footer__apl img{display:block;width:auto;height:36px}
 @media (max-width:899px){.footer__apl img{height:32px}}
+
+/* Oxfordshire page */
+.oxg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(.6rem,1.6vw,1.2rem);margin:1.4rem 0 0}.oxg figure{margin:0}.oxg img{width:100%;height:auto;display:block;filter:sepia(.07) saturate(.97)}
+.prose__sec h3{font-size:1.05rem;margin:1.2rem 0 .3rem}.prose__sec h3:first-child{margin-top:0}

@@ -1,4 +1,26 @@
 {
  "note": "Every photograph used by the site. Source files are on morganoates.co (maximum width available there: 900px; homepage slideshow images up to 1400px). Permission to reuse must be confirmed by the owner.",
- "images": []
+ "images": [
+  {
+   "key": "projects/oxfordshire/cover-900x600",
+   "width": 900,
+   "height": 600,
+   "source": "https://morganoates.co/thumbs/projects/oxfordshire/cover-900x600.jpg",
+   "local": "assets/images/projects/oxfordshire/cover-900x600.jpg"
+  },
+  {
+   "key": "projects/oxfordshire/img_5690-900x599",
+   "width": 900,
+   "height": 599,
+   "source": "https://morganoates.co/thumbs/projects/oxfordshire/img_5690-900x599.jpg",
+   "local": "assets/images/projects/oxfordshire/img_5690-900x599.jpg"
+  },
+  {
+   "key": "projects/oxfordshire/img_5704-900x600",
+   "width": 900,
+   "height": 600,
+   "source": "https://morganoates.co/thumbs/projects/oxfordshire/img_5704-900x600.jpg",
+   "local": "assets/images/projects/oxfordshire/img_5704-900x600.jpg"
+  }
+ ]
 }

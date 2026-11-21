@@ -43,3 +43,10 @@ After launch: submit the sitemap, spot-check every URL above returns 200, confir
 
 ## Deploying
 Not done, by instruction. When approved: `LAUNCH=1 node build.mjs` after `fetch-assets`, upload `dist/` to the chosen host, add `_redirects`/`_headers` equivalents, then change DNS.
+
+## Oxfordshire page (/oxfordshire) — to confirm with Dan before launch
+- Coverage wording ("Oxfordshire side around Burford, Charlbury and Chipping Norton") is a business claim: confirm those are areas Morgan Oates actually works in.
+- The Oxfordshire garden is credited only as "designed by Stephen Woodhams" (old site gave no builder). Confirm Morgan Oates' role.
+- Alt text for the two extra photos is generic; replace once someone has viewed them.
+- Local facts (51 conservation areas, ~3,200 listed buildings, soils/geology) come from West Oxfordshire District Council and Oxfordshire Wildlife & Landscape Study pages, linked at the foot of the page.
+- Page is in the preview sitemap and footer only; add redirects/links from the live site when launching.
