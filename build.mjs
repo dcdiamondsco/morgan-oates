@@ -331,30 +331,34 @@ for (const s of Object.values(svc.pages)) {
 }
 
 
-// AREA PAGES — content/areas.json. Written from local facts (geology, designations, real portfolio gardens); no stock "we serve X" copy.
-const inline = (t) => esc(t).replace(/\[([^\]]+)\]\(([^)]+)\)/g, (m, a, b2) => `<a href="${/^https?:/.test(b2) ? b2 + '" rel="noopener' : href(b2)}">${a}</a>`);
+// AREA PAGES — content/areas.json. Photo-led, same look as the Cotswolds home page. No captions or credits on images.
 for (const ar of areas) {
   CUR = ar.slug;
-  const hk = ar.hero.key;
-  const secs = ar.sections.map((sec) => {
-    let inner = (sec.p || []).map((t) => `<p>${inline(t)}</p>`).join('');
-    if (sec.figures) inner += `<div class="oxg${sec.figures.length > 2 ? ' oxg--3' : ''}">${sec.figures.map((f) => `<figure>${pic(f.key, { alt: f.alt, sizes: '(min-width: 900px) 30vw, 50vw' })}${f.caption ? `<figcaption>${esc(f.caption)}</figcaption>` : ''}</figure>`).join('')}</div>`;
-    if (sec.services) inner += `<ul class="linklist">${Object.values(svc.pages).map((s2) => `<li><a href="${href(s2.path)}">${esc(s2.title)}</a></li>`).join('')}</ul>`;
-    if (sec.qa) inner += sec.qa.map(([q, an]) => `<h3>${esc(q)}</h3><p>${inline(an)}</p>`).join('');
-    if (sec.sources) inner += `<p class="note">Background: ${sec.sources.map(([l, u]) => `<a href="${esc(u)}" rel="noopener">${esc(l)}</a>`).join(', ')}.</p>`;
-    return `<section class="prose__sec"><h2>${esc(sec.h)}</h2><div>${inner}</div></section>`;
-  }).join('');
-  const others = areas.filter((o) => o.slug !== ar.slug).map((o) => `<li><a href="${href(o.slug)}">Gardens in ${esc(o.name)}</a></li>`).join('') + `<li><a href="${href('')}">Cheltenham and the Cotswolds</a></li>`;
+  const words = `
+  <div class="wrap stage__in">
+    <h1 id="hero-h" class="stage__h"><span class="stage__kicker">Garden design &amp; landscaping &middot; ${esc(ar.name)}</span><span class="stage__hl">${esc(ar.hl)}<br><em>${esc(ar.em)}</em></span></h1>
+    <p class="stage__sub">${esc(ar.sub)}</p>
+    <p class="stage__cta"><a class="stage__link" href="${href('projects')}">See our work</a><a class="stage__link" href="${href('contact')}">Discuss your garden</a></p>
+  </div>`;
+  const stage = `
+<section class="stage stage--video stage--photo astage" aria-labelledby="hero-h">
+  ${ar.hero.map(([k, alt], i) => { const d = dims(k); return pic(k, { alt, cls: 'stage__slide', eager: i === 0, sizes: '100vw', style: `--i:${i};--b:.74` }).replace(/width="\d+" height="\d+"/, `width="${d.w}" height="${d.h}"`); }).join('\n  ')}
+  <div class="stage__veil"></div>${words}
+</section>`;
+  const band = ar.band.map(([k, alt]) => pic(k, { alt, sizes: '(min-width: 900px) 30vw, 100vw' })).join('');
+  const others = areas.filter((o) => o.slug !== ar.slug).map((o) => `<a href="${href(o.slug)}">${esc(o.name)}</a>`).join('') + `<a href="${href('')}">The Cotswolds</a>`;
   add(ar.slug, layout({
-    title: ar.metaTitle, desc: ar.metaDescription, path: ar.slug, ogImage: hk,
+    title: ar.metaTitle, desc: ar.metaDescription, path: ar.slug, ogImage: ar.hero[0][0], compact: true, dark: true,
     ld: { '@context': 'https://schema.org', '@type': 'WebPage', name: ar.metaTitle.split(' | ')[0], url: `${site.canonicalOrigin}/${ar.slug}`, about: { '@type': 'Service', serviceType: 'Garden design and landscaping', provider: { '@type': 'LocalBusiness', name: site.name, url: site.canonicalOrigin }, areaServed: { '@type': ar.ldArea.type, name: ar.ldArea.name } } },
-    body: `
-<section class="phead"><div class="wrap">${crumbs([['Home', ''], [ar.name, null]])}
-  <p class="kicker">${esc(ar.kicker)}</p><h1>${esc(ar.h1)}</h1>
-  <p class="lede">${esc(ar.lede)}</p></div></section>
-<div class="wrap"><figure class="phead__fig reveal" style="--w:${dims(hk).w}">${pic(hk, { alt: ar.hero.alt, eager: true, sizes: '(min-width: 900px) 70vw, 100vw' })}<figcaption>${esc(ar.hero.caption)}</figcaption></figure></div>
-<div class="wrap prose">${secs}
- <section class="prose__sec"><h2>Elsewhere</h2><div><ul class="linklist">${others}</ul></div></section>
+    body: `${stage}
+<div class="abody">
+<section class="wrap alead"><p>${esc(ar.intro)}</p></section>
+<div class="wrap agal">${band}</div>
+<div class="wrap prose">
+ <section class="prose__sec"><h2>${esc(ar.h2a)}</h2><div>${ar.pa.map((t) => `<p>${esc(t)}</p>`).join('')}</div></section>
+ <section class="prose__sec"><h2>Where we work</h2><div><p>${esc(ar.work)}</p><ul class="linklist">${Object.values(svc.pages).map((s2) => `<li><a href="${href(s2.path)}">${esc(s2.title)}</a></li>`).join('')}</ul></div></section>
+</div>
+<nav class="wrap aalso" aria-label="Other areas"><span>Also in</span>${others}</nav>
 </div>
 ${cta(ar.ctaHead)}`
   }));

@@ -57,3 +57,7 @@ Not done, by instruction. When approved: `LAUNCH=1 node build.mjs` after `fetch-
 - London page uses only gardens the old site described (Japanese Garden, central London basement entrance, West London townhouse, Romantic Garden). Roles are as the old site stated.
 - Business facts to confirm: that each area (Swindon, Wokingham, London) is a place Morgan Oates genuinely works, and that the Google Business Profile addresses match the real premises. No addresses appear on the pages.
 - Local facts (soils, conservation areas, tree rules) are from council and Natural England pages, linked at the foot of each page. Re-check before launch as council pages change.
+
+## Area pages restyle
+- Oxfordshire, Swindon, Wokingham and London now use the same photo-led hero as the Cotswolds page. No image captions or credits; soil and tree commentary cut to one short ground sentence per page.
+- `g-main-green-3-1536x1024.jpg` is a corrupt source file (bottom half blank) and is not used. Check other uses before launch.

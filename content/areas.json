@@ -2,327 +2,209 @@
  {
   "slug": "oxfordshire",
   "name": "Oxfordshire",
-  "kicker": "Oxfordshire",
+  "hl": "Oxfordshire gardens,",
+  "em": "built to belong.",
   "metaTitle": "Garden designers and landscapers in Oxfordshire | Morgan Oates",
-  "metaDescription": "Garden design and landscaping on the Oxfordshire side of the Cotswolds: limestone, clay and conservation-area gardens, from a Cheltenham studio.",
-  "h1": "Gardens in Oxfordshire, designed for the ground they sit on",
-  "lede": "The Cotswolds carry on east into Oxfordshire, and the county changes quickly as they do. A garden on limestone near Burford has different soil, water and rules from one on the Thames clay or in the Chilterns, and we design with that in mind.",
+  "metaDescription": "Garden design, landscaping and maintenance in Oxfordshire, from a Cheltenham studio working across the Cotswolds.",
+  "sub": "Garden design, landscaping and maintenance across the Oxfordshire Cotswolds and beyond.",
   "ldArea": {
    "type": "AdministrativeArea",
    "name": "Oxfordshire"
   },
-  "hero": {
-   "key": "projects/oxfordshire/cover-900x600",
-   "alt": "Country garden in Oxfordshire with stone cottage and sculpture",
-   "caption": "A country garden in Oxfordshire, designed by Stephen Woodhams."
-  },
-  "sections": [
-   {
-    "h": "Three kinds of ground",
-    "p": [
-     "Oxfordshire is not one landscape. In the north and west, the Cotswold hills sit on limestone. Soils there are usually thin, free-draining and lime-rich, turning orange-brown where ironstone is close to the surface. Plants that cope with dry summers and alkaline soil do well; a lawn or a border of thirsty planting needs thought.",
-     "Further south and east the land drops into the clay vales of the upper Thames. The soil is heavy and slow to drain, and along the river and its tributaries it can stay wet for long stretches. Here the work is often below ground first: drainage, levels, and choosing plants that tolerate winter water, before anything is laid or planted.",
-     "In the south-east, the Chilterns are chalk, often capped with clay and flints, and some of those soils are acidic. The same plant list does not work across all three, so we start by finding out which ground you are on."
-    ]
-   },
-   {
-    "h": "Stone that belongs",
-    "p": [
-     "Across the Cotswold part of the county, houses are mostly built of local limestone, with stone or clay-tile roofs. Walls, terraces and steps look settled when their stone is close to the house in colour and texture, and awkward when it is not. We match materials to the building and the lane around it, rather than to a catalogue."
-    ]
-   },
-   {
-    "h": "Conservation areas, listed buildings and the National Landscape",
-    "p": [
-     "West Oxfordshire alone has 51 conservation areas and around 3,200 listed buildings. In a conservation area the walls, trees, hedges and open spaces are part of what is protected, and most of the Cotswold area of West Oxfordshire lies within the Cotswolds National Landscape.",
-     "Before we draw anything we ask whether the house is listed, whether it sits in a conservation area and whether any trees are protected, because those can affect walls, outbuildings, tree work and changes of level. The council for your postcode decides what needs consent, and different parts of the county answer to different councils. Asking early means the design does not have to be redrawn later."
-    ]
-   },
-   {
-    "h": "A garden in Oxfordshire",
-    "p": [
-     "Our portfolio includes a country garden in Oxfordshire designed by Stephen Woodhams, shown above and below. You can see more of our work in the [gallery](projects)."
-    ],
-    "figures": [
-     {
-      "key": "projects/oxfordshire/img_5690-900x599",
-      "alt": "Another view of the country garden in Oxfordshire"
-     },
-     {
-      "key": "projects/oxfordshire/img_5704-900x600",
-      "alt": "Another view of the country garden in Oxfordshire"
-     }
-    ]
-   },
-   {
-    "h": "Where we work",
-    "p": [
-     "We are based in Charlton Kings, Cheltenham, and work across the Cotswolds, including the Oxfordshire side around Burford, Charlbury and Chipping Norton. If your garden is elsewhere in the county, send us the postcode and we will say honestly whether we can look after it well."
-    ],
-    "services": true
-   },
-   {
-    "h": "Questions",
-    "qa": [
-     [
-      "My house is listed, or in a conservation area. Can you still help?",
-      "Yes. It means more checking at the start, not a different kind of garden. We will work out with you what is likely to need consent before we settle the design."
-     ],
-     [
-      "My garden stays wet. Can it still be planted?",
-      "Usually, with the right plants and some work on drainage or levels. We would look at where the water sits and why before suggesting anything."
-     ]
-    ],
-    "sources": [
-     [
-      "West Oxfordshire conservation areas",
-      "https://www.westoxon.gov.uk/planning-and-building/historic-buildings-and-conservation/conservation-area-maps"
-     ],
-     [
-      "West Oxfordshire design guide on geology and landscape",
-      "https://westoxon.gov.uk/media/lzlddnxb/3-design-guide-geology-and-landscape.pdf"
-     ]
-    ]
-   }
+  "hero": [
+   [
+    "projects/oxfordshire/cover-900x600",
+    "Country garden in Oxfordshire"
+   ],
+   [
+    "projects/oxfordshire/img_5690-900x599",
+    "Country garden in Oxfordshire"
+   ],
+   [
+    "projects/oxfordshire/img_5706-900x600",
+    "Country garden in Oxfordshire"
+   ],
+   [
+    "projects/oxfordshire/img_5717-900x600",
+    "Country garden in Oxfordshire"
+   ]
   ],
+  "band": [
+   [
+    "projects/oxfordshire/img_3533-900x600",
+    "Country garden in Oxfordshire"
+   ],
+   [
+    "projects/oxfordshire/img_5696-900x600",
+    "Country garden in Oxfordshire"
+   ],
+   [
+    "projects/oxfordshire/img_5712-900x600",
+    "Country garden in Oxfordshire"
+   ]
+  ],
+  "intro": "The Cotswolds run on into Oxfordshire, and so does our work. From the limestone villages around Burford and Chipping Norton to the river valleys further south and east, every garden starts with the house, the stone and the view.",
+  "h2a": "Reading the place",
+  "pa": [
+   "The county changes as you cross it, from Cotswold limestone in the north and west to clay and chalk further south and east, so we look at your own plot before deciding what to build and plant. If your house is listed or in a conservation area, we check what that means for walls and buildings before the design is fixed."
+  ],
+  "work": "Based in Cheltenham, we work across the Cotswolds, including the Oxfordshire side around Burford, Charlbury and Chipping Norton. Tell us your postcode and what you have in mind, and we will say how we can help.",
   "ctaHead": "Tell us about your Oxfordshire garden."
  },
  {
   "slug": "swindon",
   "name": "Swindon",
-  "kicker": "Swindon",
+  "hl": "Swindon gardens,",
+  "em": "designed with care.",
   "metaTitle": "Garden designers and landscapers in Swindon | Morgan Oates",
-  "metaDescription": "Garden design and landscaping in Swindon: clay and limestone ground, Old Town and railway village conservation areas, and protected trees.",
-  "h1": "Swindon gardens: clay underfoot, history around them",
-  "lede": "Swindon sits at the western end of a ridge of low limestone hills, yet much of its ground is clay. The Old Town and the railway village are protected, and so are a great many trees. A good Swindon garden starts by reading all three.",
+  "metaDescription": "Garden design, landscaping and maintenance in Swindon, from the Morgan Oates family team.",
+  "sub": "Garden design, landscaping and maintenance in Swindon and the surrounding area.",
   "ldArea": {
    "type": "City",
    "name": "Swindon"
   },
-  "hero": {
-   "key": "photos/g-green-2-900x599",
-   "alt": "A green garden with a striped lawn, mature trees and layered borders",
-   "caption": "A garden by Morgan Oates."
-  },
-  "sections": [
-   {
-    "h": "Clay, limestone and chalk",
-    "p": [
-     "Swindon is the main town at the western end of the Midvale Ridge, a band of low limestone hills that runs east towards Oxford. That is not the whole story underfoot. Much of the borough is underlain by clays, including the Kimmeridge Clay, and one layer of it is even named the Swindon Clay after the town.",
-     "Clay subsoils are slowly permeable, so water tends to sit in a wet winter and the same soil can set hard in a dry summer. Limestone and chalk beds also run through the borough, where drainage is freer, so two gardens a mile apart can behave very differently. We look at how your own plot drains before settling levels, paths and planting."
-    ]
-   },
-   {
-    "h": "The Old Town, the railway village and your trees",
-    "p": [
-     "Swindon Old Town was first designated a conservation area in 1969, and the council lists several more around it, including Town Gardens and Prospect Place. The railway village belongs to Swindon's Railway Conservation Area, an unusually well-preserved railway company settlement from the 1840s and 1850s, and an Article 4 direction applies there. That can mean changes that normally need no permission do need it.",
-     "Trees are protected too. The council reports more than 400 tree preservation orders covering thousands of trees, and a tree in a conservation area has its own notice requirements. Whether a wall, an outbuilding or a tree is affected is something to find out before the design is fixed, not after."
-    ]
-   },
-   {
-    "h": "Where we work",
-    "p": [
-     "Swindon is one of the places Morgan Oates works, alongside the Cotswolds, Oxfordshire and beyond. If you have a plot in mind, give us the postcode and a sense of what you want from it."
-    ],
-    "services": true
-   },
-   {
-    "h": "Questions",
-    "qa": [
-     [
-      "How do I know if my house is in the railway village or the Old Town?",
-      "The council publishes conservation area maps for each of them, and we can check the address with you at the start. If you are inside one, we plan around the extra rules from the beginning."
-     ],
-     [
-      "My garden is boggy in winter and cracked in summer. Is that the clay?",
-      "Very possibly. It can be improved with drainage, better soil structure and planting that copes with both extremes, and we would look at the plot before suggesting anything."
-     ]
-    ],
-    "sources": [
-     [
-      "Swindon conservation areas",
-      "https://swindon.gov.uk/conservationareas"
-     ],
-     [
-      "Swindon protected trees",
-      "https://www.swindon.gov.uk/treeprotection"
-     ],
-     [
-      "Natural England: Midvale Ridge profile",
-      "https://publications.naturalengland.org.uk/file/5792154"
-     ]
-    ]
-   }
+  "hero": [
+   [
+    "photos/g-green-2-900x599",
+    "A striped lawn with stepping stones, mature trees and planted borders"
+   ],
+   [
+    "photos/cotswolds-1-900x600",
+    "A stone cottage garden with a brick path running between planted borders"
+   ],
+   [
+    "photos/g-show-4-900x551",
+    "Woven willow sculptures on a lawn beside clipped hedging"
+   ],
+   [
+    "photos/g-green-900x599",
+    "A woven ring sculpture above orange tulips"
+   ]
   ],
+  "band": [
+   [
+    "photos/gallery-02-terrace-1032x1280",
+    "A contemporary garden terrace with outdoor seating and planting"
+   ],
+   [
+    "photos/gallery-04-treehouse-courtyard-1032x1280",
+    "A timber treehouse above a cobbled courtyard with planting"
+   ],
+   [
+    "photos/gallery-06-sauna-water-feature-1127x1396",
+    "A timber garden sauna beside a contemporary water feature"
+   ]
+  ],
+  "intro": "Swindon brings together the old town, the railway village and open countryside, and its gardens are just as varied. We design and build gardens that suit the house and the street, from compact town plots to larger family gardens.",
+  "h2a": "Reading the place",
+  "pa": [
+   "Much of Swindon sits on clay, so drainage and planting are planned around how your own plot behaves through the seasons. Some parts of the town are conservation areas, which we look into before anything is drawn."
+  ],
+  "work": "Swindon is one of the places Morgan Oates works, alongside the Cotswolds and Oxfordshire. Send us your postcode and a few lines about the garden, and we will take it from there.",
   "ctaHead": "Tell us about your Swindon garden."
  },
  {
   "slug": "wokingham",
   "name": "Wokingham",
-  "kicker": "Wokingham",
+  "hl": "Wokingham gardens,",
+  "em": "made to be lived in.",
   "metaTitle": "Garden designers and landscapers in Wokingham | Morgan Oates",
-  "metaDescription": "Garden design and landscaping in Wokingham borough: London Clay, sandy acidic soils, brooks and protected trees, from Morgan Oates.",
-  "h1": "Wokingham gardens: sand, clay and the brooks between",
-  "lede": "Wokingham borough has two soils at once: heavy London Clay in the north and west, and poor, sandy ground to the south-east. Add the brooks that run down to the Loddon, and a garden here needs to be read before it is drawn.",
+  "metaDescription": "Garden design, landscaping and maintenance in Wokingham, from the Morgan Oates family team.",
+  "sub": "Garden design, landscaping and maintenance in Wokingham and the surrounding area.",
   "ldArea": {
    "type": "AdministrativeArea",
    "name": "Wokingham"
   },
-  "hero": {
-   "key": "photos/g-main-green-3-editorial-829x551",
-   "alt": "A formal front garden with clipped hedging, lawn and generous planting",
-   "caption": "A garden by Morgan Oates."
-  },
-  "sections": [
-   {
-    "h": "Two soils in one borough",
-    "p": [
-     "In the north and west of the borough the rolling hills are London Clay, and around Wokingham and Winnersh the ground is mostly clay. In the south-east the land is dominated by the sandy Bagshot Beds, with patches of river gravel. On that sandy ground the soils drain poorly in places and are acidic.",
-     "The difference decides what is worth planting. Acidic ground suits camellias, rhododendrons and heathers, which struggle on lime. Clay wants structure and patience. A simple check of drainage and pH tells us which one you have, and the design follows from that."
-    ]
-   },
-   {
-    "h": "Brooks and wet ground",
-    "p": [
-     "The Emm Brook, which runs through the Wokingham area, is a tributary of the River Loddon, and the ground beside brooks like it is often alluvium that holds water. A garden near one starts with a question about where water goes in a wet winter, and what the flood map says, before levels, paths or planting are decided."
-    ]
-   },
-   {
-    "h": "Trees and the council",
-    "p": [
-     "Anyone proposing work to a tree in a conservation area must give Wokingham Borough Council six weeks' written notice. A tree under a Tree Preservation Order cannot be worked on without the council's consent, and if one is felled the owner has a duty to replace it, even when it was dead or dangerous. The council keeps a protected tree map, so it is worth checking an address before any plan relies on removing a tree."
-    ]
-   },
-   {
-    "h": "Where we work",
-    "p": [
-     "Wokingham is another of our areas, next to the Cotswolds, Oxfordshire and London. A few lines about the garden and its postcode are enough for a first conversation about where to begin."
-    ],
-    "services": true
-   },
-   {
-    "h": "Questions",
-    "qa": [
-     [
-      "My soil is sandy and acidic. What will grow?",
-      "Plenty, including many plants that gardeners on chalk cannot grow at all. Sandy soil also dries out quickly, so we plan mulch and watering as part of the planting rather than as an afterthought."
-     ],
-     [
-      "There is a protected tree in my garden. Can we still build?",
-      "Often, yes, with the layout planned around the tree and its roots. We would check the protection first, so the design does not rely on work the council will not allow."
-     ]
-    ],
-    "sources": [
-     [
-      "Wokingham Borough Landscape Character Assessment (Wokingham and Winnersh area)",
-      "https://www.wokingham.gov.uk/sites/wokingham/files/2023-07/Wokingham%20Borough%20LCA%20Part%202%20Areas%20J-K.pdf"
-     ],
-     [
-      "Wokingham tree work and the law",
-      "https://www.wokingham.gov.uk/trees"
-     ]
-    ]
-   }
+  "hero": [
+   [
+    "photos/g-green-brown-900x600",
+    "A gravel path through colourful planting with a timber bench behind"
+   ],
+   [
+    "photos/cotswolds-3-900x600",
+    "Wide stone steps and a dry-stone retaining wall above a paved terrace"
+   ],
+   [
+    "photos/g-green-brown-2-900x600",
+    "A sheltered garden dining terrace framed by layered green planting and warm timber"
+   ],
+   [
+    "photos/g-main-green-900x551",
+    "Layered flowering borders under mature trees"
+   ]
   ],
+  "band": [
+   [
+    "photos/gallery-01-sculpture-garden-1032x1280",
+    "A clipped garden with a circular stone sculpture, lawn and flowering alliums"
+   ],
+   [
+    "photos/gallery-03-lavender-border-1206x1280",
+    "A lawn edged with lavender, roses and flowering borders beside a garden wall"
+   ],
+   [
+    "photos/gallery-02-terrace-1032x1280",
+    "A contemporary garden terrace with outdoor seating and planting"
+   ]
+  ],
+  "intro": "Wokingham's gardens are lived in: family lawns, mature trees and borders that have to work all year. We design and build them around how you use the space, and look after them once they are finished.",
+  "h2a": "Reading the place",
+  "pa": [
+   "The ground here runs from clay to sandy, acidic soil, so planting is chosen to suit what you actually have. We also check early for protected trees, so a design never depends on work that will not be allowed."
+  ],
+  "work": "Wokingham is another place Morgan Oates works, alongside the Cotswolds and London. Give us your postcode and a short description of the plot, and we will be in touch.",
   "ctaHead": "Tell us about your Wokingham garden."
  },
  {
   "slug": "london",
   "name": "London",
-  "kicker": "London",
+  "hl": "London gardens,",
+  "em": "small spaces, well made.",
   "metaTitle": "Garden designers and landscapers in London | Morgan Oates",
-  "metaDescription": "Garden design and building in London: townhouse, basement and walled gardens, London Clay, conservation areas and tight access, from Morgan Oates.",
-  "h1": "London gardens: small spaces, tight access, protected streets",
-  "lede": "London gardens are rarely generous. They are walled, shaded, overlooked and hard to reach, and many sit inside a conservation area. Our London work, from a basement entrance to a walled townhouse garden, has been about making a small space feel considered.",
+  "metaDescription": "Garden design, landscaping and maintenance for London townhouse, courtyard and walled gardens, from Morgan Oates.",
+  "sub": "Garden design, landscaping and maintenance for London townhouses, courtyards and walled gardens.",
   "ldArea": {
    "type": "City",
    "name": "London"
   },
-  "hero": {
-   "key": "projects/west-london-romantic-style-garden/cover-900x675",
-   "alt": "Romantic-style walled garden in West London",
-   "caption": "A walled garden in West London, designed and built by Morgan Oates."
-  },
-  "sections": [
-   {
-    "h": "Gardens we have made in London",
-    "p": [
-     "Our portfolio includes London gardens of very different kinds. See more in the [gallery](projects)."
-    ],
-    "figures": [
-     {
-      "key": "projects/japanese-garden/img_0066-900x643",
-      "alt": "Japanese-style garden with pond, rocks and maples",
-      "caption": "A Japanese-style garden with a pond and gazebo, designed and built by Morgan Oates."
-     },
-     {
-      "key": "projects/central-london-garden/cover-900x675",
-      "alt": "Shaded basement-flat entrance garden in central London",
-      "caption": "A basement-flat entrance in central London."
-     },
-     {
-      "key": "projects/scarsdale-villas/cover-900x580",
-      "alt": "Rear garden of a West London townhouse",
-      "caption": "A West London townhouse garden, designed by Stephen Woodhams and built by Morgan Oates."
-     }
-    ]
-   },
-   {
-    "h": "Small, shaded and walled",
-    "p": [
-     "A dark, shuttered basement entrance limits what will grow. In one central London garden the answer was a faux living wall and trellis panels over the walls, with shade-loving evergreen climbers in tall planters to screen the stairs, spaced so the steps stay usable.",
-     "In a compact walled garden in West London, a lawn was being taken over by mind-your-own-business, so the design embraced it as a soft ground cover, layered with shade-tolerant perennials and a few evergreen shrubs. In a small space the answer is usually to work with what is already there."
-    ]
-   },
-   {
-    "h": "London Clay and large trees",
-    "p": [
-     "Much of London sits on clay. In parts of the Royal Borough of Kensington and Chelsea the London Clay is highly shrinkable, and where trees grow they draw water from it. A large tree close to a house is therefore a structural question as well as a gardening one, and choosing or removing one is worth taking advice on."
-    ]
-   },
-   {
-    "h": "Conservation areas and tree work",
-    "p": [
-     "Conservation areas cover a great deal of London: more than 70 per cent of Kensington and Chelsea is one, and Bromley alone has 45. A tree in a conservation area generally needs six weeks' notice to the council before work, and the rules apply to trunks over 75mm across, measured at 1.5m above the ground. Boroughs differ, so we check the address with you first."
-    ]
-   },
-   {
-    "h": "Getting it in",
-    "p": [
-     "Many London gardens can only be reached through the house or along a narrow passage. That decides how materials, plants and machinery arrive, and what a build costs, so access is worked out early and shapes the design."
-    ]
-   },
-   {
-    "h": "Where we work",
-    "p": [
-     "Our London work covers West London, Primrose Hill and central London. Tell us the postcode and the size of the space, and we will talk through where we would start."
-    ],
-    "services": true
-   },
-   {
-    "h": "Questions",
-    "qa": [
-     [
-      "My garden is shaded by walls and neighbours. What can I grow?",
-      "More than most people expect. Evergreen climbers, ferns and shade-tolerant perennials do well, and a mirror or light-coloured surfaces can lift a dark space."
-     ],
-     [
-      "Do I need to tell the council before pruning a tree?",
-      "If the tree is in a conservation area or has a Tree Preservation Order, yes. Check with your borough before any work starts."
-     ]
-    ],
-    "sources": [
-     [
-      "Royal Borough of Kensington and Chelsea tree strategy",
-      "https://www.rbkc.gov.uk/wamdocs/Tree%20Strategy.pdf"
-     ],
-     [
-      "Planning Portal: trees in conservation areas",
-      "https://www.planningportal.co.uk/notification-of-proposed-works-to-trees-in-conservation-areas"
-     ]
-    ]
-   }
+  "hero": [
+   [
+    "projects/west-london-romantic-style-garden/cover-900x675",
+    "Walled garden in West London"
+   ],
+   [
+    "projects/japanese-garden/img_0066-900x643",
+    "Japanese-style garden with pond, rocks and maples"
+   ],
+   [
+    "projects/central-london-garden/cover-900x675",
+    "Basement-flat entrance garden in central London"
+   ],
+   [
+    "projects/scarsdale-villas/cover-900x580",
+    "Rear garden of a West London townhouse"
+   ]
   ],
+  "band": [
+   [
+    "projects/japanese-garden/img_0073-900x700",
+    "Japanese-style garden in London"
+   ],
+   [
+    "projects/west-london-romantic-style-garden/img_0198-900x675",
+    "Walled garden in West London"
+   ],
+   [
+    "projects/central-london-garden/img_0991-900x675",
+    "Basement-flat entrance garden in central London"
+   ]
+  ],
+  "intro": "London gardens are small, walled and often hard to reach, which makes every decision count. Our London work includes a Japanese-style garden with a pond and gazebo, a planted basement entrance in central London and a walled garden in the west of the city.",
+  "h2a": "Small spaces",
+  "pa": [
+   "Most London gardens are shaded, walled and overlooked, so light, access and privacy come first. Many streets sit within conservation areas, and that is checked before a design is settled."
+  ],
+  "work": "Our London work covers West London, Primrose Hill and central London. Share your postcode and what you are hoping for, and we will reply with how we could help.",
   "ctaHead": "Tell us about your London garden."
  }
 ]
