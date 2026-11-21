@@ -6,7 +6,7 @@
   "em": "built to belong.",
   "metaTitle": "Garden designers and landscapers in Oxfordshire | Morgan Oates",
   "metaDescription": "Garden design, landscaping and maintenance in Oxfordshire, from a Cheltenham studio working across the Cotswolds.",
-  "sub": "Garden design, landscaping and maintenance across the Oxfordshire Cotswolds and beyond.",
+  "sub": "A family team from Cheltenham. We design, build and maintain gardens in Oxfordshire, from the limestone villages of the Cotswold edge to the river valleys beyond, with walls, terraces and planting that sit comfortably beside the house.",
   "ldArea": {
    "type": "AdministrativeArea",
    "name": "Oxfordshire"
@@ -49,7 +49,8 @@
    "The county changes as you cross it, from Cotswold limestone in the north and west to clay and chalk further south and east, so we look at your own plot before deciding what to build and plant. If your house is listed or in a conservation area, we check what that means for walls and buildings before the design is fixed."
   ],
   "work": "Based in Cheltenham, we work across the Cotswolds, including the Oxfordshire side around Burford, Charlbury and Chipping Norton. Tell us your postcode and what you have in mind, and we will say how we can help.",
-  "ctaHead": "Tell us about your Oxfordshire garden."
+  "ctaHead": "Tell us about your Oxfordshire garden.",
+  "loc": "in Oxfordshire"
  },
  {
   "slug": "swindon",
@@ -58,7 +59,7 @@
   "em": "designed with care.",
   "metaTitle": "Garden designers and landscapers in Swindon | Morgan Oates",
   "metaDescription": "Garden design, landscaping and maintenance in Swindon, from the Morgan Oates family team.",
-  "sub": "Garden design, landscaping and maintenance in Swindon and the surrounding area.",
+  "sub": "A family team from Cheltenham. We design, build and maintain gardens in Swindon and the villages around it, shaping family lawns, terraces and borders to suit the way you live.",
   "ldArea": {
    "type": "City",
    "name": "Swindon"
@@ -101,7 +102,8 @@
    "Much of Swindon sits on clay, so drainage and planting are planned around how your own plot behaves through the seasons. Some parts of the town are conservation areas, which we look into before anything is drawn."
   ],
   "work": "Swindon is one of the places Morgan Oates works, alongside the Cotswolds and Oxfordshire. Send us your postcode and a few lines about the garden, and we will take it from there.",
-  "ctaHead": "Tell us about your Swindon garden."
+  "ctaHead": "Tell us about your Swindon garden.",
+  "loc": "in Swindon"
  },
  {
   "slug": "wokingham",
@@ -110,7 +112,7 @@
   "em": "made to be lived in.",
   "metaTitle": "Garden designers and landscapers in Wokingham | Morgan Oates",
   "metaDescription": "Garden design, landscaping and maintenance in Wokingham, from the Morgan Oates family team.",
-  "sub": "Garden design, landscaping and maintenance in Wokingham and the surrounding area.",
+  "sub": "A family team from Cheltenham. We design, build and maintain gardens in Wokingham, giving mature plots fresh structure, planting and places to sit, and keeping them looking their best afterwards.",
   "ldArea": {
    "type": "AdministrativeArea",
    "name": "Wokingham"
@@ -153,7 +155,8 @@
    "The ground here runs from clay to sandy, acidic soil, so planting is chosen to suit what you actually have. We also check early for protected trees, so a design never depends on work that will not be allowed."
   ],
   "work": "Wokingham is another place Morgan Oates works, alongside the Cotswolds and London. Give us your postcode and a short description of the plot, and we will be in touch.",
-  "ctaHead": "Tell us about your Wokingham garden."
+  "ctaHead": "Tell us about your Wokingham garden.",
+  "loc": "in Wokingham"
  },
  {
   "slug": "london",
@@ -162,7 +165,7 @@
   "em": "small spaces, well made.",
   "metaTitle": "Garden designers and landscapers in London | Morgan Oates",
   "metaDescription": "Garden design, landscaping and maintenance for London townhouse, courtyard and walled gardens, from Morgan Oates.",
-  "sub": "Garden design, landscaping and maintenance for London townhouses, courtyards and walled gardens.",
+  "sub": "A family team from Cheltenham. We design, build and maintain gardens in London, turning townhouse yards, courtyards and walled gardens into private, well-made outdoor rooms.",
   "ldArea": {
    "type": "City",
    "name": "London"
@@ -205,6 +208,7 @@
    "Most London gardens are shaded, walled and overlooked, so light, access and privacy come first. Many streets sit within conservation areas, and that is checked before a design is settled."
   ],
   "work": "Our London work covers West London, Primrose Hill and central London. Share your postcode and what you are hoping for, and we will reply with how we could help.",
-  "ctaHead": "Tell us about your London garden."
+  "ctaHead": "Tell us about your London garden.",
+  "loc": "in London"
  }
 ]

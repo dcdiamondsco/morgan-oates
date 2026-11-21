@@ -182,7 +182,7 @@ function sequence(p) {
   const fig = (it, extra = '') => {
     const key = pimg(p.slug, it.f);
     const portrait = it.h > it.w * 1.1;
-    return `<figure class="seq__fig${portrait ? ' is-portrait' : ''} reveal ${extra}" style="--w:${it.w}">${pic(key, { alt: `${p.title}: view ${it.i + 1} of ${total}`, sizes: '(min-width: 900px) 50vw, 100vw' })}<figcaption><span>Plate ${String(it.i + 1).padStart(2, '0')}</span></figcaption></figure>`;
+    return `<figure class="seq__fig${portrait ? ' is-portrait' : ''} reveal ${extra}" style="--w:${it.w}">${pic(key, { alt: `${p.title}: view ${it.i + 1} of ${total}`, sizes: '(min-width: 900px) 50vw, 100vw' })}</figure>`;
   };
   while (k < items.length) {
     const it = items[k], nx = items[k + 1];
@@ -312,7 +312,7 @@ function serviceBody(s) {
   return `
 <section class="phead"><div class="wrap">${crumbs([['Home', ''], ['Services', svc.overview.path], [s.title, null]])}
   <p class="kicker">${esc(s.kicker)}</p><h1>${esc(s.title)}</h1><p class="lede">${esc(s.lede)}</p></div></section>
-<div class="wrap"><figure class="phead__fig ${s.imagePortrait ? 'phead__fig--portrait' : ''} reveal" style="--w:${dims(s.image).w}">${pic(s.image, { alt: s.imageAlt, eager: true, sizes: '(min-width: 900px) 70vw, 100vw' })}<figcaption>${esc(s.caption)}</figcaption></figure></div>
+<div class="wrap"><figure class="phead__fig ${s.imagePortrait ? 'phead__fig--portrait' : ''} reveal" style="--w:${dims(s.image).w}">${pic(s.image, { alt: s.imageAlt, eager: true, sizes: '(min-width: 900px) 70vw, 100vw' })}</figure></div>
 <div class="wrap prose">${secs}${also}${jr}</div>
 ${relatedBlock(s.related)}${cta()}`;
 }
@@ -337,7 +337,7 @@ for (const ar of areas) {
   CUR = ar.slug;
   const words = `
   <div class="wrap stage__in">
-    <h1 id="hero-h" class="stage__h"><span class="stage__kicker">Garden design &amp; landscaping &middot; ${esc(ar.name)}</span><span class="stage__hl">${esc(ar.hl)}<br><em>${esc(ar.em)}</em></span></h1>
+    <h1 id="hero-h" class="stage__h"><span class="stage__kicker">Garden design<br class="kbr"> &amp; landscaping<br class="kbr2"> <span class="kdot" aria-hidden="true">&middot; </span>${esc(ar.loc)}</span><span class="stage__hl">${esc(ar.hl)}<br><em>${esc(ar.em)}</em></span></h1>
     <p class="stage__sub">${esc(ar.sub)}</p>
     <p class="stage__cta"><a class="stage__link" href="${href('projects')}">See our work</a><a class="stage__link" href="${href('contact')}">Discuss your garden</a></p>
   </div>`;
