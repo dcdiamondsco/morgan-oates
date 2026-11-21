@@ -353,10 +353,8 @@ for (const ar of areas) {
     ld: { '@context': 'https://schema.org', '@type': 'WebPage', name: ar.metaTitle.split(' | ')[0], url: `${site.canonicalOrigin}/${ar.slug}`, about: { '@type': 'Service', serviceType: 'Garden design and landscaping', provider: { '@type': 'LocalBusiness', name: site.name, url: site.canonicalOrigin }, areaServed: { '@type': ar.ldArea.type, name: ar.ldArea.name } } },
     body: `${stage}
 <div class="abody">
-<section class="wrap alead"><p>${esc(ar.intro)}</p></section>
 <div class="wrap agal">${band}</div>
 <div class="wrap prose">
- <section class="prose__sec"><h2>${esc(ar.h2a)}</h2><div>${ar.pa.map((t) => `<p>${esc(t)}</p>`).join('')}</div></section>
  <section class="prose__sec"><h2>Where we work</h2><div><p>${esc(ar.work)}</p><ul class="linklist">${Object.values(svc.pages).map((s2) => `<li><a href="${href(s2.path)}">${esc(s2.title)}</a></li>`).join('')}</ul></div></section>
 </div>
 <nav class="wrap aalso" aria-label="Other areas"><span>Also in</span>${others}</nav>

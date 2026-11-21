@@ -1713,3 +1713,5 @@ html body main .stage.astage .stage__in{position:relative;z-index:3}
 html:has(.astage),html:has(.astage) body{height:auto!important;overflow:auto!important;overflow-x:hidden!important;overscroll-behavior:auto!important;background:var(--chalk)!important}
 html:has(.astage) .header--over{position:absolute!important;padding-top:1rem}
 html:has(.astage) .header--over~footer.footer--compact{position:relative!important;bottom:auto!important}
+
+.agal{padding-top:clamp(2.5rem,6vw,5rem)}
