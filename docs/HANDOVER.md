@@ -50,3 +50,10 @@ Not done, by instruction. When approved: `LAUNCH=1 node build.mjs` after `fetch-
 - Alt text for the two extra photos is generic; replace once someone has viewed them.
 - Local facts (51 conservation areas, ~3,200 listed buildings, soils/geology) come from West Oxfordshire District Council and Oxfordshire Wildlife & Landscape Study pages, linked at the foot of the page.
 - Page is in the preview sitemap and footer only; add redirects/links from the live site when launching.
+
+## Area pages (/swindon, /wokingham, /london) — to confirm with Dan before launch
+- Content lives in content/areas.json (one block per area; the build makes the pages, footer "Areas" column and sitemap entries). Cheltenham is the Cotswolds home page, so it has no area page.
+- Swindon and Wokingham have no portfolio gardens of their own, so those pages carry no project photos; they use generic Morgan Oates garden photos captioned "A garden by Morgan Oates". Add real local projects when they exist.
+- London page uses only gardens the old site described (Japanese Garden, central London basement entrance, West London townhouse, Romantic Garden). Roles are as the old site stated.
+- Business facts to confirm: that each area (Swindon, Wokingham, London) is a place Morgan Oates genuinely works, and that the Google Business Profile addresses match the real premises. No addresses appear on the pages.
+- Local facts (soils, conservation areas, tree rules) are from council and Natural England pages, linked at the foot of each page. Re-check before launch as council pages change.

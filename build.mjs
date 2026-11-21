@@ -28,7 +28,8 @@ const proj = Object.fromEntries(projects.map((p) => [p.slug, p]));
 let CUR = ''; // path of the page being rendered ('' = home)
 
 const rel = (to) => '../'.repeat(CUR.split('/').filter(Boolean).length) + to;
-const LOCAL_ONLY = new Set(['privacy', 'terms', 'contact', 'projects', 'west-london-landscape-gardeners', 'before-and-after', 'oxfordshire']);
+const areas = read('areas.json');
+const LOCAL_ONLY = new Set(['privacy', 'terms', 'contact', 'projects', 'west-london-landscape-gardeners', 'before-and-after', 'oxfordshire', 'swindon', 'wokingham', 'london']);
 const href = (to) => (to && !LOCAL_ONLY.has(to) ? 'https://morganoates.co/' + to : LINKS === 'files' ? rel(to ? to + '/index.html' : 'index.html') : '/' + to);
 const asset = (to) => (LINKS === 'files' ? rel(to) : '/' + to);
 
@@ -126,10 +127,13 @@ ${true ? `<footer class="footer footer--compact"><div class="wrap footer__row"><
         <li><a href="${href('projects')}">Gardens</a></li>
         <li><a href="${href('west-london-landscape-gardeners')}">The Team</a></li>
         <li><a href="${href('before-and-after')}">Before and after</a></li>
-        <li><a href="${href('oxfordshire')}">Oxfordshire gardens</a></li>
         <li><a href="${href('blog')}">Journal</a></li>
         <li><a href="${href('contact')}">Contact</a></li>
       </ul>
+    </div>
+    <div>
+      <h2 class="footer__h">Areas</h2>
+      <ul>${areas.map((a) => `<li><a href="${href(a.slug)}">${esc(a.name)}</a></li>`).join('')}</ul>
     </div>
     <div>
       <h2 class="footer__h">Contact</h2>
@@ -327,51 +331,32 @@ for (const s of Object.values(svc.pages)) {
 }
 
 
-// OXFORDSHIRE — area page. Written from local facts (geology, designations, one real portfolio garden); no stock "we serve X" copy.
-CUR = 'oxfordshire';
-{
-  const oxHero = pimg('oxfordshire', 'cover-900x600');
-  const oxMore = [pimg('oxfordshire', 'img_5690-900x599'), pimg('oxfordshire', 'img_5704-900x600')];
-  add('oxfordshire', layout({
-    title: 'Garden designers and landscapers in Oxfordshire | Morgan Oates',
-    desc: 'Garden design and landscaping on the Oxfordshire side of the Cotswolds: limestone, clay and conservation-area gardens, from a Cheltenham studio.',
-    path: 'oxfordshire', ogImage: oxHero,
-    ld: { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Garden designers and landscapers in Oxfordshire', url: `${site.canonicalOrigin}/oxfordshire`, about: { '@type': 'Service', serviceType: 'Garden design and landscaping', provider: { '@type': 'LocalBusiness', name: site.name, url: site.canonicalOrigin }, areaServed: { '@type': 'AdministrativeArea', name: 'Oxfordshire' } } },
+// AREA PAGES — content/areas.json. Written from local facts (geology, designations, real portfolio gardens); no stock "we serve X" copy.
+const inline = (t) => esc(t).replace(/\[([^\]]+)\]\(([^)]+)\)/g, (m, a, b2) => `<a href="${/^https?:/.test(b2) ? b2 + '" rel="noopener' : href(b2)}">${a}</a>`);
+for (const ar of areas) {
+  CUR = ar.slug;
+  const hk = ar.hero.key;
+  const secs = ar.sections.map((sec) => {
+    let inner = (sec.p || []).map((t) => `<p>${inline(t)}</p>`).join('');
+    if (sec.figures) inner += `<div class="oxg${sec.figures.length > 2 ? ' oxg--3' : ''}">${sec.figures.map((f) => `<figure>${pic(f.key, { alt: f.alt, sizes: '(min-width: 900px) 30vw, 50vw' })}${f.caption ? `<figcaption>${esc(f.caption)}</figcaption>` : ''}</figure>`).join('')}</div>`;
+    if (sec.services) inner += `<ul class="linklist">${Object.values(svc.pages).map((s2) => `<li><a href="${href(s2.path)}">${esc(s2.title)}</a></li>`).join('')}</ul>`;
+    if (sec.qa) inner += sec.qa.map(([q, an]) => `<h3>${esc(q)}</h3><p>${inline(an)}</p>`).join('');
+    if (sec.sources) inner += `<p class="note">Background: ${sec.sources.map(([l, u]) => `<a href="${esc(u)}" rel="noopener">${esc(l)}</a>`).join(', ')}.</p>`;
+    return `<section class="prose__sec"><h2>${esc(sec.h)}</h2><div>${inner}</div></section>`;
+  }).join('');
+  const others = areas.filter((o) => o.slug !== ar.slug).map((o) => `<li><a href="${href(o.slug)}">Gardens in ${esc(o.name)}</a></li>`).join('') + `<li><a href="${href('')}">Cheltenham and the Cotswolds</a></li>`;
+  add(ar.slug, layout({
+    title: ar.metaTitle, desc: ar.metaDescription, path: ar.slug, ogImage: hk,
+    ld: { '@context': 'https://schema.org', '@type': 'WebPage', name: ar.metaTitle.split(' | ')[0], url: `${site.canonicalOrigin}/${ar.slug}`, about: { '@type': 'Service', serviceType: 'Garden design and landscaping', provider: { '@type': 'LocalBusiness', name: site.name, url: site.canonicalOrigin }, areaServed: { '@type': ar.ldArea.type, name: ar.ldArea.name } } },
     body: `
-<section class="phead"><div class="wrap">${crumbs([['Home', ''], ['Oxfordshire', null]])}
-  <p class="kicker">Oxfordshire</p><h1>Gardens in Oxfordshire, designed for the ground they sit on</h1>
-  <p class="lede">The Cotswolds carry on east into Oxfordshire, and the county changes quickly as they do. A garden on limestone near Burford has different soil, water and rules from one on the Thames clay or in the Chilterns, and we design with that in mind.</p></div></section>
-<div class="wrap"><figure class="phead__fig reveal" style="--w:900">${pic(oxHero, { alt: 'Country garden in Oxfordshire with stone cottage and sculpture', eager: true, sizes: '(min-width: 900px) 70vw, 100vw' })}<figcaption>A country garden in Oxfordshire, designed by Stephen Woodhams.</figcaption></figure></div>
-<div class="wrap prose">
- <section class="prose__sec"><h2>Three kinds of ground</h2><div>
-  <p>Oxfordshire is not one landscape. In the north and west, the Cotswold hills sit on limestone. Soils there are usually thin, free-draining and lime-rich, turning orange-brown where ironstone is close to the surface. Plants that cope with dry summers and alkaline soil do well; a lawn or a border of thirsty planting needs thought.</p>
-  <p>Further south and east the land drops into the clay vales of the upper Thames. The soil is heavy and slow to drain, and along the river and its tributaries it can stay wet for long stretches. Here the work is often below ground first: drainage, levels, and choosing plants that tolerate winter water, before anything is laid or planted.</p>
-  <p>In the south-east, the Chilterns are chalk, often capped with clay and flints, and some of those soils are acidic. The same plant list does not work across all three, so we start by finding out which ground you are on.</p>
- </div></section>
- <section class="prose__sec"><h2>Stone that belongs</h2><div>
-  <p>Across the Cotswold part of the county, houses are mostly built of local limestone, with stone or clay-tile roofs. Walls, terraces and steps look settled when their stone is close to the house in colour and texture, and awkward when it is not. We match materials to the building and the lane around it, rather than to a catalogue.</p>
- </div></section>
- <section class="prose__sec"><h2>Conservation areas, listed buildings and the National Landscape</h2><div>
-  <p>West Oxfordshire alone has 51 conservation areas and around 3,200 listed buildings. In a conservation area the walls, trees, hedges and open spaces are part of what is protected, and most of the Cotswold area of West Oxfordshire lies within the Cotswolds National Landscape.</p>
-  <p>Before we draw anything we ask whether the house is listed, whether it sits in a conservation area and whether any trees are protected, because those can affect walls, outbuildings, tree work and changes of level. The council for your postcode decides what needs consent, and different parts of the county answer to different councils. Asking early means the design does not have to be redrawn later.</p>
- </div></section>
- <section class="prose__sec"><h2>A garden in Oxfordshire</h2><div>
-  <p>Our portfolio includes a country garden in Oxfordshire designed by Stephen Woodhams, shown above and below. You can see more of our work in the <a href="${href('projects')}">gallery</a>.</p>
-  <div class="oxg">${oxMore.map((k) => `<figure>${pic(k, { alt: 'Another view of the country garden in Oxfordshire', sizes: '(min-width: 900px) 30vw, 50vw' })}</figure>`).join('')}</div>
- </div></section>
- <section class="prose__sec"><h2>Where we work</h2><div>
-  <p>We are based in Charlton Kings, Cheltenham, and work across the Cotswolds, including the Oxfordshire side around Burford, Charlbury and Chipping Norton. If your garden is elsewhere in the county, send us the postcode and we will say honestly whether we can look after it well.</p>
-  <ul class="linklist">${Object.values(svc.pages).map((s) => `<li><a href="${href(s.path)}">${esc(s.title)}</a></li>`).join('')}</ul>
- </div></section>
- <section class="prose__sec"><h2>Questions</h2><div>
-  <h3>My house is listed, or in a conservation area. Can you still help?</h3>
-  <p>Yes. It means more checking at the start, not a different kind of garden. We will work out with you what is likely to need consent before we settle the design.</p>
-  <h3>My garden stays wet. Can it still be planted?</h3>
-  <p>Usually, with the right plants and some work on drainage or levels. We would look at where the water sits and why before suggesting anything.</p>
-  <p class="note">Background: <a href="https://www.westoxon.gov.uk/planning-and-building/historic-buildings-and-conservation/conservation-area-maps" rel="noopener">West Oxfordshire conservation areas</a> and the <a href="https://westoxon.gov.uk/media/lzlddnxb/3-design-guide-geology-and-landscape.pdf" rel="noopener">West Oxfordshire design guide on geology and landscape</a>.</p>
- </div></section>
+<section class="phead"><div class="wrap">${crumbs([['Home', ''], [ar.name, null]])}
+  <p class="kicker">${esc(ar.kicker)}</p><h1>${esc(ar.h1)}</h1>
+  <p class="lede">${esc(ar.lede)}</p></div></section>
+<div class="wrap"><figure class="phead__fig reveal" style="--w:${dims(hk).w}">${pic(hk, { alt: ar.hero.alt, eager: true, sizes: '(min-width: 900px) 70vw, 100vw' })}<figcaption>${esc(ar.hero.caption)}</figcaption></figure></div>
+<div class="wrap prose">${secs}
+ <section class="prose__sec"><h2>Elsewhere</h2><div><ul class="linklist">${others}</ul></div></section>
 </div>
-${cta('Tell us about your Oxfordshire garden.')}`
+${cta(ar.ctaHead)}`
   }));
 }
 

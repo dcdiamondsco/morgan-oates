@@ -2,6 +2,20 @@
  "note": "Every photograph used by the site. Source files are on morganoates.co (maximum width available there: 900px; homepage slideshow images up to 1400px). Permission to reuse must be confirmed by the owner.",
  "images": [
   {
+   "key": "projects/central-london-garden/cover-900x675",
+   "width": 900,
+   "height": 675,
+   "source": "https://morganoates.co/thumbs/projects/central-london-garden/cover-900x675.jpg",
+   "local": "assets/images/projects/central-london-garden/cover-900x675.jpg"
+  },
+  {
+   "key": "projects/japanese-garden/img_0066-900x643",
+   "width": 900,
+   "height": 643,
+   "source": "https://morganoates.co/thumbs/projects/japanese-garden/img_0066-900x643.jpg",
+   "local": "assets/images/projects/japanese-garden/img_0066-900x643.jpg"
+  },
+  {
    "key": "projects/oxfordshire/cover-900x600",
    "width": 900,
    "height": 600,
@@ -21,6 +35,20 @@
    "height": 600,
    "source": "https://morganoates.co/thumbs/projects/oxfordshire/img_5704-900x600.jpg",
    "local": "assets/images/projects/oxfordshire/img_5704-900x600.jpg"
+  },
+  {
+   "key": "projects/scarsdale-villas/cover-900x580",
+   "width": 900,
+   "height": 580,
+   "source": "https://morganoates.co/thumbs/projects/scarsdale-villas/cover-900x580.jpg",
+   "local": "assets/images/projects/scarsdale-villas/cover-900x580.jpg"
+  },
+  {
+   "key": "projects/west-london-romantic-style-garden/cover-900x675",
+   "width": 900,
+   "height": 675,
+   "source": "https://morganoates.co/thumbs/projects/west-london-romantic-style-garden/cover-900x675.jpg",
+   "local": "assets/images/projects/west-london-romantic-style-garden/cover-900x675.jpg"
   }
  ]
 }

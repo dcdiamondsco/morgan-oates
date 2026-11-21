@@ -176,7 +176,7 @@ figcaption span{font-weight:700;letter-spacing:.1em;text-transform:uppercase;fon
 /* footer */
 .footer{--on-dark:var(--text);--on-dark-muted:var(--muted);background:linear-gradient(180deg,var(--chalk) 0%,var(--stone) 100%);color:var(--text);padding:clamp(2.5rem,5vw,4rem) 0 1.5rem;font-size:.9375rem}
 .footer a{color:var(--ink)}.footer a:hover{color:var(--clay)}
-.footer__grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:2rem}
+.footer__grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1.2fr;gap:2rem}
 .footer__logo{filter:url(#ink-brown);height:48px;width:auto;margin-bottom:1rem}
 .footer__h{font:700 .75rem var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--clay);margin:0 0 .8rem}
 .footer ul{list-style:none;margin:0;padding:0}.footer li{padding:.22rem 0}
@@ -1690,3 +1690,6 @@ html:has(.stage__hl) .stage__h{font-size:clamp(1.7rem,7.6vw,2.2rem)!important}
 /* Oxfordshire page */
 .oxg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(.6rem,1.6vw,1.2rem);margin:1.4rem 0 0}.oxg figure{margin:0}.oxg img{width:100%;height:auto;display:block;filter:sepia(.07) saturate(.97)}
 .prose__sec h3{font-size:1.05rem;margin:1.2rem 0 .3rem}.prose__sec h3:first-child{margin-top:0}
+
+.oxg figcaption{font-size:.875rem;color:var(--muted);margin-top:.4rem}.oxg--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:760px){.oxg--3{grid-template-columns:1fr}}
